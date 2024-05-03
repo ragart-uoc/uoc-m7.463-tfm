@@ -1,10 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
-namespace TFM.Debug
+namespace TFM.Debug.DeLucaEffect
 {
     /// <summary>
-    /// Class <c>ButtonFadeCharacter</c> is a script that fades a character in and out.
+    /// Class <c>ButtonFadeCharacter</c> contains the logic for fading a character in and out.
     /// </summary>
     public class ButtonFadeCharacter : MonoBehaviour
     {
