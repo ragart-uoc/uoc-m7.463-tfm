@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TFM.Debug.Scripts.Interaction.Managers;
 
 namespace TFM.Debug.Scripts.Interaction.Actions
 {
@@ -10,16 +11,14 @@ namespace TFM.Debug.Scripts.Interaction.Actions
     public class ActionSequence : ScriptableObject
     {
         /// <value>Property <c>actions</c> represents the list of actions.</value>
-        [SerializeReference]
-        public List<ActionBase> sequenceActions = new List<ActionBase>();
+        [SerializeReference] public List<ActionBase> sequenceActions = new List<ActionBase>();
 
         /// <summary>
         /// Method <c>ExecuteSequence</c> executes the sequence.
         /// </summary>
         public void ExecuteSequence()
         {
-            foreach (var action in sequenceActions)
-                action.Execute();
+            ActionManager.Instance.ExecuteSequence(sequenceActions);
         }
     }
 }

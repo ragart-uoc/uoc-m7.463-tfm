@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf71bdfcdd043504e9c68675acf4f459, type: 3}
-  m_Name: OldMan
+  m_Name: OldMan-Old
   m_EditorClassIdentifier: 
-  actorImage: {fileID: 0}
+  actorImagePrefab: {fileID: 3825974013967766440, guid: c0189c994c3feb74bb183134a80a084e, type: 3}
   actorName: Old Man

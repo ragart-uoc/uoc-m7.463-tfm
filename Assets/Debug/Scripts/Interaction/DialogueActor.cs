@@ -8,8 +8,8 @@ namespace TFM.Debug.Scripts.Interaction
     [CreateAssetMenu(fileName="DialogueActor", menuName = "Dialogue/DialogueActor")]
     public class DialogueActor : ScriptableObject
     {
-        /// <value>Property <c>actorImage</c> represents the actor image.</value>
-        public Sprite actorImage;
+        /// <value>Property <c>actorImagePrefab</c> represents the actor image.</value>
+        public GameObject actorImagePrefab;
         
         /// <value>Property <c>actorName</c> represents the actor name.</value>
         public string actorName;

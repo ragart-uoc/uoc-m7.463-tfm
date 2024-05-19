@@ -37,6 +37,37 @@ namespace TFM.Debug.Scripts.Interaction.Actions
                     continue;
 
                 var actionType = actionProp.managedReferenceFullTypename;
+                var actionName = actionType.Substring(actionType.LastIndexOf('.') + 1);
+                
+                switch (actionName)
+                {
+                    case "ShowDialogueAction":
+                        EditorGUILayout.LabelField("Show Dialogue Action", EditorStyles.boldLabel);
+                        break;
+                    case "HideDialogueAction":
+                        EditorGUILayout.LabelField("Hide Dialogue Action", EditorStyles.boldLabel);
+                        break;
+                    case "SceneChangeAction":
+                        EditorGUILayout.LabelField("Scene Change Action", EditorStyles.boldLabel);
+                        break;
+                }
+
+                if (actionType.EndsWith("ShowDialogueAction"))
+                {
+                    var actorProp = actionProp.FindPropertyRelative("actor");
+                    var dialogueLineProp = actionProp.FindPropertyRelative("dialogueLine");
+                    var positionProp = actionProp.FindPropertyRelative("position");
+                    EditorGUILayout.PropertyField(actorProp, new GUIContent("Actor"));
+                    EditorGUILayout.PropertyField(dialogueLineProp, new GUIContent("Dialogue Line"));
+                    positionProp.intValue = EditorGUILayout.Popup(positionProp.displayName, positionProp.intValue, new[] {"Left", "Right"});
+                }
+                else if (actionType.EndsWith("SceneChangeAction"))
+                {
+                    var sceneProp = actionProp.FindPropertyRelative("sceneName");
+                    EditorGUILayout.PropertyField(sceneProp, new GUIContent("Scene Name"));
+                }
+                var waitForInputProp = actionProp.FindPropertyRelative("waitForInput");
+                waitForInputProp.intValue = EditorGUILayout.Popup(waitForInputProp.displayName, waitForInputProp.intValue, new[] {"No", "Yes"});
 
                 EditorGUILayout.BeginHorizontal();
 
@@ -47,24 +78,16 @@ namespace TFM.Debug.Scripts.Interaction.Actions
                 }
 
                 EditorGUILayout.EndHorizontal();
-
-                if (actionType.EndsWith("DialogueAction"))
-                {
-                    var actorProp = actionProp.FindPropertyRelative("actor");
-                    var dialogueLineProp = actionProp.FindPropertyRelative("dialogueLine");
-                    EditorGUILayout.PropertyField(actorProp, new GUIContent("Actor"));
-                    EditorGUILayout.PropertyField(dialogueLineProp, new GUIContent("Dialogue Line"));
-                }
-                else if (actionType.EndsWith("SceneChangeAction"))
-                {
-                    var sceneProp = actionProp.FindPropertyRelative("sceneName");
-                    EditorGUILayout.PropertyField(sceneProp, new GUIContent("Scene Name"));
-                }
             }
 
-            if (GUILayout.Button("Add Dialogue Action"))
+            if (GUILayout.Button("Add Show Dialogue Action"))
             {
-                AddAction<DialogueAction>();
+                AddAction<ShowDialogueAction>();
+            }
+            
+            if (GUILayout.Button("Add Hide Dialogue Action"))
+            {
+                AddAction<HideDialogueAction>();
             }
 
             if (GUILayout.Button("Add Scene Change Action"))

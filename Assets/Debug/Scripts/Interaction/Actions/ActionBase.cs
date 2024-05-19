@@ -6,6 +6,9 @@ namespace TFM.Debug.Scripts.Interaction.Actions
     [System.Serializable]
     public abstract class ActionBase
     {
+        /// <value>Property <c>waitForInput</c> represents if an input is expected to continue.</value>
+        public int waitForInput;
+
         /// <summary>
         /// Method <c>Execute</c> executes the action.
         /// </summary>
