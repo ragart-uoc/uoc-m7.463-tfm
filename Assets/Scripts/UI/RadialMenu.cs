@@ -1,7 +1,7 @@
 using UnityEngine;
 using TFM.Managers;
 
-namespace TFM
+namespace TFM.UI
 {
     /// <summary>
     /// Class <c>RadialMenu</c> contains the logic for the radial menu.

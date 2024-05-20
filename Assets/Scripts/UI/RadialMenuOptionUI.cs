@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TFM.Managers;
 
-namespace TFM
+namespace TFM.UI
 {
     /// <summary>
     /// Class <c>RadialMenuOptionUI</c> contains the logic for the radial menu UI option

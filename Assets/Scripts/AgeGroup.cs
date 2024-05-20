@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TFM.Debug.Scripts.AgeChanging
+namespace TFM
 {
     /// <summary>
     /// Struct <c>AgeGroup</c> contains the properties for age groups.
@@ -8,10 +8,10 @@ namespace TFM.Debug.Scripts.AgeChanging
     [System.Serializable]
     public struct AgeGroup
     {
-        /// <value>Property <c>Group</c> represents the age group.</value>
+        /// <value>Property <c>group</c> represents the age group.</value>
         public AgeProperties.Groups group;
         
-        /// <value>Property <c>Characters</c> represents the characters in the age group.</value>
-        public GameObject[] characters;
+        /// <value>Property <c>objects</c> represents the objects in the age group.</value>
+        public GameObject[] objects;
     }
 }

@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
+#if (UNITY_EDITOR) 
 namespace TFM.Actions
 {
     /// <summary>
@@ -110,3 +111,4 @@ namespace TFM.Actions
         }
     }
 }
+#endif

@@ -13,33 +13,33 @@ MonoBehaviour:
   m_Name: ItemInteraction_Boat-PieceOfPaper
   m_EditorClassIdentifier: 
   sequenceActions:
-  - rid: 2928997158758121487
-  - rid: 2928997158758121491
-  - rid: 2928997158758121492
-  - rid: 2928997158758121493
+  - rid: 2928997179906064384
+  - rid: 2928997179906064385
+  - rid: 2928997179906064386
+  - rid: 2928997179906064387
   references:
     version: 2
     RefIds:
-    - rid: 2928997158758121487
-      type: {class: ShowDialogueAction, ns: TFM.Debug.Scripts.Interaction.Actions, asm: Assembly-CSharp}
+    - rid: 2928997179906064384
+      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: That's the boat from the piece of paper.
-        position: 0
-    - rid: 2928997158758121491
-      type: {class: ShowDialogueAction, ns: TFM.Debug.Scripts.Interaction.Actions, asm: Assembly-CSharp}
+        position: 1
+    - rid: 2928997179906064385
+      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
-        dialogueLine: Let's take a look.
+        dialogueLine: Let's take a look
         position: 0
-    - rid: 2928997158758121492
-      type: {class: HideDialogueAction, ns: TFM.Debug.Scripts.Interaction.Actions, asm: Assembly-CSharp}
+    - rid: 2928997179906064386
+      type: {class: HideDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
-    - rid: 2928997158758121493
-      type: {class: SceneChangeAction, ns: TFM.Debug.Scripts.Interaction.Actions, asm: Assembly-CSharp}
+    - rid: 2928997179906064387
+      type: {class: SceneChangeAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
         sceneName: Hub

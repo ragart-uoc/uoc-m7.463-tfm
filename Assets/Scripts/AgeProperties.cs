@@ -1,4 +1,4 @@
-namespace TFM.Debug.Scripts.AgeChanging
+namespace TFM
 {
     /// <summary>
     /// Class <c>AgeProperties</c> contains the properties for age groups.

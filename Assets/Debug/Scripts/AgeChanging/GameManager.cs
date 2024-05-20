@@ -54,7 +54,7 @@ namespace TFM.Debug.Scripts.AgeChanging
                     continue;
 
                 // Loop through all characters
-                foreach (var character in ageGroup.characters)
+                foreach (var character in ageGroup.objects)
                 {
                     // Get character mesh renderer
                     var characterMeshRenderer = character.GetComponent<Renderer>();
@@ -162,7 +162,7 @@ namespace TFM.Debug.Scripts.AgeChanging
                     continue;
 
                 // Loop through all characters
-                foreach (var character in ageGroupObject.characters)
+                foreach (var character in ageGroupObject.objects)
                 {
                     // Get character mesh renderer
                     var characterMeshRenderer = character.GetComponent<Renderer>();

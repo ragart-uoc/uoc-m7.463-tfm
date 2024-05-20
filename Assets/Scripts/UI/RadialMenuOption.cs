@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace TFM
+namespace TFM.UI
 {
     /// <summary>
     /// Struct <c>RadialMenuOption</c> contains the logic for the radial menu option.
