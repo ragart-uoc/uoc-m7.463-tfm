@@ -30,7 +30,7 @@ namespace TFM.Managers
         /// </summary>
         public void StartGame()
         {
-            SceneManager.LoadScene("Intro");
+            SceneManager.LoadScene("3_Intro");
         }
 
         /// <summary>

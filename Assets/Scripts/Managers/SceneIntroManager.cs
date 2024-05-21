@@ -37,7 +37,7 @@ namespace TFM.Managers
             /*
             if (UnityEngine.InputSystem.Keyboard.current.anyKey.wasPressedThisFrame
                     || UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame)
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("2_MainMenu");
             */
         }
         

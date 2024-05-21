@@ -50,7 +50,7 @@ namespace TFM.Managers
             companyMotto.CrossFadeAlpha(0.0f, 1.5f, false);
             yield return new WaitForSeconds(1.5f);
 
-            SceneManager.LoadScene("Notice");
+            SceneManager.LoadScene("1_Notice");
         }
     }
 }
