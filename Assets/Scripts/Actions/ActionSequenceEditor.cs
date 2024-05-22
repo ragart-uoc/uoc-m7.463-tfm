@@ -65,7 +65,9 @@ namespace TFM.Actions
                 else if (actionType.EndsWith("SceneChangeAction"))
                 {
                     var sceneProp = actionProp.FindPropertyRelative("sceneName");
+                    var fadeOverlayProp = actionProp.FindPropertyRelative("fadeOverlay");
                     EditorGUILayout.PropertyField(sceneProp, new GUIContent("Scene Name"));
+                    fadeOverlayProp.intValue = EditorGUILayout.Popup(fadeOverlayProp.displayName, fadeOverlayProp.intValue, new[] {"No", "Yes"});
                 }
                 var waitForInputProp = actionProp.FindPropertyRelative("waitForInput");
                 waitForInputProp.intValue = EditorGUILayout.Popup(waitForInputProp.displayName, waitForInputProp.intValue, new[] {"No", "Yes"});

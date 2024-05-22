@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,9 @@ namespace TFM.Managers
     {
         /// <value>Property <c>Instance</c> represents the singleton instance of the class.</value>
         public static UIManager Instance;
+        
+        /// <value>Property <c>disableInteractions</c> represents if the interactions are disabled.</value>
+        public bool disableInteractions;
         
         #region Radial menu
         
@@ -64,6 +68,14 @@ namespace TFM.Managers
         
         #endregion
         
+        #region Fade overlay
+        
+            /// <value>Property <c>fadeOverlay</c> represents the fade overlay.</value>
+            [Header("Fade Overlay")]
+            public Image fadeOverlay;
+            
+        #endregion
+        
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
         /// </summary>
@@ -76,6 +88,15 @@ namespace TFM.Managers
                 return;
             }
             Instance = this;
+        }
+        
+        /// <summary>
+        /// Method <c>EnableInteractions</c> enables or disables the interactions.
+        /// </summary>
+        /// <param name="enable">If the interactions are enabled.</param>
+        public void EnableInteractions(bool enable = true)
+        {
+            disableInteractions = !enable;
         }
         
         #region Status bar
@@ -176,6 +197,36 @@ namespace TFM.Managers
                 dialogue.gameObject.SetActive(false);
             }
 
-            #endregion
+        #endregion
+            
+        #region Fade overlay
+            
+            /// <summary>
+            /// Method <c>FadeOverlay</c> fades the overlay.
+            /// </summary>
+            /// <param name="targetAlpha">The target alpha.</param>
+            /// <param name="duration">The duration.</param>
+            /// <param name="callback">A callback to execute after the fade.</param>
+            public void FadeOverlay(float targetAlpha, float duration = 1f, Action callback = null)
+            {
+                StartCoroutine(FadeOverlayCoroutine(targetAlpha, duration, callback));
+            }
+            
+            /// <summary>
+            /// Method <c>FadeOverlay</c> fades the overlay.
+            /// </summary>
+            /// <param name="targetAlpha">The target alpha.</param>
+            /// <param name="duration">The duration.</param>
+            /// <param name="callback">A callback to execute after the fade.</param>
+            private IEnumerator FadeOverlayCoroutine(float targetAlpha, float duration = 1f, Action callback = null)
+            {
+                fadeOverlay.GetComponent<CanvasRenderer>().SetAlpha(targetAlpha == 0 ? 1 : 0);
+                fadeOverlay.gameObject.SetActive(true);
+                fadeOverlay.CrossFadeAlpha(targetAlpha, duration, false);
+                yield return new WaitForSeconds(duration);
+                callback?.Invoke();
+            }
+        
+        #endregion
     }
 }

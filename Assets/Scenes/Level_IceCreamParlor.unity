@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.17587127, g: 0.22008407, b: 0.30241302, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 5556e1497ce19fa49a891e7797e862cd, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -484,50 +484,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3870839638511519746, guid: f03a1b6e03cf72f4d8eda46158b5144a, type: 3}
   m_PrefabInstance: {fileID: 507257779}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &908624652
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 908624654}
-  - component: {fileID: 908624653}
-  m_Layer: 0
-  m_Name: InputManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &908624653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908624652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56899d9e671578542b0b0c3dde76e760, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &908624654
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 908624652}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1069898996
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ce13e92e4f3ff4eb670b05b8feac46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableInteractions: 0
   radialMenu: {fileID: 49370268}
   statusBar: {fileID: 49370267}
   notice: {fileID: 49370266}
@@ -661,6 +618,7 @@ MonoBehaviour:
   dialogueActorContainer: {fileID: 49370261}
   dialogueActorName: {fileID: 49370260}
   dialogueText: {fileID: 49370259}
+  fadeOverlay: {fileID: 0}
 --- !u!4 &1192216447
 Transform:
   m_ObjectHideFlags: 0
@@ -687,6 +645,7 @@ GameObject:
   - component: {fileID: 1355620116}
   - component: {fileID: 1355620115}
   - component: {fileID: 1355620114}
+  - component: {fileID: 1355620117}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -768,6 +727,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 30, y: -125, z: 0}
+--- !u!114 &1355620117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355620113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_MaxRayIntersections: 0
 --- !u!1 &2004321656
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +875,5 @@ SceneRoots:
   - {fileID: 49370258}
   - {fileID: 89242704}
   - {fileID: 2004321658}
-  - {fileID: 908624654}
   - {fileID: 1192216447}
   - {fileID: 2117122807}

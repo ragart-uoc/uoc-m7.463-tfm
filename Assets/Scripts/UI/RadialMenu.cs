@@ -1,5 +1,6 @@
 using UnityEngine;
 using TFM.Managers;
+using TFM.Persistence;
 
 namespace TFM.UI
 {
@@ -162,7 +163,7 @@ namespace TFM.UI
         public void Close()
         {
             if (target != null && targetItem != null)
-                target.GetComponent<Interactable>().Interact(targetItem);
+                target.GetComponent<ObjectInteractable>().Interact(targetItem);
             CleanOptions(ref innerOptions, ref _innerOptionUIs); 
             CleanOptions(ref _outerOptions, ref _outerOptionUIs, 8);
             target = null;

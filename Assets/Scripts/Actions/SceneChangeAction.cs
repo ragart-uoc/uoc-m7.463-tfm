@@ -1,3 +1,6 @@
+using UnityEngine.SceneManagement;
+using TFM.Managers;
+
 namespace TFM.Actions
 {
     /// <summary>
@@ -8,13 +11,24 @@ namespace TFM.Actions
     {
         /// <value>Property <c>sceneName</c> represents the name of the scene.</value>
         public string sceneName;
+        
+        /// <value>Property <c>fadeOverlay</c> represents the fade overlay.</value>
+        public int fadeOverlay;
 
         /// <summary>
         /// Method <c>Execute</c> executes the action.
         /// </summary>
         public override void Execute()
         {
-            UnityEngine.Debug.Log("Change Scene to: " + sceneName);
+            if (fadeOverlay == 1)
+                UIManager.Instance.FadeOverlay(1.0f, 3.0f, ChangeScene);
+            else
+                SceneManager.LoadScene(sceneName);
+        }
+        
+        private void ChangeScene()
+        {
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

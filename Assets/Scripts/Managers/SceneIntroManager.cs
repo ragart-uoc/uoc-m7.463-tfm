@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace TFM.Managers
 {
@@ -34,11 +33,9 @@ namespace TFM.Managers
         /// </summary>
         private void Update()
         {
-            /*
             if (UnityEngine.InputSystem.Keyboard.current.anyKey.wasPressedThisFrame
                     || UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame)
-                SceneManager.LoadScene("2_MainMenu");
-            */
+                CustomSceneManager.Instance.LoadScene("Level_Room");
         }
         
         /// <summary>

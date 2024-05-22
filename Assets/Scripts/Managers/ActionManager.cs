@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,18 +33,22 @@ namespace TFM.Managers
         /// Method <c>ExecuteSequence</c> executes the sequence.
         /// </summary>
         /// <param name="sequenceActions">The list of actions to execute.</param>
-        public void ExecuteSequence(List<ActionBase> sequenceActions)
+        /// <param name="callback">The callback action.</param>
+        public void ExecuteSequence(List<ActionBase> sequenceActions, Action callback = null)
         {
-            StartCoroutine(ExecuteSequenceCoroutine(sequenceActions));
+            StartCoroutine(ExecuteSequenceCoroutine(sequenceActions, callback));
         }
 
         /// <summary>
         /// Method <c>ExecuteSequenceCoroutine</c> executes the sequence coroutine.
         /// </summary>
         /// <param name="sequenceActions">The list of actions to execute.</param>
+        /// <param name="callback">The callback action.</param>
         /// <returns>Returns the coroutine.</returns>
-        private IEnumerator ExecuteSequenceCoroutine(List<ActionBase> sequenceActions)
+        private IEnumerator ExecuteSequenceCoroutine(List<ActionBase> sequenceActions, Action callback = null)
         {
+            UIManager.Instance.EnableInteractions(false);
+            UIManager.Instance.SetStatusBarText("");
             foreach (var action in sequenceActions)
             {
                 action.Execute();
@@ -51,6 +56,7 @@ namespace TFM.Managers
                 if (action.waitForInput == 1)
                     yield return new WaitUntil(() => Mouse.current.leftButton.wasPressedThisFrame);
             }
+            callback?.Invoke();
         }
     }
 }
