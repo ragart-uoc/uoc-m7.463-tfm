@@ -225,10 +225,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 429096482313060817, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 705300373572061041, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -307,26 +303,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 705300373572061041, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 884113917940057955, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 884113917940057955, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 884113917940057955, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 884113917940057955, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 884113917940057955, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
-      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5242333537805223041, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
@@ -591,7 +567,7 @@ MonoBehaviour:
   itemUnpickedDescription: A <color="red">figure</color> representing an ice cream.<br>It
     was part of my
   pickableItem: {fileID: 11400000, guid: 6174f8e4661118744932981e35c804f4, type: 2}
-  itemInteractions: []
+  objectInteracions: []
 --- !u!114 &161317639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -968,9 +944,10 @@ MonoBehaviour:
   itemDescription: An album containing photos from my life
   itemUnpickedDescription: An album containing photos from my life
   pickableItem: {fileID: 0}
-  itemInteractions:
+  objectInteracions:
   - item: {fileID: 11400000, guid: 6174f8e4661118744932981e35c804f4, type: 2}
     actionSequence: {fileID: 11400000, guid: e824d4ff85db10a4cb4acdb288bf83c8, type: 2}
+    discardItem: 1
 --- !u!114 &1073437974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,12 +1023,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192216445}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1659445521}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1306508294
 GameObject:
@@ -1097,6 +1074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c927d3815dae34ab01d6240197ac40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGameLoaded: 0
 --- !u!1 &1355620113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,6 +1306,7 @@ Transform:
   m_Children:
   - {fileID: 2117122807}
   - {fileID: 1444729946}
+  - {fileID: 1192216447}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1718896819
@@ -1456,6 +1435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db8d0466a8cff04cafc7f50c431edfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  availableItems:
+  - {fileID: 11400000, guid: 6174f8e4661118744932981e35c804f4, type: 2}
   pickedItems: []
   discardedItems: []
 --- !u!4 &2004321658
@@ -1519,6 +1500,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   availableLevels:
   - {fileID: 11400000, guid: 7260493f853e700448fe8fa5ea41c438, type: 2}
+  - {fileID: 11400000, guid: f43a65bfc32fd46469b60a473f7d3e36, type: 2}
+  - {fileID: 11400000, guid: 059dbbd7f547cde4a8c17bdc66c0bf00, type: 2}
+  - {fileID: 11400000, guid: db4356b774dde1f45a5b5f7c0b0f8226, type: 2}
+  - {fileID: 11400000, guid: fe926f823ab00774ea489ade07ebe4c0, type: 2}
+  - {fileID: 11400000, guid: cf83a682043ec544a9a80246101bcccc, type: 2}
+  - {fileID: 11400000, guid: be9d9a925366a53488c596bd6870df6f, type: 2}
 --- !u!1 &2088644621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,7 +1594,6 @@ SceneRoots:
   - {fileID: 457214686}
   - {fileID: 49370258}
   - {fileID: 89242704}
-  - {fileID: 1192216447}
   - {fileID: 1659445521}
   - {fileID: 1306508295}
   - {fileID: 1396236851}

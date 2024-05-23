@@ -46,9 +46,6 @@ namespace TFM.Managers
                 _levels[l.levelName].currentAgeGroup = l.initialAgeGroup;
                 _levels[l.levelName].activeShowableObjects = Array.Empty<GameObject>();
             }
-            
-            // Get the current level from the CustomSceneManager
-            _currentLevelName = CustomSceneManager.Instance.currentLevel.levelName;
         }
         
         /// <summary>
@@ -56,6 +53,7 @@ namespace TFM.Managers
         /// </summary>
         private void Start()
         {
+            _currentLevelName = CustomSceneManager.Instance.currentLevel.levelName;
             LateStart();
         }
         

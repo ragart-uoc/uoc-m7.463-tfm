@@ -17,11 +17,11 @@ namespace TFM.Managers
         public List<Item> availableItems;
         
         /// <value>Property <c>pickedItems</c> represents the picked items.</value>
-        //[HideInInspector]
+        [HideInInspector]
         public List<Item> pickedItems;
         
         /// <value>Property <c>discardedItems</c> represents the discarded items.</value>
-        //[HideInInspector]
+        [HideInInspector]
         public List<Item> discardedItems;
 
         /// <summary>

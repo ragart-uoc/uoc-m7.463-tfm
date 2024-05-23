@@ -40,6 +40,7 @@ namespace TFM
         /// <value>Property <c>_isKeyPressed</c> represents if a key is pressed over the object.</value>
         private bool _isKeyPressed;
         
+        /// <value>Property <c>_coroutine</c> represents the coroutine.</value>
         private Coroutine _coroutine;
 
         /// <summary>

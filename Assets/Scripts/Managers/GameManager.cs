@@ -16,6 +16,7 @@ namespace TFM.Managers
         private string _saveFilePath;
         
         /// <value>Property <c>isGameLoaded</c> represents if the game is loaded.</value>
+        [HideInInspector]
         public bool isGameLoaded;
 
         /// <summary>
