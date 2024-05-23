@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
   m_Name: Park
   m_EditorClassIdentifier: 
-  levelName: Park
+  sceneName: Level_Park
   initialAgeGroup: 0
-  levelSequenceEvents: []
+  levelSequenceEvents:
+  - triggerEvent: {fileID: 0}
+    actionSequence: {fileID: 11400000, guid: d78b251a357c3014c94f7429e9a2d3d6, type: 2}
+    completionEvent: {fileID: 11400000, guid: 69124820b1591054c912546499993035, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: 6221d2b24f2a37548a1b87ca52e0bed8, type: 2}
+    actionSequence: {fileID: 11400000, guid: 9079fa34163ceac42bd344ce83ef9ee0, type: 2}
+    completionEvent: {fileID: 11400000, guid: e86ffd79bfd5c23498665c919b71a10b, type: 2}
   currentAgeGroup: 0
   activeShowableObjects: []
   activeShowableObjectsIds: 

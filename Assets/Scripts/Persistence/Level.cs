@@ -10,8 +10,8 @@ namespace TFM.Persistence
     [CreateAssetMenu(fileName = "Level", menuName = "Custom/Level")]
     public class Level : ScriptableObject
     {
-        /// <value>Property <c>levelName</c> represents the level name.</value>
-        public string levelName;
+        /// <value>Property <c>sceneName</c> represents the scene name.</value>
+        public string sceneName;
         
         /// <value>Property <c>initialAgeGroup</c> represents the initial age group.</value>
         public AgeGroupProperties.Groups initialAgeGroup;
@@ -27,6 +27,7 @@ namespace TFM.Persistence
         [HideInInspector]
         public GameObject[] activeShowableObjects;
         
+        /// <value>Property <c>activeShowableObjectsIds</c> represents the active showable objects IDs.</value>
         [HideInInspector]
         public int[] activeShowableObjectsIds;
     }

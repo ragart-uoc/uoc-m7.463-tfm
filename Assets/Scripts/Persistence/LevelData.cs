@@ -9,8 +9,8 @@ namespace TFM.Persistence
     [Serializable]
     public struct LevelData
     {
-        /// <value>Property <c>levelName</c> represents the level name.</value>
-        public string levelName;
+        /// <value>Property <c>sceneName</c> represents the scene name.</value>
+        public string sceneName;
         
         /// <value>Property <c>initialAgeGroup</c> represents the initial age group.</value>
         public AgeGroupProperties.Groups initialAgeGroup;
@@ -27,13 +27,13 @@ namespace TFM.Persistence
         /// <summary>
         /// Method <c>LevelData</c> is the constructor of the class.
         /// </summary>
-        /// <param name="levelName">The level name.</param>
+        /// <param name="sceneName">The scene name.</param>
         /// <param name="initialAgeGroup">The initial age group.</param>
         /// <param name="currentAgeGroup">The current age group.</param>
         /// <param name="activeShowableObjectsIds">The active showable objects IDs.</param>
-        public LevelData(string levelName, AgeGroupProperties.Groups initialAgeGroup, AgeGroupProperties.Groups currentAgeGroup, int[] activeShowableObjectsIds)
+        public LevelData(string sceneName, AgeGroupProperties.Groups initialAgeGroup, AgeGroupProperties.Groups currentAgeGroup, int[] activeShowableObjectsIds)
         {
-            this.levelName = levelName;
+            this.sceneName = sceneName;
             this.initialAgeGroup = initialAgeGroup;
             this.currentAgeGroup = currentAgeGroup;
             this.activeShowableObjects = Array.Empty<GameObject>();

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
   m_Name: Park_Minigame
   m_EditorClassIdentifier: 
-  levelName: Kite Minigame
+  sceneName: Minigame_Park
   initialAgeGroup: 0
   levelSequenceEvents: []
   currentAgeGroup: 0

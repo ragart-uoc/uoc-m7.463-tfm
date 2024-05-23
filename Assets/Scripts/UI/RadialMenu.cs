@@ -24,13 +24,13 @@ namespace TFM.UI
 
         #region Inner menu
 
-            /// <value>Property <c>radialMenuOptions</c> represents the radial menu options.</value>
+            /// <value>Property <c>innerOptions</c> represents the inner radial menu options.</value>
             public RadialMenuOption[] innerOptions;
                 
-            /// <value>Property <c>radialMenuOptionUIs</c> represents the radial menu option UIs.</value>
+            /// <value>Property <c>_innerOptionUIs</c> represents the inner radial menu option UIs.</value>
             private RadialMenuOptionUI[] _innerOptionUIs;
 
-            /// <value>Property <c>radialMenuOptionUIPrefab</c> represents the radial menu option UI prefab.</value>
+            /// <value>Property <c>innerOptionPrefab</c> represents the inner radial menu option prefab.</value>
             public RadialMenuOptionUI innerOptionPrefab;
             
             /// <value>Property <c>innerOptionsContainer</c> represents the radial menu inner options container.</value>
@@ -40,16 +40,16 @@ namespace TFM.UI
         
         #region Outer menu
 
-            /// <value>Property <c>radialMenuOptions</c> represents the radial menu options.</value>
+            /// <value>Property <c>_outerOptions</c> represents the outer radial menu options.</value>
             private RadialMenuOption[] _outerOptions = new RadialMenuOption[8];
                 
-            /// <value>Property <c>radialMenuOptionUIs</c> represents the radial menu option UIs.</value>
+            /// <value>Property <c>_outerOptionUIs</c> represents the outer radial menu option UIs.</value>
             private RadialMenuOptionUI[] _outerOptionUIs = new RadialMenuOptionUI[8];
             
             /// <value>Property <c>_itemType</c> represents the item type.</value>
             private ItemProperties.Types _itemType;
         
-            /// <value>Property <c>radialMenuOptionUIPrefab</c> represents the radial menu option UI prefab.</value>
+            /// <value>Property <c>outerOptionPrefab</c> represents the outer radial menu option prefab.</value>
             public RadialMenuOptionUI outerOptionPrefab;
             
             /// <value>Property <c>outerOptionsContainer</c> represents the radial menu outer options container.</value>

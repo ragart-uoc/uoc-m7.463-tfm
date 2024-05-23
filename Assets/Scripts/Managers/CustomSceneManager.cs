@@ -12,9 +12,17 @@ namespace TFM.Managers
     {
         /// <value>Property <c>Instance</c> represents the instance of the game manager.</value>
         public static CustomSceneManager Instance;
+
+        /// <summary>
+        /// Delegate <c>SceneChange</c> represents the scene change.
+        /// </summary>
+        public delegate void CustomSceneManagerEvents(string sceneName);
+
+        /// <value>Event <c>LoadScene</c> represents the load scene event.</value>
+        public event CustomSceneManagerEvents LoadScene;
         
-        /// <value>Property <c>currentLevel</c> represents the current level.</value>
-        public Level currentLevel;
+        /// <value>Event <c>UnloadScene</c> represents the unload scene event.</value>
+        public event CustomSceneManagerEvents UnloadScene;
 
         /// <summary>
         /// Method <c>Awake</c> initializes the game manager.
@@ -28,25 +36,47 @@ namespace TFM.Managers
                 return;
             }
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
         /// <summary>
-        /// Method <c>LoadScene</c> loads the scene.
+        /// Method <c>LoadNewScene</c> loads the new scene.
         /// </summary>
-        /// <param name="sceneName">The name of the scene to load.</param>
-        public void LoadScene(string sceneName)
+        /// <param name="sceneName">The scene name.</param>
+        public void LoadNewScene(string sceneName)
         {
-            StartCoroutine(LoadSceneCoroutine(sceneName));
+            StartCoroutine(LoadLevel(sceneName));
+        }
+        
+        /// <summary>
+        /// Method <c>UnloadCurrentScene</c> unloads the current scene.
+        /// </summary>
+        public void UnloadCurrentScene()
+        {
+            var sceneName = SceneManager.GetActiveScene().name;
+            OnUnloadScene(sceneName);
         }
 
         /// <summary>
-        /// Method <c>LoadSceneCoroutine</c> loads the scene coroutine.
+        /// Method <c>LoadLevel</c> loads the level.
         /// </summary>
-        /// <param name="sceneName">The name of the scene to load.</param>
-        /// <returns>Returns the coroutine.</returns>
-        private IEnumerator LoadSceneCoroutine(string sceneName)
+        /// <param name="sceneName">The scene name.</param>
+        private IEnumerator LoadLevel(string sceneName)
         {
-            yield return SceneManager.LoadSceneAsync(sceneName);
+            OnUnloadScene(SceneManager.GetActiveScene().name);
+            var asyncLevelLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+            while (!asyncLevelLoad!.isDone)
+                yield return null;
+            LoadScene?.Invoke(sceneName);
+        }
+
+        /// <summary>
+        /// Method <c>OnUnloadScene</c> unloads the scene.
+        /// </summary>
+        /// <param name="sceneName">The scene name.</param>
+        private void OnUnloadScene(string sceneName)
+        {
+            UnloadScene?.Invoke(sceneName);
         }
     }
 }

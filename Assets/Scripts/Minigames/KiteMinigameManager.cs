@@ -1,7 +1,8 @@
+using TFM.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using TFM.Managers;
+using Event = TFM.Persistence.Event;
 
 namespace TFM.Minigames
 {
@@ -18,6 +19,8 @@ namespace TFM.Minigames
 
         /// <value>Property <c>_score</c> represents the score.</value>
         private int _score;
+
+        public Event completionEvent;
 
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
@@ -49,6 +52,10 @@ namespace TFM.Minigames
         {
             _score++;
             UpdateScoreText();
+            if (_score < 10)
+                return;
+            EventManager.Instance.UpsertEventState(completionEvent, true);
+            CustomSceneManager.Instance.LoadNewScene("Level_Park");
         }
 
         /// <summary>
@@ -64,9 +71,10 @@ namespace TFM.Minigames
         /// </summary>
         public void GameOver()
         {
-            StartCoroutine(UIManager.Instance.ShowMessage("Game Over!"));
+            //StartCoroutine(UIManager.Instance.ShowMessage("Game Over!"));
+            RestartGame();
         }
-
+        
         /// <summary>
         /// Method <c>RestartGame</c> restarts the game.
         /// </summary>

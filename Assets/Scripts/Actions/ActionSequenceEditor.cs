@@ -69,6 +69,15 @@ namespace TFM.Actions
                     EditorGUILayout.PropertyField(sceneProp, new GUIContent("Scene Name"));
                     fadeOverlayProp.intValue = EditorGUILayout.Popup(fadeOverlayProp.displayName, fadeOverlayProp.intValue, new[] {"No", "Yes"});
                 }
+                else if (actionType.EndsWith("HideDialogueAction"))
+                {
+                    // No properties to display
+                }
+                else if (actionType.EndsWith("TriggerEventAction"))
+                {
+                    var eventObjectProp = actionProp.FindPropertyRelative("eventObject");
+                    EditorGUILayout.PropertyField(eventObjectProp, new GUIContent("Event"));
+                }
                 var waitForInputProp = actionProp.FindPropertyRelative("waitForInput");
                 waitForInputProp.intValue = EditorGUILayout.Popup(waitForInputProp.displayName, waitForInputProp.intValue, new[] {"No", "Yes"});
 
@@ -96,6 +105,11 @@ namespace TFM.Actions
             if (GUILayout.Button("Add Scene Change Action"))
             {
                 AddAction<SceneChangeAction>();
+            }
+            
+            if (GUILayout.Button("Add Trigger Event Action"))
+            {
+                AddAction<TriggerEventAction>();
             }
 
             serializedObject.ApplyModifiedProperties();

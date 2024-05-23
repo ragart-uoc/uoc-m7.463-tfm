@@ -16,7 +16,8 @@ namespace TFM.Managers
         public static UIManager Instance;
         
         /// <value>Property <c>disableInteractions</c> represents if the interactions are disabled.</value>
-        public bool disableInteractions;
+        [SerializeField]
+        private bool _disableInteractions;
         
         #region Radial menu
         
@@ -96,7 +97,15 @@ namespace TFM.Managers
         /// <param name="enable">If the interactions are enabled.</param>
         public void EnableInteractions(bool enable = true)
         {
-            disableInteractions = !enable;
+            _disableInteractions = !enable;
+        }
+        
+        /// <summary>
+        /// Method <c>InteractionsEnabled</c> checks if the interactions are enabled.
+        /// </summary>
+        public bool InteractionsEnabled()
+        {
+            return !_disableInteractions;
         }
         
         #region Status bar

@@ -9,6 +9,9 @@ namespace TFM.Persistence
     [System.Serializable]
     public class GameStateData
     {
+        /// <value>Property <c>currentSceneName</c> represents the current level name.</value>
+        public string currentSceneName;
+        
         /// <value>Property <c>events</c> represents the events.</value>
         public List<EventData> events;
         
@@ -21,11 +24,13 @@ namespace TFM.Persistence
         /// <summary>
         /// Method <c>GameStateData</c> is the constructor of the class.
         /// </summary>
+        /// <param name="currentSceneName">The current level name.</param>
         /// <param name="events">The events.</param>
         /// <param name="levels">The levels.</param>
         /// <param name="items">The items.</param>
-        public GameStateData(List<EventData> events, List<LevelData> levels, List<ItemData> items)
+        public GameStateData(string currentSceneName, List<EventData> events, List<LevelData> levels, List<ItemData> items)
         {
+            this.currentSceneName = currentSceneName;
             this.events = events;
             this.levels = levels;
             this.items = items;

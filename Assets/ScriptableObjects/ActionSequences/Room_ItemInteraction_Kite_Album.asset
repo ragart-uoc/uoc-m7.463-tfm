@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: Room_ItemInteraction_Kite_Album
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 2928997223638499335
+  - rid: 2928997223638499336
+  - rid: 2928997223638499337
+  - rid: 2928997223638499338
+  - rid: 2928997223638499339
+  references:
+    version: 2
+    RefIds:
+    - rid: 2928997223638499335
+      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: Ah, my old kite...
+        position: 0
+    - rid: 2928997223638499336
+      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: As soon as the wind rose, we ran to fly it.
+        position: 0
+    - rid: 2928997223638499337
+      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: Those were the good days...
+        position: 0
+    - rid: 2928997223638499338
+      type: {class: HideDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 2928997223638499339
+      type: {class: SceneChangeAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        sceneName: Level_Park
+        fadeOverlay: 1

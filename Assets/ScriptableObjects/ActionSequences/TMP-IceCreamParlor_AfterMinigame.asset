@@ -10,30 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
-  m_Name: Room_Tutorial
+  m_Name: TMP-IceCreamParlor_AfterMinigame
   m_EditorClassIdentifier: 
   sequenceActions:
-  - rid: 2928997223638499332
-  - rid: 2928997223638499333
-  - rid: 2928997223638499334
+  - rid: 2928997223638499362
+  - rid: 2928997223638499363
+  - rid: 2928997223638499364
+  - rid: 2928997223638499365
   references:
     version: 2
     RefIds:
-    - rid: 2928997223638499332
+    - rid: 2928997223638499362
       type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
-        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
-        dialogueLine: This is a tutorial
+        actor: {fileID: 11400000, guid: 4cfdd433b65d9ab4a9fca370fc3494f4, type: 2}
+        dialogueLine: You won't be able to lose at minigames.
         position: 0
-    - rid: 2928997223638499333
+    - rid: 2928997223638499363
       type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
-        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
-        dialogueLine: And here the tutorial ends!
+        actor: {fileID: 11400000, guid: 4cfdd433b65d9ab4a9fca370fc3494f4, type: 2}
+        dialogueLine: Failing will only intensify the narrative, but there's no losing
+          per se.
         position: 0
-    - rid: 2928997223638499334
+    - rid: 2928997223638499364
       type: {class: HideDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+    - rid: 2928997223638499365
+      type: {class: SceneChangeAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        sceneName: Level_Room
+        fadeOverlay: 1

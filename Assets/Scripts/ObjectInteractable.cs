@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using TFM.Handlers;
 using TFM.Managers;
 using TFM.Persistence;
 
@@ -51,7 +49,14 @@ namespace TFM
             _outline = gameObject.GetComponent<Outline>() ?? gameObject.AddComponent<Outline>();
             _outline.OutlineMode = Outline.Mode.OutlineVisible;
             _outline.enabled = false;
-            LateStart();
+        }
+        
+        /// <summary>
+        /// Method <c>OnEnable</c> is called when the behaviour becomes enabled.
+        /// </summary>
+        private void OnEnable()
+        {
+            GameManager.Instance.OnSceneLoaded += LateStart;
         }
 
         /// <summary>
@@ -59,35 +64,14 @@ namespace TFM
         /// </summary>
         private void OnDisable()
         {
-            if (_coroutine != null)
-                StopCoroutine(_coroutine);
-        }
-        
-        
-        /// <summary>
-        /// Method <c>OnEnable</c> is called when the behaviour becomes enabled.
-        /// </summary>
-        private void OnEnable()
-        {
-            if (_coroutine != null)
-                _coroutine = StartCoroutine(LateStartCoroutine());
-        }
-
-        /// <summary>
-        /// Method <c>LateStart</c> is called after the GameManager has loaded the game.
-        /// </summary>
-        private void LateStart()
-        {
-            _coroutine = StartCoroutine(LateStartCoroutine());
+            GameManager.Instance.OnSceneLoaded -= LateStart;
         }
         
         /// <summary>
-        /// Method <c>LateStartCoroutine</c> is the coroutine for the late start.
+        /// Method <c>LateStart</c> is the coroutine for the late start.
         /// </summary>
-        private IEnumerator LateStartCoroutine()
+        private void LateStart(string sceneName)
         {
-            while (!GameManager.Instance.isGameLoaded)
-                yield return null;
             if (ItemManager.Instance.IsItemPickedOrDiscarded(pickableItem))
                 pickableItem = null;
         }
@@ -97,7 +81,7 @@ namespace TFM
         /// </summary>
         private void Update()
         {
-            _isInteractionPossible = !UIManager.Instance.disableInteractions;
+            _isInteractionPossible = UIManager.Instance.InteractionsEnabled();
             Highlight();
         }
         

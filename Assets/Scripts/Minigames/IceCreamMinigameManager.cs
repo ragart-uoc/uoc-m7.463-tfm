@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TFM.Managers;
@@ -6,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using Event = TFM.Persistence.Event;
 
 namespace TFM.Minigames
 {
@@ -59,6 +59,12 @@ namespace TFM.Minigames
         
         /// <value>Property <c>_gameActive</c> represents if the game is active.</value>
         private bool _gameActive;
+        
+        /// <value>Property <c>completionEvent</c> represents the completion event.</value>
+        public Event completionEvent;
+        
+        /// <value>Property <c>_victoryCount</c> represents the victory count.</value>
+        private int _victoryCount;
 
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
@@ -88,24 +94,6 @@ namespace TFM.Minigames
                 button.onClick.AddListener(() => AddColor(color));
             }
             _playerSelection = new List<Color>();
-            LateStart();
-        }
-        
-        /// <summary>
-        /// Method <c>LateStart</c> is called after the GameManager has loaded the game.
-        /// </summary>
-        private void LateStart()
-        {
-            StartCoroutine(LateStartCoroutine());
-        }
-        
-        /// <summary>
-        /// Method <c>LateStartCoroutine</c> is a coroutine that waits for the game to load.
-        /// </summary>
-        private IEnumerator LateStartCoroutine()
-        {
-            while (!GameManager.Instance.isGameLoaded)
-                yield return null;
             StartNewOrder();
         }
 
@@ -131,6 +119,12 @@ namespace TFM.Minigames
         /// </summary>
         private void StartNewOrder()
         {
+            if (_victoryCount >= 5)
+            {
+                EventManager.Instance.UpsertEventState(completionEvent, true);
+                CustomSceneManager.Instance.LoadNewScene("Level_IceCreamParlor");
+                return;
+            }
             _currentRequest = new List<Color>();
             for (var i = 0; i < 3; i++)
             {
@@ -159,6 +153,9 @@ namespace TFM.Minigames
             CheckOrder();
         }
 
+        /// <summary>
+        /// Method <c>CheckOrder</c> checks the order.
+        /// </summary>
         private void CheckOrder()
         {
             if (_currentRequest.Count == _playerSelection.Count)
@@ -170,6 +167,7 @@ namespace TFM.Minigames
                     return;
                 }
                 StartCoroutine(UIManager.Instance.ShowMessage("Correct!", 2f));
+                _victoryCount++;
                 StartNewOrder();
             }
             else

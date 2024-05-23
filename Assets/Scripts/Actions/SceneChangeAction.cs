@@ -23,12 +23,15 @@ namespace TFM.Actions
             if (fadeOverlay == 1)
                 UIManager.Instance.FadeOverlay(1.0f, 3.0f, ChangeScene);
             else
-                SceneManager.LoadScene(sceneName);
+                CustomSceneManager.Instance.LoadNewScene(sceneName);
         }
         
+        /// <summary>
+        /// Method <c>ChangeScene</c> changes the scene.
+        /// </summary>
         private void ChangeScene()
         {
-            SceneManager.LoadScene(sceneName);
+            CustomSceneManager.Instance.LoadNewScene(sceneName);
         }
     }
 }

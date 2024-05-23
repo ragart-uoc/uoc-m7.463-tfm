@@ -35,6 +35,14 @@ namespace TFM.Managers
             foreach (var e in availableEvents)
                 Events.Add(e, false);
         }
+
+        /// <summary>
+        /// Method <c>Start</c> is called before the first frame update.
+        /// </summary>
+        private void Start()
+        {
+            ImportData(GameManager.Instance.gameStateData.events);
+        }
         
         /// <summary>
         /// Method <c>UpsertEventState</c> upserts the event state.
@@ -73,6 +81,8 @@ namespace TFM.Managers
         /// <param name="data">The event data.</param>
         public void ImportData(List<EventData> data)
         {
+            if (data == null)
+                return;
             Events.Clear();
             foreach (var eventData in data)
             {

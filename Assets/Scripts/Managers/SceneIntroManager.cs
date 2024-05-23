@@ -1,3 +1,4 @@
+using TFM.Actions;
 using TMPro;
 using UnityEngine;
 
@@ -13,6 +14,12 @@ namespace TFM.Managers
         
         /// <value>Property <c>blinkingText</c> represents the blinking text in the scene.</value>
         public TextMeshProUGUI blinkingText;
+
+        /// <value>Property <c>actionSequence</c> represents the action sequence for the scene.</value>
+        public ActionSequence actionSequence;
+        
+        /// <value>Property <c>clickedScreen</c> represents if the screen was clicked.</value>
+        private bool _clickedScreen;
 
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
@@ -33,9 +40,12 @@ namespace TFM.Managers
         /// </summary>
         private void Update()
         {
-            if (UnityEngine.InputSystem.Keyboard.current.anyKey.wasPressedThisFrame
-                    || UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame)
-                CustomSceneManager.Instance.LoadScene("Level_Room");
+            if (_clickedScreen
+                || (!UnityEngine.InputSystem.Keyboard.current.anyKey.wasPressedThisFrame
+                    && !UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame))
+                return;
+            _clickedScreen = true;
+            actionSequence.ExecuteSequence();
         }
         
         /// <summary>

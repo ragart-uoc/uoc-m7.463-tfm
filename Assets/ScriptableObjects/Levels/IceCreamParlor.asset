@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
   m_Name: IceCreamParlor
   m_EditorClassIdentifier: 
-  levelName: Ice Cream Parlor
+  sceneName: Level_IceCreamParlor
   initialAgeGroup: 0
-  levelSequenceEvents: []
+  levelSequenceEvents:
+  - triggerEvent: {fileID: 0}
+    actionSequence: {fileID: 11400000, guid: 8480d7ee95cbc2342988103384a935f3, type: 2}
+    completionEvent: {fileID: 11400000, guid: 22e682d83e234dc4dbdcb83bfd4a6564, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: cd9462fd82f573e46a774c3d6628e74f, type: 2}
+    actionSequence: {fileID: 11400000, guid: 6463762fe7252da4e9e31220e93052a3, type: 2}
+    completionEvent: {fileID: 11400000, guid: a8361e69559901c46bffbedda71644ec, type: 2}
   currentAgeGroup: 0
   activeShowableObjects: []
   activeShowableObjectsIds: 

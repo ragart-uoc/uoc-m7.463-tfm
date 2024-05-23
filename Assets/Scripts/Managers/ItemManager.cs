@@ -42,6 +42,14 @@ namespace TFM.Managers
             pickedItems = new List<Item>();
             discardedItems = new List<Item>();
         }
+
+        /// <summary>
+        /// Method <c>Start</c> is called before the first frame update.
+        /// </summary>
+        private void Start()
+        {
+            ImportData(GameManager.Instance.gameStateData.items);
+        }
         
         /// <summary>
         /// Method <c>AddItem</c> adds an item to the picked items.
@@ -122,6 +130,8 @@ namespace TFM.Managers
         /// <param name="data">The item data.</param>
         public void ImportData(List<ItemData> data)
         {
+            if (data == null)
+                return;
             pickedItems.Clear();
             discardedItems.Clear();
             foreach (var itemData in data)

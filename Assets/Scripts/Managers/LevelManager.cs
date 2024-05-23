@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -21,8 +20,8 @@ namespace TFM.Managers
         /// <value>Property <c>levels</c> represents the levels.</value>
         private readonly Dictionary<string, Level> _levels = new Dictionary<string, Level>();
         
-        /// <value>Property <c>_currentLevelName</c> represents the current level name.</value>
-        private string _currentLevelName;
+        /// <value>Property <c>_currentSceneName</c> represents the current level name.</value>
+        private string _currentSceneName;
 
         /// <summary>
         /// Method <c>Awake</c> initializes the game manager.
@@ -41,10 +40,10 @@ namespace TFM.Managers
             // Initialize the levels
             foreach (var l in availableLevels)
             {
-                if (!_levels.TryAdd(l.levelName, l))
-                    _levels[l.levelName] = l;
-                _levels[l.levelName].currentAgeGroup = l.initialAgeGroup;
-                _levels[l.levelName].activeShowableObjects = Array.Empty<GameObject>();
+                if (!_levels.TryAdd(l.sceneName, l))
+                    _levels[l.sceneName] = l;
+                _levels[l.sceneName].currentAgeGroup = l.initialAgeGroup;
+                _levels[l.sceneName].activeShowableObjects = Array.Empty<GameObject>();
             }
         }
         
@@ -53,37 +52,42 @@ namespace TFM.Managers
         /// </summary>
         private void Start()
         {
-            _currentLevelName = CustomSceneManager.Instance.currentLevel.levelName;
-            LateStart();
+            ImportData(GameManager.Instance.gameStateData.levels);
+        }
+
+        /// <summary>
+        /// Method <c>OnEnable</c> is called when the object becomes enabled and active.
+        /// </summary>
+        private void OnEnable()
+        {
+            GameManager.Instance.OnSceneLoaded += OnSceneLoaded;
         }
         
         /// <summary>
-        /// Method <c>LateStart</c> is called after the GameManager has loaded the game.
+        /// Method <c>OnDisable</c> is called when the behaviour becomes disabled.
         /// </summary>
-        private void LateStart()
+        private void OnDisable()
         {
-            StartCoroutine(LateStartCoroutine());
+            GameManager.Instance.OnSceneLoaded -= OnSceneLoaded;
         }
         
         /// <summary>
-        /// Method <c>LateStartCoroutine</c> is the coroutine for the late start.
+        /// Method <c>OnSceneLoaded</c> is called when the scene is loaded.
         /// </summary>
-        private IEnumerator LateStartCoroutine()
+        private void OnSceneLoaded(string sceneName)
         {
-            while (!GameManager.Instance.isGameLoaded)
-                yield return null;
-            RefreshSceneShowableObjects(true);
+            _currentSceneName = sceneName;
             UIManager.Instance.FadeOverlay(0f, 2f, Initialize);
         }
 
         /// <summary>
         /// Method <c>Initialize</c> initializes the level.
         /// </summary>
-        public void Initialize()
+        private void Initialize()
         {
             // Check action sequences
             foreach (var levelSequenceEvent in
-                     from levelSequenceEvent in _levels[_currentLevelName].levelSequenceEvents
+                     from levelSequenceEvent in _levels[_currentSceneName].levelSequenceEvents
                      where levelSequenceEvent.actionSequence != null
                      where levelSequenceEvent.completionEvent != null
                          && !EventManager.Instance.GetEventState(levelSequenceEvent.completionEvent)
@@ -95,13 +99,13 @@ namespace TFM.Managers
                 levelSequenceEvent.actionSequence.ExecuteSequence(UpdateLevel);
                 return;
             }
-            UIManager.Instance.EnableInteractions();
+            UpdateLevel();
         }
         
         /// <summary>
         /// Method <c>UpdateLevel</c> updates the level.
         /// </summary>
-        public void UpdateLevel()
+        private void UpdateLevel()
         {
             RefreshSceneShowableObjects();
             UIManager.Instance.EnableInteractions();
@@ -125,7 +129,7 @@ namespace TFM.Managers
         private void RefreshSceneShowableObjects(bool hideAll = false)
         {
             var showableObjects = GetShowableObjects();
-            var currentLevel = _levels[_currentLevelName];
+            var currentLevel = _levels[_currentSceneName];
             var activeShowableObjectsSet = new HashSet<GameObject>(currentLevel.activeShowableObjects);
             var activeShowableObjectsIdsSet = new HashSet<int>(currentLevel.activeShowableObjectsIds);
             foreach (var showableObject in showableObjects)
@@ -143,6 +147,7 @@ namespace TFM.Managers
                         break;
                     case false when isActive || wasActive:
                         showableComponent.Fade(0f, 1.0f);
+                        showableComponent.gameObject.SetActive(false);
                         break;
                     default:
                         showableObject.SetActive(shouldShow);
@@ -156,8 +161,8 @@ namespace TFM.Managers
         /// </summary>
         public List<LevelData> ExportData()
         {
-            _levels[_currentLevelName].activeShowableObjects = GetShowableObjects(true);
-            _levels[_currentLevelName].activeShowableObjectsIds = _levels[_currentLevelName].activeShowableObjects
+            _levels[_currentSceneName].activeShowableObjects = GetShowableObjects(true);
+            _levels[_currentSceneName].activeShowableObjectsIds = _levels[_currentSceneName].activeShowableObjects
                 .Select(showableObject => showableObject.GetInstanceID())
                 .ToArray();
             return _levels
@@ -172,13 +177,23 @@ namespace TFM.Managers
         /// <param name="data">The level data.</param>
         public void ImportData(List<LevelData> data)
         {
+            if (data == null)
+                return;
             foreach (var level in data
-                         .Select(levelData => availableLevels.Find(l => l.levelName == levelData.levelName))
+                         .Select(levelData => availableLevels.Find(l => l.sceneName == levelData.sceneName))
                          .Where(level => level != null))
             {
-                if (_levels.TryAdd(level.levelName, level))
-                    _levels[level.levelName] = level;
+                if (_levels.TryAdd(level.sceneName, level))
+                    _levels[level.sceneName] = level;
             }
+        }
+        
+        /// <summary>
+        /// Method <c>GetCurrentSceneName</c> gets the current level name.
+        /// </summary>
+        public string GetCurrentSceneName()
+        {
+            return _currentSceneName;
         }
     }
 }
