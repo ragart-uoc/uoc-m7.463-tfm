@@ -2,7 +2,7 @@ using TFM.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using Event = TFM.Persistence.Event;
+using Event = TFM.Entities.Event;
 
 namespace TFM.Minigames
 {
@@ -55,7 +55,7 @@ namespace TFM.Minigames
             if (_score < 10)
                 return;
             EventManager.Instance.UpsertEventState(completionEvent, true);
-            CustomSceneManager.Instance.LoadNewScene("Level_Park");
+            CustomSceneManager.Instance.LoadLevel("Park");
         }
 
         /// <summary>

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
   m_Name: Graveyard
   m_EditorClassIdentifier: 
-  sceneName: Level_Graveyard
+  levelName: Level_Graveyard
+  sceneAsset: {fileID: 102900000, guid: 1e6bf02d3c1ae164ba97cc7a6348e628, type: 3}
   initialAgeGroup: 4
   levelSequenceEvents: []
   currentAgeGroup: 0

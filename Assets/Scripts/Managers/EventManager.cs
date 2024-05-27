@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using TFM.Persistence;
-using Event = TFM.Persistence.Event;
+using TFM.Entities;
+using Event = TFM.Entities.Event;
 
 namespace TFM.Managers
 {
@@ -10,12 +10,31 @@ namespace TFM.Managers
     {
         /// <value>Property <c>Instance</c> represents the instance of the game manager.</value>
         public static EventManager Instance;
-
-        /// <value>Property <c>AvailableEvents</c> represents the available events.</value>
-        public List<Event> availableEvents;
         
-        /// <value>Property <c>Events</c> represents the events.</value>
-        public readonly Dictionary<Event, bool> Events = new Dictionary<Event, bool>();
+        #region Unity Events and Delegates
+
+            /// <summary>
+            /// Delegate <c>EventManagerEvents</c> represents the event manager events.
+            /// </summary>
+            public delegate void EventManagerEvents(Event e = null);
+            
+            /// <value>Event <c>Ready</c> represents the ready event.</value>
+            public event EventManagerEvents Ready;
+
+            /// <value>Event <c>OnEventTriggered</c> represents the event triggered event.</value>
+            public event EventManagerEvents EventTriggered;
+        
+        #endregion
+        
+        #region Events
+
+            /// <value>Property <c>AvailableEvents</c> represents the available events.</value>
+            public List<Event> availableEvents;
+            
+            /// <value>Property <c>Events</c> represents the events.</value>
+            public readonly Dictionary<Event, bool> Events = new Dictionary<Event, bool>();
+        
+        #endregion
 
         /// <summary>
         /// Method <c>Awake</c> initializes the game manager.
@@ -42,6 +61,7 @@ namespace TFM.Managers
         private void Start()
         {
             ImportData(GameManager.Instance.gameStateData.events);
+            Ready?.Invoke();
         }
         
         /// <summary>
@@ -53,7 +73,7 @@ namespace TFM.Managers
         {
             if (!Events.TryAdd(e, state))
                 Events[e] = state;
-            GameManager.Instance.SaveGameState();
+            EventTriggered?.Invoke(e);
         }
         
         /// <summary>
@@ -79,7 +99,7 @@ namespace TFM.Managers
         /// Method <c>ImportData</c> imports the data.
         /// </summary>
         /// <param name="data">The event data.</param>
-        public void ImportData(List<EventData> data)
+        private void ImportData(List<EventData> data)
         {
             if (data == null)
                 return;
@@ -91,6 +111,5 @@ namespace TFM.Managers
                     Events.Add(eventObject, eventData.eventState);
             }
         }
-
     }
 }

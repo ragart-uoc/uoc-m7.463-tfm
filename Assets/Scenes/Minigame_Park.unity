@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: b6c806ce372dd93439ff33d3862727ba, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 7a5c36e6b3c382a4c8e0658949fba188, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c422492a579cbf4c963f78d585a3f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  availableLevels: {fileID: 11400000, guid: 7f4a8f0b2731ec047b8b2c842c62d684, type: 2}
 --- !u!4 &47351582
 Transform:
   m_ObjectHideFlags: 0
@@ -332,6 +333,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 419578156010841207, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
   m_PrefabInstance: {fileID: 49370258}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &49370263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5440953239395311601, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
+  m_PrefabInstance: {fileID: 49370258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &49370267 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 759962752914807094, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
@@ -482,16 +494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b68aa86c622ab4da9a18ba2e274697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableLevels:
-  - {fileID: 11400000, guid: 7260493f853e700448fe8fa5ea41c438, type: 2}
-  - {fileID: 11400000, guid: f43a65bfc32fd46469b60a473f7d3e36, type: 2}
-  - {fileID: 11400000, guid: 059dbbd7f547cde4a8c17bdc66c0bf00, type: 2}
-  - {fileID: 11400000, guid: db4356b774dde1f45a5b5f7c0b0f8226, type: 2}
-  - {fileID: 11400000, guid: fe926f823ab00774ea489ade07ebe4c0, type: 2}
-  - {fileID: 11400000, guid: cf83a682043ec544a9a80246101bcccc, type: 2}
-  - {fileID: 11400000, guid: be9d9a925366a53488c596bd6870df6f, type: 2}
-  - {fileID: 11400000, guid: 2e8518a3628869549969d84a8dbea919, type: 2}
-  - {fileID: 11400000, guid: 0f97e745ad348d744ad0f7294b7a7a05, type: 2}
 --- !u!4 &147920734
 Transform:
   m_ObjectHideFlags: 0
@@ -810,7 +812,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ce13e92e4f3ff4eb670b05b8feac46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableInteractions: 0
   radialMenu: {fileID: 0}
   statusBar: {fileID: 49370267}
   notice: {fileID: 0}
@@ -822,6 +823,7 @@ MonoBehaviour:
   dialogueActorName: {fileID: 49370260}
   dialogueText: {fileID: 49370259}
   fadeOverlay: {fileID: 1628064943}
+  saveIndicator: {fileID: 49370263}
 --- !u!4 &1192216447
 Transform:
   m_ObjectHideFlags: 0

@@ -22,33 +22,33 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 2928997223638499335
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: Ah, my old kite...
         position: 0
     - rid: 2928997223638499336
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: As soon as the wind rose, we ran to fly it.
         position: 0
     - rid: 2928997223638499337
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: Those were the good days...
         position: 0
     - rid: 2928997223638499338
-      type: {class: HideDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
     - rid: 2928997223638499339
-      type: {class: SceneChangeAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
-        sceneName: Level_Park
+        level: {fileID: 11400000, guid: db4356b774dde1f45a5b5f7c0b0f8226, type: 2}
         fadeOverlay: 1

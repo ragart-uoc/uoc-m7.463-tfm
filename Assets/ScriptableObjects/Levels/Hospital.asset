@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
   m_Name: Hospital
   m_EditorClassIdentifier: 
-  sceneName: Level_Hospital
+  levelName: Level_Hospital
+  sceneAsset: {fileID: 102900000, guid: 48f7ab0152c3be34989d1933b46fa1c1, type: 3}
   initialAgeGroup: 4
   levelSequenceEvents: []
   currentAgeGroup: 0

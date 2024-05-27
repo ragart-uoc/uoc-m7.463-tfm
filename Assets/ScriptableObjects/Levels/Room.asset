@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
   m_Name: Room
   m_EditorClassIdentifier: 
-  sceneName: Level_Room
+  levelName: Level_Room
+  sceneAsset: {fileID: 102900000, guid: 762571b0f886e0f4e80a91aeaeff0687, type: 3}
   initialAgeGroup: 4
   levelSequenceEvents:
   - triggerEvent: {fileID: 0}

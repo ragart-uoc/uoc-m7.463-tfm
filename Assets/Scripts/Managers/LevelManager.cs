@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using TFM.Persistence;
+using TFM.Entities;
 
 namespace TFM.Managers
 {
@@ -13,15 +13,31 @@ namespace TFM.Managers
     {
         /// <value>Property <c>Instance</c> represents the instance of the game manager.</value>
         public static LevelManager Instance;
+        
+        #region Unity Events and Delegates
+        
+            /// <summary>
+            /// Delegate <c>LevelManagerEvents</c> represents the level manager events.
+            /// </summary>
+            public delegate void LevelManagerEvents(Level level);
+            
+            /// <value>Event <c>Ready</c> represents the ready event.</value>
+            public event LevelManagerEvents Ready;
 
-        /// <value>Property <c>availableLevels</c> represents the available levels.</value>
-        public List<Level> availableLevels;
+            /// <value>Event <c>OnLevelUpdated</c> represents the level updated event.</value>
+            public event LevelManagerEvents LevelUpdated;
+            
+        #endregion
         
-        /// <value>Property <c>levels</c> represents the levels.</value>
-        private readonly Dictionary<string, Level> _levels = new Dictionary<string, Level>();
-        
-        /// <value>Property <c>_currentSceneName</c> represents the current level name.</value>
-        private string _currentSceneName;
+        #region Levels and scenes
+            
+            /// <value>Property <c>levels</c> represents the levels.</value>
+            private readonly Dictionary<string, Level> _levels = new Dictionary<string, Level>();
+
+            /// <value>Property <c>_currentLevelName</c> represents the current level name.</value>
+            private string _currentLevelName;
+            
+        #endregion
 
         /// <summary>
         /// Method <c>Awake</c> initializes the game manager.
@@ -36,23 +52,6 @@ namespace TFM.Managers
             }
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            
-            // Initialize the levels
-            foreach (var l in availableLevels)
-            {
-                if (!_levels.TryAdd(l.sceneName, l))
-                    _levels[l.sceneName] = l;
-                _levels[l.sceneName].currentAgeGroup = l.initialAgeGroup;
-                _levels[l.sceneName].activeShowableObjects = Array.Empty<GameObject>();
-            }
-        }
-        
-        /// <summary>
-        /// Method <c>Start</c> is called before the first frame update.
-        /// </summary>
-        private void Start()
-        {
-            ImportData(GameManager.Instance.gameStateData.levels);
         }
 
         /// <summary>
@@ -60,7 +59,7 @@ namespace TFM.Managers
         /// </summary>
         private void OnEnable()
         {
-            GameManager.Instance.OnSceneLoaded += OnSceneLoaded;
+            GameManager.Instance.Ready += OnGameReady;
         }
         
         /// <summary>
@@ -68,15 +67,40 @@ namespace TFM.Managers
         /// </summary>
         private void OnDisable()
         {
-            GameManager.Instance.OnSceneLoaded -= OnSceneLoaded;
+            GameManager.Instance.Ready -= OnGameReady;
         }
         
         /// <summary>
-        /// Method <c>OnSceneLoaded</c> is called when the scene is loaded.
+        /// Method <c>OnGameReady</c> is called when the game is ready.
         /// </summary>
-        private void OnSceneLoaded(string sceneName)
+        /// <param name="levelName">The name of the level.</param>
+        /// <param name="sceneName">The name of the scene.</param>
+        private void OnGameReady(string levelName, string sceneName)
         {
-            _currentSceneName = sceneName;
+            _currentLevelName = levelName;
+            
+            // Initialize the levels
+            foreach (var level in CustomSceneManager.Instance.availableLevels.levels)
+            {
+                if (!_levels.TryAdd(level.name, level))
+                    _levels[level.name] = level;
+                _levels[level.name].currentAgeGroup = level.initialAgeGroup;
+                _levels[level.name].activeShowableObjects = Array.Empty<GameObject>();
+            }
+            
+            // Import data
+            ImportData(GameManager.Instance.gameStateData.levels);
+            
+            // Ready event
+            Ready?.Invoke(_levels[_currentLevelName]);
+            
+            // Show the overlay
+            UIManager.Instance.ShowHideOverlay();
+            
+            // Refresh the scene showable objects
+            RefreshSceneShowableObjects(true);
+            
+            // Fade out the overlay
             UIManager.Instance.FadeOverlay(0f, 2f, Initialize);
         }
 
@@ -85,21 +109,29 @@ namespace TFM.Managers
         /// </summary>
         private void Initialize()
         {
-            // Check action sequences
+            ExecuteActionSequences(UpdateLevel);
+        }
+        
+        /// <summary>
+        /// Method <c>ExecuteActionSequences</c> executes the action sequences.
+        /// </summary>
+        /// <param name="callback">The callback.</param>
+        private void ExecuteActionSequences(Action callback)
+        {
             foreach (var levelSequenceEvent in
-                     from levelSequenceEvent in _levels[_currentSceneName].levelSequenceEvents
-                     where levelSequenceEvent.actionSequence != null
-                     where levelSequenceEvent.completionEvent != null
-                         && !EventManager.Instance.GetEventState(levelSequenceEvent.completionEvent)
-                     where levelSequenceEvent.triggerEvent == null
-                         || EventManager.Instance.GetEventState(levelSequenceEvent.triggerEvent)
-                     select levelSequenceEvent)
+                from levelSequenceEvent in _levels[_currentLevelName].levelSequenceEvents
+                where levelSequenceEvent.actionSequence != null
+                where levelSequenceEvent.completionEvent != null
+                    && !EventManager.Instance.GetEventState(levelSequenceEvent.completionEvent)
+                where levelSequenceEvent.triggerEvent == null
+                    || EventManager.Instance.GetEventState(levelSequenceEvent.triggerEvent)
+                select levelSequenceEvent)
             {
                 EventManager.Instance.UpsertEventState(levelSequenceEvent.completionEvent, true);
-                levelSequenceEvent.actionSequence.ExecuteSequence(UpdateLevel);
+                levelSequenceEvent.actionSequence.ExecuteSequence(callback);
                 return;
             }
-            UpdateLevel();
+            callback?.Invoke();
         }
         
         /// <summary>
@@ -109,7 +141,7 @@ namespace TFM.Managers
         {
             RefreshSceneShowableObjects();
             UIManager.Instance.EnableInteractions();
-            GameManager.Instance.SaveGameState();
+            LevelUpdated?.Invoke(_levels[_currentLevelName]);
         }
         
         /// <summary>
@@ -129,7 +161,7 @@ namespace TFM.Managers
         private void RefreshSceneShowableObjects(bool hideAll = false)
         {
             var showableObjects = GetShowableObjects();
-            var currentLevel = _levels[_currentSceneName];
+            var currentLevel = _levels[_currentLevelName];
             var activeShowableObjectsSet = new HashSet<GameObject>(currentLevel.activeShowableObjects);
             var activeShowableObjectsIdsSet = new HashSet<int>(currentLevel.activeShowableObjectsIds);
             foreach (var showableObject in showableObjects)
@@ -161,8 +193,8 @@ namespace TFM.Managers
         /// </summary>
         public List<LevelData> ExportData()
         {
-            _levels[_currentSceneName].activeShowableObjects = GetShowableObjects(true);
-            _levels[_currentSceneName].activeShowableObjectsIds = _levels[_currentSceneName].activeShowableObjects
+            _levels[_currentLevelName].activeShowableObjects = GetShowableObjects(true);
+            _levels[_currentLevelName].activeShowableObjectsIds = _levels[_currentLevelName].activeShowableObjects
                 .Select(showableObject => showableObject.GetInstanceID())
                 .ToArray();
             return _levels
@@ -175,25 +207,26 @@ namespace TFM.Managers
         /// Method <c>ImportData</c> imports the data.
         /// </summary>
         /// <param name="data">The level data.</param>
-        public void ImportData(List<LevelData> data)
+        private void ImportData(List<LevelData> data)
         {
             if (data == null)
                 return;
             foreach (var level in data
-                         .Select(levelData => availableLevels.Find(l => l.sceneName == levelData.sceneName))
+                         .Select(levelData => CustomSceneManager.Instance.availableLevels.levels
+                             .Find(l => l.sceneName == levelData.sceneName))
                          .Where(level => level != null))
             {
-                if (_levels.TryAdd(level.sceneName, level))
-                    _levels[level.sceneName] = level;
+                if (_levels.TryAdd(level.name, level))
+                    _levels[level.name] = level;
             }
         }
         
         /// <summary>
-        /// Method <c>GetCurrentSceneName</c> gets the current level name.
+        /// Method <c>GetCurrentLevelName</c> gets the current level name.
         /// </summary>
-        public string GetCurrentSceneName()
+        public string GetCurrentLevelName()
         {
-            return _currentSceneName;
+            return _currentLevelName;
         }
     }
 }

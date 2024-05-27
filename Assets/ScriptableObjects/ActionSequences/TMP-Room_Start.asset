@@ -24,12 +24,12 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 2928997223638499344
-      type: {class: TriggerEventAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
         eventObject: {fileID: 11400000, guid: e77066e5c54bd1b4b82bd172fff45422, type: 2}
     - rid: 2928997223638499345
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 4cfdd433b65d9ab4a9fca370fc3494f4, type: 2}
@@ -37,14 +37,14 @@ MonoBehaviour:
           the controls.
         position: 0
     - rid: 2928997223638499346
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 4cfdd433b65d9ab4a9fca370fc3494f4, type: 2}
         dialogueLine: Eveything is controlled by your mouse.
         position: 0
     - rid: 2928997223638499347
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 4cfdd433b65d9ab4a9fca370fc3494f4, type: 2}
@@ -52,7 +52,7 @@ MonoBehaviour:
           can be collected.
         position: 0
     - rid: 2928997223638499348
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 4cfdd433b65d9ab4a9fca370fc3494f4, type: 2}
@@ -60,13 +60,13 @@ MonoBehaviour:
           radial menu.<br>You can use any object on the others.
         position: 0
     - rid: 2928997223638499352
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 4cfdd433b65d9ab4a9fca370fc3494f4, type: 2}
         dialogueLine: Try to ineract with the ice cream statue
         position: 0
     - rid: 2928997223638499353
-      type: {class: HideDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0

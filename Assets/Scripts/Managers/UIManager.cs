@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using TFM.UI;
+using TFM.Entities;
 
 namespace TFM.Managers
 {
@@ -16,7 +16,6 @@ namespace TFM.Managers
         public static UIManager Instance;
         
         /// <value>Property <c>disableInteractions</c> represents if the interactions are disabled.</value>
-        [SerializeField]
         private bool _disableInteractions;
         
         #region Radial menu
@@ -74,6 +73,14 @@ namespace TFM.Managers
             /// <value>Property <c>fadeOverlay</c> represents the fade overlay.</value>
             [Header("Fade Overlay")]
             public Image fadeOverlay;
+            
+        #endregion
+        
+        #region Save indicator
+        
+            /// <value>Property <c>saveIndicator</c> represents the save indicator.</value>
+            [Header("Save Indicator")]
+            public Image saveIndicator;
             
         #endregion
         
@@ -209,6 +216,24 @@ namespace TFM.Managers
         #endregion
             
         #region Fade overlay
+        
+            /// <summary>
+            /// Method <c>ShowHideOverlay</c> shows or hides the overlay.
+            /// </summary>
+            /// <param name="show">If the overlay is shown.</param>
+            /// <param name="alpha">The alpha of the overlay.</param>
+            public void ShowHideOverlay(bool show = true, float alpha = 1.0f)
+            {
+                if (show)
+                {
+                    fadeOverlay.GetComponent<CanvasRenderer>().SetAlpha(alpha);
+                    fadeOverlay.gameObject.SetActive(true);
+                }
+                else
+                {
+                    fadeOverlay.gameObject.SetActive(false);
+                }
+            }
             
             /// <summary>
             /// Method <c>FadeOverlay</c> fades the overlay.
@@ -229,13 +254,58 @@ namespace TFM.Managers
             /// <param name="callback">A callback to execute after the fade.</param>
             private IEnumerator FadeOverlayCoroutine(float targetAlpha, float duration = 1f, Action callback = null)
             {
-                fadeOverlay.GetComponent<CanvasRenderer>().SetAlpha(targetAlpha == 0 ? 1 : 0);
-                fadeOverlay.gameObject.SetActive(true);
+                if (fadeOverlay == null)
+                    yield break;
+                if (fadeOverlay.gameObject.activeSelf
+                        && Mathf.Approximately(fadeOverlay.canvasRenderer.GetAlpha(), targetAlpha))
+                    yield break;
+                if (!fadeOverlay.gameObject.activeSelf)
+                    ShowHideOverlay(true, targetAlpha == 0 ? 1 : 0);
                 fadeOverlay.CrossFadeAlpha(targetAlpha, duration, false);
                 yield return new WaitForSeconds(duration);
                 callback?.Invoke();
             }
         
+        #endregion
+        
+        #region Save indicator
+        
+            /// <summary>
+            /// Method <c>SetSaveIndicator</c> sets the save indicator.
+            /// </summary>
+            /// <param name="duration">The duration to show the save indicator.</param>
+            public void SetSaveIndicator(float duration = 0f)
+            {
+                // Show the save indicator during the duration
+                StartCoroutine(ShowSaveIndicator(duration));
+                if (duration > 0)
+                    StartCoroutine(RotateSaveIndicator());
+            }
+            
+            /// <summary>
+            /// Method <c>ShowSaveIndicator</c> shows the save indicator.
+            /// </summary>
+            /// <param name="duration">The duration to show the save indicator.</param>
+            private IEnumerator ShowSaveIndicator(float duration)
+            {
+                saveIndicator.gameObject.SetActive(true);
+                yield return new WaitForSeconds(duration);
+                saveIndicator.gameObject.SetActive(false);
+            }
+            
+            /// <summary>
+            /// Method <c>RotateSaveIndicator</c> rotates the save indicator.
+            /// </summary>
+            private IEnumerator RotateSaveIndicator()
+            {
+                while (saveIndicator.gameObject.activeSelf)
+                {
+                    saveIndicator.transform.Rotate(Vector3.forward, 360 * Time.deltaTime);
+                    yield return null;
+                }
+                saveIndicator.transform.rotation = Quaternion.identity;
+            }
+            
         #endregion
     }
 }

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Park
   m_EditorClassIdentifier: 
   sceneName: Level_Park
-  initialAgeGroup: 0
+  sceneAsset: {fileID: 102900000, guid: ec85d4faffbd6894f99d9e7bef027e72, type: 3}
+  initialAgeGroup: 2
   levelSequenceEvents:
   - triggerEvent: {fileID: 0}
     actionSequence: {fileID: 11400000, guid: d78b251a357c3014c94f7429e9a2d3d6, type: 2}

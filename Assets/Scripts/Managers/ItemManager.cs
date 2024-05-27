@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using TFM.Persistence;
+using TFM.Entities;
 
 namespace TFM.Managers
 {
@@ -13,16 +13,38 @@ namespace TFM.Managers
         /// <value>Property <c>Instance</c> represents the singleton instance of the class.</value>
         public static ItemManager Instance;
         
-        /// <value>Property <c>availableItems</c> represents the available items.</value>
-        public List<Item> availableItems;
+        #region Unity Events and Delegates
         
-        /// <value>Property <c>pickedItems</c> represents the picked items.</value>
-        [HideInInspector]
-        public List<Item> pickedItems;
+            /// <summary>
+            /// Delegate <c>ItemManagerEvents</c> represents the item manager events.
+            /// </summary>
+            public delegate void ItemManagerEvents(Item item = null);
+            
+            /// <value>Event <c>Ready</c> represents the ready event.</value>
+            public event ItemManagerEvents Ready;
         
-        /// <value>Property <c>discardedItems</c> represents the discarded items.</value>
-        [HideInInspector]
-        public List<Item> discardedItems;
+            /// <value>Event <c>OnItemPicked</c> represents the item picked event.</value>
+            public event ItemManagerEvents ItemPicked;
+            
+            /// <value>Event <c>OnItemDiscarded</c> represents the item discarded event.</value>
+            public event ItemManagerEvents ItemDiscarded;
+            
+        #endregion
+        
+        #region Items
+        
+            /// <value>Property <c>availableItems</c> represents the available items.</value>
+            public List<Item> availableItems;
+            
+            /// <value>Property <c>pickedItems</c> represents the picked items.</value>
+            [HideInInspector]
+            public List<Item> pickedItems;
+            
+            /// <value>Property <c>discardedItems</c> represents the discarded items.</value>
+            [HideInInspector]
+            public List<Item> discardedItems;
+            
+        #endregion
 
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
@@ -49,6 +71,7 @@ namespace TFM.Managers
         private void Start()
         {
             ImportData(GameManager.Instance.gameStateData.items);
+            Ready?.Invoke();
         }
         
         /// <summary>
@@ -60,7 +83,7 @@ namespace TFM.Managers
             if (pickedItems.Contains(item))
                 return;
             pickedItems.Add(item);
-            GameManager.Instance.SaveGameState();
+            ItemPicked?.Invoke(item);
         }
         
         /// <summary>
@@ -73,7 +96,7 @@ namespace TFM.Managers
                 return;
             pickedItems.Remove(item);
             discardedItems.Add(item);
-            GameManager.Instance.SaveGameState();
+            ItemDiscarded?.Invoke(item);
         }
         
         /// <summary>
@@ -128,7 +151,7 @@ namespace TFM.Managers
         /// Method <c>ImportData</c> imports the data.
         /// </summary>
         /// <param name="data">The item data.</param>
-        public void ImportData(List<ItemData> data)
+        private void ImportData(List<ItemData> data)
         {
             if (data == null)
                 return;

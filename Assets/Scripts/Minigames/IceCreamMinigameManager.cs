@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
-using Event = TFM.Persistence.Event;
+using Event = TFM.Entities.Event;
 
 namespace TFM.Minigames
 {
@@ -122,7 +122,7 @@ namespace TFM.Minigames
             if (_victoryCount >= 5)
             {
                 EventManager.Instance.UpsertEventState(completionEvent, true);
-                CustomSceneManager.Instance.LoadNewScene("Level_IceCreamParlor");
+                CustomSceneManager.Instance.LoadLevel("IceCreamParlor");
                 return;
             }
             _currentRequest = new List<Color>();

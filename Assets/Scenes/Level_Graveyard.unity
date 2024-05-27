@@ -277,6 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c422492a579cbf4c963f78d585a3f20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  availableLevels: {fileID: 11400000, guid: 7f4a8f0b2731ec047b8b2c842c62d684, type: 2}
 --- !u!4 &47351582
 Transform:
   m_ObjectHideFlags: 0
@@ -697,16 +698,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b68aa86c622ab4da9a18ba2e274697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableLevels:
-  - {fileID: 11400000, guid: 7260493f853e700448fe8fa5ea41c438, type: 2}
-  - {fileID: 11400000, guid: f43a65bfc32fd46469b60a473f7d3e36, type: 2}
-  - {fileID: 11400000, guid: 059dbbd7f547cde4a8c17bdc66c0bf00, type: 2}
-  - {fileID: 11400000, guid: db4356b774dde1f45a5b5f7c0b0f8226, type: 2}
-  - {fileID: 11400000, guid: fe926f823ab00774ea489ade07ebe4c0, type: 2}
-  - {fileID: 11400000, guid: cf83a682043ec544a9a80246101bcccc, type: 2}
-  - {fileID: 11400000, guid: be9d9a925366a53488c596bd6870df6f, type: 2}
-  - {fileID: 11400000, guid: 2e8518a3628869549969d84a8dbea919, type: 2}
-  - {fileID: 11400000, guid: 0f97e745ad348d744ad0f7294b7a7a05, type: 2}
 --- !u!4 &147920734
 Transform:
   m_ObjectHideFlags: 0
@@ -1208,7 +1199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ce13e92e4f3ff4eb670b05b8feac46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disableInteractions: 0
   radialMenu: {fileID: 49370268}
   statusBar: {fileID: 49370267}
   notice: {fileID: 49370266}
@@ -1220,6 +1210,7 @@ MonoBehaviour:
   dialogueActorName: {fileID: 49370260}
   dialogueText: {fileID: 49370259}
   fadeOverlay: {fileID: 1628064943}
+  saveIndicator: {fileID: 1438936105}
 --- !u!4 &1192216447
 Transform:
   m_ObjectHideFlags: 0
@@ -1360,6 +1351,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2551352463736364049, guid: 213d2b56253be4d4cbfb202ddb822757, type: 3}
   m_PrefabInstance: {fileID: 392050181}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1438936105 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5440953239395311601, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
+  m_PrefabInstance: {fileID: 49370258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1484671789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1935,6 +1937,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c927d3815dae34ab01d6240197ac40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameStateData:
+    currentSceneName: 
+    events: []
+    levels: []
+    items: []
 --- !u!4 &2019079362
 Transform:
   m_ObjectHideFlags: 0

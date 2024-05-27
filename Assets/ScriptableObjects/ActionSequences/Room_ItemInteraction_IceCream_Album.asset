@@ -21,26 +21,26 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 2928997223638499328
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: Ah, the ice cream parlor.
         position: 0
     - rid: 2928997223638499329
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: That's probably my fondest memory of my childhood.
         position: 0
     - rid: 2928997223638499330
-      type: {class: HideDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
     - rid: 2928997223638499331
-      type: {class: SceneChangeAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
-        sceneName: Level_IceCreamParlor
+        level: {fileID: 11400000, guid: f43a65bfc32fd46469b60a473f7d3e36, type: 2}
         fadeOverlay: 1

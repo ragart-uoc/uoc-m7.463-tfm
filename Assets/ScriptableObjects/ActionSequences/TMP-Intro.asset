@@ -21,26 +21,26 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 2928997223638499340
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 4cfdd433b65d9ab4a9fca370fc3494f4, type: 2}
         dialogueLine: There should be a short intro here, but...
         position: 0
     - rid: 2928997223638499341
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 4cfdd433b65d9ab4a9fca370fc3494f4, type: 2}
         dialogueLine: Time constraints.
         position: 0
     - rid: 2928997223638499342
-      type: {class: HideDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
     - rid: 2928997223638499343
-      type: {class: SceneChangeAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
-        sceneName: Level_Room
+        level: {fileID: 11400000, guid: 7260493f853e700448fe8fa5ea41c438, type: 2}
         fadeOverlay: 1

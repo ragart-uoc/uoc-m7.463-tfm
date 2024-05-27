@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
   m_Name: IceCreamParlor_Minigame
   m_EditorClassIdentifier: 
-  sceneName: Minigame_IceCreamParlor
+  levelName: Minigame_IceCreamParlor
+  sceneAsset: {fileID: 102900000, guid: 394453ed28f13524b9b55bfc6dae1d28, type: 3}
   initialAgeGroup: 0
   levelSequenceEvents: []
   currentAgeGroup: 0

@@ -21,7 +21,7 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 2928997223638499372
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 4cfdd433b65d9ab4a9fca370fc3494f4, type: 2}
@@ -29,19 +29,19 @@ MonoBehaviour:
           will be ready for playing!
         position: 0
     - rid: 2928997223638499373
-      type: {class: ShowDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: See you then...
         position: 1
     - rid: 2928997223638499374
-      type: {class: HideDialogueAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
     - rid: 2928997223638499375
-      type: {class: SceneChangeAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
-        sceneName: 2_MainMenu
+        level: {fileID: 11400000, guid: ae7bef56a368e45418f6feb0187d7954, type: 2}
         fadeOverlay: 1
