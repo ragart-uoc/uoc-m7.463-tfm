@@ -43,9 +43,9 @@ namespace TFM.Entities
                     UIManager.Instance.radialMenu.SpawnOuterMenu(radialMenuOption.type);
                     break;
                 case Type.Outer when radialMenuOption.item != null:
+                    var targetName = UIManager.Instance.radialMenu.target.GetComponent<ObjectInteractable>().itemName;
                     UIManager.Instance.radialMenu.targetItem = radialMenuOption.item;
-                    UIManager.Instance.SetStatusBarText("Use " + radialMenuOption.item.Title + " on " +
-                                                        UIManager.Instance.radialMenu.target.name);
+                    UIManager.Instance.SetStatusBarText("Use " + radialMenuOption.item.Title + " on " + targetName);
                     break;
             }
         }
@@ -63,8 +63,9 @@ namespace TFM.Entities
                 case Type.Inner:
                     break;
                 case Type.Outer when radialMenuOption.item != null:
+                    var targetName = UIManager.Instance.radialMenu.target.GetComponent<ObjectInteractable>().itemName;
                     UIManager.Instance.radialMenu.targetItem = null;
-                    UIManager.Instance.SetStatusBarText(UIManager.Instance.radialMenu.target.name);
+                    UIManager.Instance.SetStatusBarText(targetName);
                     break;
             }
         }

@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
   m_Name: Room
   m_EditorClassIdentifier: 
-  levelName: Level_Room
+  sceneName: Level_Room
   sceneAsset: {fileID: 102900000, guid: 762571b0f886e0f4e80a91aeaeff0687, type: 3}
   initialAgeGroup: 4
   levelSequenceEvents:
   - triggerEvent: {fileID: 0}
-    actionSequence: {fileID: 11400000, guid: 7987af74466b3b54582d3d94275da270, type: 2}
+    actionSequence: {fileID: 11400000, guid: 06168b2fbf89b1d4c881d66c688aa264, type: 2}
     completionEvent: {fileID: 11400000, guid: 8e5151ccf1c251c4f8ea5d78b8fa0b4d, type: 2}
-  - triggerEvent: {fileID: 11400000, guid: a8361e69559901c46bffbedda71644ec, type: 2}
-    actionSequence: {fileID: 11400000, guid: e4a56fc9ab2bb8648826ba77813111fd, type: 2}
-    completionEvent: {fileID: 11400000, guid: 9b2733aaf796d5c4695bee4202c4553d, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: bc595c02200ac484ea9cd5955c3573a7, type: 2}
+    actionSequence: {fileID: 11400000, guid: 58c8468471d2d2347bd7eb33371429a5, type: 2}
+    completionEvent: {fileID: 11400000, guid: 982727ffe45fe4a45bd25db5a15031e7, type: 2}
   currentAgeGroup: 4
   activeShowableObjects: []
-  activeShowableObjectsIds: 1809030036090300
+  activeShowableObjectsIds: 8c7a0300ac7a0300e67a0300

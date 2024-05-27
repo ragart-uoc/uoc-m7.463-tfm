@@ -124,6 +124,7 @@ namespace TFM.Managers
             public void SetStatusBarText(string text)
             {
                 statusBar.text = text;
+                statusBar.transform.parent.gameObject.SetActive(!string.IsNullOrEmpty(text));
             }
             
             /// <summary>
@@ -141,12 +142,24 @@ namespace TFM.Managers
             /// <param name="message">The message to show.</param>
             /// <param name="duration">The duration to show the message.</param>
             /// <param name="afterMessage">The message to show after the duration.</param>
+            public void ShowMessage(string message, float duration = 3f, string afterMessage = "")
+            {
+                StartCoroutine(ShowMessageCoroutine(message, duration, afterMessage));
+            }
+
+            /// <summary>
+            /// Method <c>ShowMessageCoroutine</c> shows a message for a duration.
+            /// </summary>
+            /// <param name="message">The message to show.</param>
+            /// <param name="duration">The duration to show the message.</param>
+            /// <param name="afterMessage">The message to show after the duration.</param>
             /// <returns>An IEnumerator.</returns>
-            public IEnumerator ShowMessage(string message, float duration = 3f, string afterMessage = "")
+            private IEnumerator ShowMessageCoroutine(string message, float duration = 3f, string afterMessage = "")
             {
                 statusBar.text = message;
                 yield return new WaitForSeconds(duration);
                 statusBar.text = afterMessage;
+                statusBar.transform.parent.gameObject.SetActive(!string.IsNullOrEmpty(afterMessage));
             }
         
         #endregion

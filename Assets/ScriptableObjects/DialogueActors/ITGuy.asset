@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ITGuy
   m_EditorClassIdentifier: 
   actorImagePrefab: {fileID: 4428604033727658030, guid: 2e8128fd6cd7bbf42bddffa6c4b15a26, type: 3}
-  actorName: Faceless Support Person
+  actorName: Faceless Technician

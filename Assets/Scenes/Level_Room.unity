@@ -655,6 +655,10 @@ MonoBehaviour:
   itemDescription: A figure representing an ice cream.<br>It was part of my childhood.
   itemUnpickedDescription: A <color="red">figure</color> representing an ice cream.<br>It
     was part of my childhood.
+  actionSequence:
+    triggerEvent: {fileID: 0}
+    actionSequence: {fileID: 11400000, guid: c994c39c35509b54cad9dcd2e8a0ef62, type: 2}
+    completionEvent: {fileID: 11400000, guid: a85c68c27bde45a46a53832fcab1a473, type: 2}
   pickableItem: {fileID: 11400000, guid: 6174f8e4661118744932981e35c804f4, type: 2}
   objectInteracions: []
 --- !u!114 &161317639
@@ -776,7 +780,7 @@ Transform:
   m_Children:
   - {fileID: 161317637}
   - {fileID: 1073437971}
-  - {fileID: 1500305010}
+  - {fileID: 7096242850864234545}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &833910810 stripped
@@ -1039,6 +1043,10 @@ MonoBehaviour:
   itemName: Photo album
   itemDescription: An album containing photos from my life
   itemUnpickedDescription: An album containing photos from my life
+  actionSequence:
+    triggerEvent: {fileID: 0}
+    actionSequence: {fileID: 0}
+    completionEvent: {fileID: 0}
   pickableItem: {fileID: 0}
   objectInteracions:
   - item: {fileID: 11400000, guid: 6174f8e4661118744932981e35c804f4, type: 2}
@@ -1059,7 +1067,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd459c9d151ab6045a50271922bb62c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showEvents: []
+  showEvents:
+  - {fileID: 11400000, guid: a85c68c27bde45a46a53832fcab1a473, type: 2}
   hideEvents: []
   availableAgeGroups: 04000000
 --- !u!1 &1192216445
@@ -1147,8 +1156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb0a92b97621144e861eeddaab87b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableEvents:
-  - {fileID: 11400000, guid: 8e5151ccf1c251c4f8ea5d78b8fa0b4d, type: 2}
+  availableEvents: {fileID: 11400000, guid: 2a9c09ee4af07624e9d313996aa90d5f, type: 2}
 --- !u!4 &1316684213
 Transform:
   m_ObjectHideFlags: 0
@@ -1273,155 +1281,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
---- !u!1001 &1500305009
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 457214686}
-    m_Modifications:
-    - target: {fileID: 5422306484864063518, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_Name
-      value: Kite
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.29999998
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.30000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.90000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8723701
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.48158002
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.08389521
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.0035657163
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 57.101
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -16.011
-      objectReference: {fileID: 0}
-    - target: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -9.22
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5422306484864063518, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1500305012}
-    - targetCorrespondingSourceObject: {fileID: 5422306484864063518, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1500305013}
-    - targetCorrespondingSourceObject: {fileID: 3457600416323027726, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1500305015}
-  m_SourcePrefab: {fileID: 100100000, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
---- !u!4 &1500305010 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7096242849372952128, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-  m_PrefabInstance: {fileID: 1500305009}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1500305011 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5422306484864063518, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-  m_PrefabInstance: {fileID: 1500305009}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1500305012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500305011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd459c9d151ab6045a50271922bb62c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showEvents:
-  - {fileID: 11400000, guid: a8361e69559901c46bffbedda71644ec, type: 2}
-  hideEvents: []
-  availableAgeGroups: 04000000
---- !u!114 &1500305013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500305011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c7db24e542d2d248b854f951791d0ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemName: Kite
-  itemDescription: My precious kite.
-  itemUnpickedDescription: That's my <color="red">Kite</color>!<br> I thought I lost
-    it when I was a kid...
-  pickableItem: {fileID: 11400000, guid: 256a242404876ed43b899bda7d31ec98, type: 2}
-  objectInteracions: []
---- !u!1 &1500305014 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3457600416323027726, guid: 646477fb221a4d344b8a499708bdcde6, type: 3}
-  m_PrefabInstance: {fileID: 1500305009}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1500305015
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500305014}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 5a27b8bc6fa5dd34ea3acd05b2516e15, type: 2}
 --- !u!114 &1628064943 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 884113917940057955, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
@@ -1462,9 +1321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db8d0466a8cff04cafc7f50c431edfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableItems:
-  - {fileID: 11400000, guid: 6174f8e4661118744932981e35c804f4, type: 2}
-  - {fileID: 11400000, guid: 256a242404876ed43b899bda7d31ec98, type: 2}
+  availableItems: {fileID: 11400000, guid: cce36ffd95d893d4bbe04e57e23e2ec5, type: 2}
   pickedItems: []
   discardedItems: []
 --- !u!4 &2004321658
@@ -1512,7 +1369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStateData:
-    currentSceneName: 
+    currentLevelName: 
     events: []
     levels: []
     items: []
@@ -1638,6 +1495,117 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3331523509193791582
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 457214686}
+    m_Modifications:
+    - target: {fileID: 3931625604756192686, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+      propertyPath: m_Name
+      value: Kite
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345350172925926443, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345350172925926443, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345350172925926443, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.90000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345350172925926443, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8723701
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345350172925926443, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.48158002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345350172925926443, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.08389521
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345350172925926443, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0035657163
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345350172925926443, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 57.101
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345350172925926443, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -16.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 6345350172925926443, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -9.22
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3931625604756192686, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7096242850864234547}
+    - targetCorrespondingSourceObject: {fileID: 3931625604756192686, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7096242850864234546}
+  m_SourcePrefab: {fileID: 100100000, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+--- !u!1 &5422306483644812911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3931625604756192686, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+  m_PrefabInstance: {fileID: 3331523509193791582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7096242850864234545 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6345350172925926443, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+  m_PrefabInstance: {fileID: 3331523509193791582}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7096242850864234546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5422306483644812911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd459c9d151ab6045a50271922bb62c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showEvents:
+  - {fileID: 11400000, guid: 982727ffe45fe4a45bd25db5a15031e7, type: 2}
+  hideEvents: []
+  availableAgeGroups: 04000000
+--- !u!114 &7096242850864234547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5422306483644812911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7db24e542d2d248b854f951791d0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Kite
+  itemDescription: My precious kite.
+  itemUnpickedDescription: That's my <color="red">Kite</color>!<br> I thought I lost
+    it when I was a kid...
+  actionSequence:
+    triggerEvent: {fileID: 0}
+    actionSequence: {fileID: 0}
+    completionEvent: {fileID: 0}
+  pickableItem: {fileID: 11400000, guid: 256a242404876ed43b899bda7d31ec98, type: 2}
+  objectInteracions: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

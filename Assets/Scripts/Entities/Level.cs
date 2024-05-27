@@ -14,8 +14,10 @@ namespace TFM.Entities
         /// <value>Property <c>sceneName</c> represents the scene name.</value>
         public string sceneName;
         
+        #if UNITY_EDITOR
         /// <value>Property <c>sceneAsset</c> represents the scene asset.</value>
         public SceneAsset sceneAsset;
+        #endif
         
         /// <value>Property <c>initialAgeGroup</c> represents the initial age group.</value>
         public AgeGroupProperties.Groups initialAgeGroup;

@@ -1,4 +1,5 @@
 using System;
+using TFM.Actions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TFM.Managers;
@@ -18,6 +19,9 @@ namespace TFM.Entities
         
         /// <value>Property <c>itemUnpickedDescription</c> represents the unpicked description of the item.</value>
         public string itemUnpickedDescription;
+        
+        /// <value>Property <c>actionSequence</c> represents the action sequence.</value>
+        public EventTriggerActionSequence actionSequence;
 
         /// <value>Property <c>pickableItem</c> represents the pickable item.</value>
         public Item pickableItem;
@@ -70,6 +74,10 @@ namespace TFM.Entities
             ItemManager.Instance.Ready -= HandleItemManagerReady;
         }
         
+        /// <summary>
+        /// Method <c>HandleItemManagerReady</c> handles the item manager ready event.
+        /// </summary>
+        /// <param name="item"></param>
         private void HandleItemManagerReady(Item item)
         {
             LateStart();
@@ -111,6 +119,8 @@ namespace TFM.Entities
         public void OnPointerExit(PointerEventData eventData)
         {
             _isPointerOver = false;
+            if (UIManager.Instance.GetStatusBarText() == itemName)
+                UIManager.Instance.SetStatusBarText(string.Empty);
         }
         
         /// <summary>
@@ -124,20 +134,10 @@ namespace TFM.Entities
             switch (eventData.button)
             {
                 case PointerEventData.InputButton.Left:
-                    var message = (pickableItem == null) ? itemDescription : itemUnpickedDescription;
-                    StartCoroutine(UIManager.Instance.ShowMessage(message, 3f, itemName));
-                    if (pickableItem != null
-                        && !ItemManager.Instance.IsItemPickedOrDiscarded(pickableItem))
-                    {
-                        ItemManager.Instance.AddItem(pickableItem);
-                        StartCoroutine(UIManager.Instance.ShowItemNotice(pickableItem.Icon, "Picked", pickableItem.Title));
-                        pickableItem = null;
-                    }
+                    HandleLeftClickDown();
                     break;
                 case PointerEventData.InputButton.Right:
-                    _isKeyPressed = true;
-                    UIManager.Instance.EnableInteractions(false);
-                    UIManager.Instance.radialMenu.Open(transform);
+                    HandleRightClickDown();
                     break;
                 case PointerEventData.InputButton.Middle:
                     break;
@@ -155,17 +155,76 @@ namespace TFM.Entities
             switch (eventData.button)
             {
                 case PointerEventData.InputButton.Left:
+                    HandleLeftClickUp();
                     break;
                 case PointerEventData.InputButton.Right:
-                    _isKeyPressed = false;
-                    UIManager.Instance.EnableInteractions();
-                    UIManager.Instance.radialMenu.Close();
+                    HandleRightClickUp();
                     break;
                 case PointerEventData.InputButton.Middle:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+        
+        /// <summary>
+        /// Method <c>HandleLeftClickDown</c> handles the left click down event.
+        /// </summary>
+        private void HandleLeftClickDown()
+        {
+            if (!_isInteractionPossible)
+                return;
+            // Check if a sequence has been defined and has not been completed
+            if (actionSequence.actionSequence != null
+                && (actionSequence.triggerEvent == null
+                    || EventManager.Instance.GetEventState(actionSequence.triggerEvent))
+                && (actionSequence.completionEvent == null
+                    || !EventManager.Instance.GetEventState(actionSequence.completionEvent)))
+            {
+                actionSequence.actionSequence.ExecuteSequence();
+            }
+            // Show the message
+            else
+            {
+                var message = (pickableItem == null) ? itemDescription : itemUnpickedDescription;
+                UIManager.Instance.ShowMessage(message, 3f, itemName);
+            }
+            // Pick the item
+            if (pickableItem == null
+                    || ItemManager.Instance.IsItemPickedOrDiscarded(pickableItem))
+                return;
+            ItemManager.Instance.AddItem(pickableItem);
+            StartCoroutine(UIManager.Instance.ShowItemNotice(pickableItem.Icon, "Picked", pickableItem.Title));
+            pickableItem = null;
+        }
+        
+        /// <summary>
+        /// Method <c>HandleLeftClickUp</c> handles the left click up event.
+        /// </summary>
+        private void HandleLeftClickUp()
+        {
+        }
+        
+        /// <summary>
+        /// Method <c>HandleRightClickDown</c> handles the right click down event.
+        /// </summary>
+        private void HandleRightClickDown()
+        {
+            if (!_isInteractionPossible)
+                return;
+            _isKeyPressed = true;
+            UIManager.Instance.EnableInteractions(false);
+            UIManager.Instance.radialMenu.Open(transform);
+        }
+        
+        /// <summary>
+        /// Method <c>HandleRightClickUp</c> handles the right click up event.
+        /// </summary>
+        private void HandleRightClickUp()
+        {
+            _isKeyPressed = false;
+            UIManager.Instance.EnableInteractions();
+            UIManager.Instance.radialMenu.Close();
         }
 
         /// <summary>
@@ -176,8 +235,6 @@ namespace TFM.Entities
             if (!_isInteractionPossible || _isKeyPressed)
                 return;
             _outline.enabled = _isPointerOver;
-            if (!_isPointerOver && UIManager.Instance.GetStatusBarText() == itemName)
-                UIManager.Instance.SetStatusBarText(string.Empty);
         }
 
         /// <summary>
@@ -195,7 +252,7 @@ namespace TFM.Entities
                     ItemManager.Instance.DiscardItem(item);
                 return;
             }
-            StartCoroutine(UIManager.Instance.ShowMessage("That doesn't work."));
+            UIManager.Instance.ShowMessage("That doesn't work.");
         }
     }
 }

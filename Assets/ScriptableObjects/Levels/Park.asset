@@ -17,11 +17,11 @@ MonoBehaviour:
   initialAgeGroup: 2
   levelSequenceEvents:
   - triggerEvent: {fileID: 0}
-    actionSequence: {fileID: 11400000, guid: d78b251a357c3014c94f7429e9a2d3d6, type: 2}
-    completionEvent: {fileID: 11400000, guid: 69124820b1591054c912546499993035, type: 2}
-  - triggerEvent: {fileID: 11400000, guid: 6221d2b24f2a37548a1b87ca52e0bed8, type: 2}
-    actionSequence: {fileID: 11400000, guid: 9079fa34163ceac42bd344ce83ef9ee0, type: 2}
-    completionEvent: {fileID: 11400000, guid: e86ffd79bfd5c23498665c919b71a10b, type: 2}
-  currentAgeGroup: 0
+    actionSequence: {fileID: 11400000, guid: d274269cee653614e96b99d6a0877987, type: 2}
+    completionEvent: {fileID: 11400000, guid: 0e50f57a8b794ed489c33c9f0efe3ec9, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: faae77205b64baa41b5cbd10c5f4a0db, type: 2}
+    actionSequence: {fileID: 11400000, guid: 91a9d0b54cf10fc4782157f3e2237c6b, type: 2}
+    completionEvent: {fileID: 11400000, guid: 19e901ed119049b4da0278334c115828, type: 2}
+  currentAgeGroup: 2
   activeShowableObjects: []
   activeShowableObjectsIds: 

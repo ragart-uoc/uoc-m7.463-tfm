@@ -12,16 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
   m_Name: IceCreamParlor
   m_EditorClassIdentifier: 
-  levelName: Level_IceCreamParlor
+  sceneName: Level_IceCreamParlor
   sceneAsset: {fileID: 102900000, guid: 5311e5d2783592f4a982e74de9c12f03, type: 3}
   initialAgeGroup: 0
   levelSequenceEvents:
   - triggerEvent: {fileID: 0}
-    actionSequence: {fileID: 11400000, guid: 8480d7ee95cbc2342988103384a935f3, type: 2}
-    completionEvent: {fileID: 11400000, guid: 22e682d83e234dc4dbdcb83bfd4a6564, type: 2}
-  - triggerEvent: {fileID: 11400000, guid: cd9462fd82f573e46a774c3d6628e74f, type: 2}
-    actionSequence: {fileID: 11400000, guid: 6463762fe7252da4e9e31220e93052a3, type: 2}
-    completionEvent: {fileID: 11400000, guid: a8361e69559901c46bffbedda71644ec, type: 2}
+    actionSequence: {fileID: 11400000, guid: c15f46e8289cc8a43be49d103b2553b8, type: 2}
+    completionEvent: {fileID: 11400000, guid: 4f7ee9051a9e75c428e1437520c599c3, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: dd6a79f81b3403846bad572de79e48e9, type: 2}
+    actionSequence: {fileID: 11400000, guid: bc138798c173c8c4b8e4e669ac81f1e6, type: 2}
+    completionEvent: {fileID: 11400000, guid: df6a92fc478671c40bb15f3a161cf8a7, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: f52130651b9d56f4b849d41c77172545, type: 2}
+    actionSequence: {fileID: 11400000, guid: cfd122a73d7109848b82c616a68116ec, type: 2}
+    completionEvent: {fileID: 11400000, guid: 2b0b2db3c69c3964ba12bb55d2971fb8, type: 2}
   currentAgeGroup: 0
   activeShowableObjects: []
-  activeShowableObjectsIds: 
+  activeShowableObjectsIds: f28303004a8403005684030068840300728403008a8403009a840300a4840300be840300ea840300f4840300008503000a850300

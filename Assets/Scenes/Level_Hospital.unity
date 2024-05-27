@@ -841,8 +841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb0a92b97621144e861eeddaab87b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableEvents:
-  - {fileID: 11400000, guid: 8e5151ccf1c251c4f8ea5d78b8fa0b4d, type: 2}
+  availableEvents: {fileID: 11400000, guid: 2a9c09ee4af07624e9d313996aa90d5f, type: 2}
 --- !u!4 &1316684213
 Transform:
   m_ObjectHideFlags: 0
@@ -991,9 +990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db8d0466a8cff04cafc7f50c431edfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableItems:
-  - {fileID: 11400000, guid: 6174f8e4661118744932981e35c804f4, type: 2}
-  - {fileID: 11400000, guid: 256a242404876ed43b899bda7d31ec98, type: 2}
+  availableItems: {fileID: 11400000, guid: cce36ffd95d893d4bbe04e57e23e2ec5, type: 2}
   pickedItems: []
   discardedItems: []
 --- !u!4 &2004321658
@@ -1041,7 +1038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameStateData:
-    currentSceneName: 
+    currentLevelName: 
     events: []
     levels: []
     items: []

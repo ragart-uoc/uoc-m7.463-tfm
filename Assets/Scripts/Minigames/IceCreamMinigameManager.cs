@@ -1,5 +1,8 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TFM.Entities;
 using TFM.Managers;
 using TMPro;
 using UnityEngine;
@@ -16,24 +19,58 @@ namespace TFM.Minigames
     {
         /// <value>Property <c>Instance</c> represents the singleton instance of the class.</value>
         public static IceCreamMinigameManager Instance;
+        
+        #region General
+        
+            /// <value>Property <c>timeLimit</c> represents the time limit.</value>
+            public float timeLimit = 5f;
+        
+            /// <value>Property <c>completionEvent</c> represents the completion event.</value>
+            public Event completionEvent;
+            
+        #endregion
+        
+        #region UI
 
-        /// <value>Property <c>customerSelectionPanel</c> represents the customer selection panel.</value>
-        public Transform customerSelectionPanel;
-        
-        /// <value>Property <c>timerText</c> represents the timer text.</value>
-        public TextMeshProUGUI timerText;
-        
-        /// <value>Property <c>timeLimit</c> represents the time limit.</value>
-        public float timeLimit = 5f;
-        
-        /// <value>Property <c>playerSelectionPanel</c> represents the player selection panel.</value>
-        public Transform playerSelectionPanel;
+            /// <value>Property <c>customerSelectionPanel</c> represents the customer selection panel.</value>
+            [Header("UI")]
+            public Transform customerSelectionPanel;
+            
+            /// <value>Property <c>timerText</c> represents the timer text.</value>
+            public TextMeshProUGUI timerText;
+            
+            /// <value>Property <c>playerSelectionPanel</c> represents the player selection panel.</value>
+            public Transform playerSelectionPanel;
 
-        /// <value>Property <c>playerSelectedPanel</c> represents the player selected panel.</value>
-        public Transform playerSelectedPanel;
+            /// <value>Property <c>playerSelectedPanel</c> represents the player selected panel.</value>
+            public Transform playerSelectedPanel;
+            
+            /// <value>Property <c>playerSelectionButtonPrefab</c> represents the player selection button prefab.</value>
+            public GameObject playerSelectionButtonPrefab;
         
-        /// <value>Property <c>playerSelectionButtonPrefab</c> represents the player selection button prefab.</value>
-        public GameObject playerSelectionButtonPrefab;
+        #endregion
+        
+        #region Dialogue
+        
+            /// <value>Property <c>successActor</c> represents the success actor.</value>
+            public DialogueActor successActor;
+            
+            /// <value>Property <c>failActor</c> represents the fail actor.</value>
+            public DialogueActor failActor;
+            
+            /// <value>Property <c>successDialogues</c> represents the success dialogues.</value>
+            public string[] successDialogues;
+            
+            /// <value>Property <c>_successDialogueIndex</c> represents the success dialogue index.</value>
+            private int _successDialogueIndex;
+            
+            /// <value>Property <c>failDialogues</c> represents the fail dialogues.</value>
+            public string[] failDialogues;
+            
+            /// <value>Property <c>_failDialogueIndex</c> represents the fail dialogue index.</value>
+            private int _failDialogueIndex;
+            
+        #endregion
 
         /// <value>Property <c>_colors</c> represents the colors.</value>
         private readonly Color[] _colors =
@@ -60,9 +97,6 @@ namespace TFM.Minigames
         /// <value>Property <c>_gameActive</c> represents if the game is active.</value>
         private bool _gameActive;
         
-        /// <value>Property <c>completionEvent</c> represents the completion event.</value>
-        public Event completionEvent;
-        
         /// <value>Property <c>_victoryCount</c> represents the victory count.</value>
         private int _victoryCount;
 
@@ -83,7 +117,7 @@ namespace TFM.Minigames
         /// <summary>
         /// Method <c>Start</c> is called before the first frame update.
         /// </summary>
-        private void Start()
+        private IEnumerator Start()
         {
             foreach (Transform child in playerSelectionPanel)
                 Destroy(child.gameObject);
@@ -94,6 +128,8 @@ namespace TFM.Minigames
                 button.onClick.AddListener(() => AddColor(color));
             }
             _playerSelection = new List<Color>();
+            UIManager.Instance.ShowDialogue(successActor, "Come on, brother. Let's play! Serve me the ice cream I want.");
+            yield return new WaitForSeconds(1f);
             StartNewOrder();
         }
 
@@ -119,7 +155,7 @@ namespace TFM.Minigames
         /// </summary>
         private void StartNewOrder()
         {
-            if (_victoryCount >= 5)
+            if (_victoryCount >= successDialogues.Length)
             {
                 EventManager.Instance.UpsertEventState(completionEvent, true);
                 CustomSceneManager.Instance.LoadLevel("IceCreamParlor");
@@ -162,19 +198,38 @@ namespace TFM.Minigames
             {
                 if (_currentRequest.Where((t, i) => t != _playerSelection[i]).Any())
                 {
-                    StartCoroutine(UIManager.Instance.ShowMessage("Wrong!", 2f));
-                    StartNewOrder();
+                    ShowFailDialogue(StartNewOrder);
                     return;
                 }
-                StartCoroutine(UIManager.Instance.ShowMessage("Correct!", 2f));
                 _victoryCount++;
-                StartNewOrder();
+                ShowSuccessDialogue(StartNewOrder);
             }
             else
             {
-                StartCoroutine(UIManager.Instance.ShowMessage("Incomplete!", 2f));
-                StartNewOrder();
+                ShowFailDialogue(StartNewOrder);
             }
+        }
+        
+        /// <summary>
+        /// Method <c>ShowSuccessDialogue</c> shows the dialogue.
+        /// </summary>
+        private void ShowSuccessDialogue(Action callback = null)
+        {
+            var message = successDialogues[_successDialogueIndex];
+            _successDialogueIndex = (_successDialogueIndex + 1) % successDialogues.Length;
+            UIManager.Instance.ShowDialogue(successActor, message);
+            callback?.Invoke();
+        }
+
+        /// <summary>
+        /// Method <c>ShowFailDialogue</c> shows the dialogue.
+        /// </summary>
+        private void ShowFailDialogue(Action callback = null)
+        {
+            var message = failDialogues[_failDialogueIndex];
+            _failDialogueIndex = (_failDialogueIndex + 1) % failDialogues.Length;
+            UIManager.Instance.ShowDialogue(failActor, message);
+            callback?.Invoke();
         }
     }
 }

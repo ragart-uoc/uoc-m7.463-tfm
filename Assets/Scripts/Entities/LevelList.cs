@@ -9,6 +9,7 @@ namespace TFM.Entities
     [CreateAssetMenu(fileName = "LevelList", menuName = "Custom/LevelList")]
     public class LevelList : ScriptableObject
     {
+        /// <value>Property <c>levels</c> represents the levels.</value>
         public List<Level> levels = new List<Level>();
         
         /// <value>Property <c>levelsFolder</c> represents the levels folder.</value>

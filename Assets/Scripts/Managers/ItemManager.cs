@@ -34,14 +34,14 @@ namespace TFM.Managers
         #region Items
         
             /// <value>Property <c>availableItems</c> represents the available items.</value>
-            public List<Item> availableItems;
+            public ItemList availableItems;
             
             /// <value>Property <c>pickedItems</c> represents the picked items.</value>
-            [HideInInspector]
+            //[HideInInspector]
             public List<Item> pickedItems;
             
             /// <value>Property <c>discardedItems</c> represents the discarded items.</value>
-            [HideInInspector]
+            //[HideInInspector]
             public List<Item> discardedItems;
             
         #endregion
@@ -159,13 +159,20 @@ namespace TFM.Managers
             discardedItems.Clear();
             foreach (var itemData in data)
             {
-                var item = availableItems.Find(i => i.Title == itemData.itemName);
+                var item = availableItems.items.Find(i => i.Title == itemData.itemName);
                 if (item == null)
                     continue;
-                if (itemData.itemState == ItemData.ItemState.Picked)
-                    pickedItems.Add(item);
-                else
-                    discardedItems.Add(item);
+                switch (itemData.itemState)
+                {
+                    case ItemData.ItemState.Picked 
+                        when !pickedItems.Contains(item):
+                        pickedItems.Add(item);
+                        break;
+                    case ItemData.ItemState.Discarded 
+                        when !discardedItems.Contains(item):
+                        discardedItems.Add(item);
+                        break;
+                }
             }
         }
     }

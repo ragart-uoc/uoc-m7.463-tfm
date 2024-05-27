@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using TFM.Entities;
+using Event = TFM.Entities.Event;
 
 namespace TFM.Managers
 {
@@ -59,7 +60,8 @@ namespace TFM.Managers
         /// </summary>
         private void OnEnable()
         {
-            GameManager.Instance.Ready += OnGameReady;
+            GameManager.Instance.Ready += HandleGameReady;
+            EventManager.Instance.EventTriggered += HandleEventTriggered;
         }
         
         /// <summary>
@@ -67,15 +69,16 @@ namespace TFM.Managers
         /// </summary>
         private void OnDisable()
         {
-            GameManager.Instance.Ready -= OnGameReady;
+            GameManager.Instance.Ready -= HandleGameReady;
+            EventManager.Instance.EventTriggered -= HandleEventTriggered;
         }
         
         /// <summary>
-        /// Method <c>OnGameReady</c> is called when the game is ready.
+        /// Method <c>HandleGameReady</c> is called when the game is ready.
         /// </summary>
         /// <param name="levelName">The name of the level.</param>
         /// <param name="sceneName">The name of the scene.</param>
-        private void OnGameReady(string levelName, string sceneName)
+        private void HandleGameReady(string levelName, string sceneName)
         {
             _currentLevelName = levelName;
             
@@ -103,6 +106,14 @@ namespace TFM.Managers
             // Fade out the overlay
             UIManager.Instance.FadeOverlay(0f, 2f, Initialize);
         }
+        
+        /// <summary>
+        /// Method <c>HandleEventTriggered</c> handles the event triggered.
+        /// </summary>
+        private void HandleEventTriggered(Event e)
+        {
+            ExecuteActionSequences(UpdateLevel);
+        }
 
         /// <summary>
         /// Method <c>Initialize</c> initializes the level.
@@ -121,13 +132,12 @@ namespace TFM.Managers
             foreach (var levelSequenceEvent in
                 from levelSequenceEvent in _levels[_currentLevelName].levelSequenceEvents
                 where levelSequenceEvent.actionSequence != null
-                where levelSequenceEvent.completionEvent != null
-                    && !EventManager.Instance.GetEventState(levelSequenceEvent.completionEvent)
                 where levelSequenceEvent.triggerEvent == null
                     || EventManager.Instance.GetEventState(levelSequenceEvent.triggerEvent)
+                where levelSequenceEvent.completionEvent == null
+                      || !EventManager.Instance.GetEventState(levelSequenceEvent.completionEvent)
                 select levelSequenceEvent)
             {
-                EventManager.Instance.UpsertEventState(levelSequenceEvent.completionEvent, true);
                 levelSequenceEvent.actionSequence.ExecuteSequence(callback);
                 return;
             }
@@ -227,6 +237,17 @@ namespace TFM.Managers
         public string GetCurrentLevelName()
         {
             return _currentLevelName;
+        }
+
+        /// <summary>
+        /// Method <c>ChangeAgeGroup</c> changes the age group.
+        /// </summary>
+        /// <param name="ageGroup">The age group.</param>
+        public void ChangeAgeGroup(AgeGroupProperties.Groups ageGroup)
+        {
+            UIManager.Instance.EnableInteractions(false);
+            _levels[_currentLevelName].currentAgeGroup = ageGroup;
+            UpdateLevel();
         }
     }
 }

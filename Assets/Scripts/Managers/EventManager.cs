@@ -29,7 +29,7 @@ namespace TFM.Managers
         #region Events
 
             /// <value>Property <c>AvailableEvents</c> represents the available events.</value>
-            public List<Event> availableEvents;
+            public EventList availableEvents;
             
             /// <value>Property <c>Events</c> represents the events.</value>
             public readonly Dictionary<Event, bool> Events = new Dictionary<Event, bool>();
@@ -51,7 +51,7 @@ namespace TFM.Managers
             DontDestroyOnLoad(gameObject);
             
             // Initialize the events
-            foreach (var e in availableEvents)
+            foreach (var e in availableEvents.events)
                 Events.Add(e, false);
         }
 
@@ -106,8 +106,9 @@ namespace TFM.Managers
             Events.Clear();
             foreach (var eventData in data)
             {
-                var eventObject = availableEvents.Find(e => e.eventName == eventData.eventName);
-                if (eventObject != null)
+                var eventObject = availableEvents.events.Find(e => e.eventName == eventData.eventName);
+                if (eventObject != null
+                        && !Events.ContainsKey(eventObject))
                     Events.Add(eventObject, eventData.eventState);
             }
         }

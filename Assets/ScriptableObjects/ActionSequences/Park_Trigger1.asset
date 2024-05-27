@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: Park_Trigger1
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 2928997344236273750
+  - rid: 2928997344236273751
+  - rid: 2928997344236273752
+  - rid: 2928997344236273753
+  - rid: 2928997344236273754
+  references:
+    version: 2
+    RefIds:
+    - rid: 2928997344236273750
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: We used to go to the park everyday.
+        position: 0
+    - rid: 2928997344236273751
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: It gave us peace. The peace I did not have growing up.
+        position: 0
+    - rid: 2928997344236273752
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 172b4a38f45121e4fb5a1af3ce0f2e91, type: 2}
+        dialogueLine: ...
+        position: 1
+    - rid: 2928997344236273753
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 2928997344236273754
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 89733ddce0c679742a7da967a9a3a6b6, type: 2}

@@ -43,6 +43,9 @@ namespace TFM.Entities
                 
                 switch (actionName)
                 {
+                    case "MessageShowAction":
+                        EditorGUILayout.LabelField("Show Message Action", EditorStyles.boldLabel);
+                        break;
                     case "DialogueShowAction":
                         EditorGUILayout.LabelField("Show Dialogue Action", EditorStyles.boldLabel);
                         break;
@@ -55,9 +58,21 @@ namespace TFM.Entities
                     case "EventTriggerAction":
                         EditorGUILayout.LabelField("Trigger Event Action", EditorStyles.boldLabel);
                         break;
+                    case "LevelChangeAgeGroupAction":
+                        EditorGUILayout.LabelField("Change Age Group Action", EditorStyles.boldLabel);
+                        break;
                 }
 
-                if (actionType.EndsWith("DialogueShowAction"))
+                if (actionType.EndsWith("MessageShowAction"))
+                {
+                    var messageProp = actionProp.FindPropertyRelative("message");
+                    var durationProp = actionProp.FindPropertyRelative("duration");
+                    var afterMessageProp = actionProp.FindPropertyRelative("afterMessage");
+                    EditorGUILayout.PropertyField(messageProp, new GUIContent("Message"));
+                    EditorGUILayout.PropertyField(durationProp, new GUIContent("Duration"));
+                    EditorGUILayout.PropertyField(afterMessageProp, new GUIContent("After Message"));
+                }
+                else if (actionType.EndsWith("DialogueShowAction"))
                 {
                     var actorProp = actionProp.FindPropertyRelative("actor");
                     var dialogueLineProp = actionProp.FindPropertyRelative("dialogueLine");
@@ -82,9 +97,15 @@ namespace TFM.Entities
                     var eventObjectProp = actionProp.FindPropertyRelative("eventObject");
                     EditorGUILayout.PropertyField(eventObjectProp, new GUIContent("Event"));
                 }
+                else if (actionType.EndsWith("LevelChangeAgeGroupAction"))
+                {
+                    var ageGroupProp = actionProp.FindPropertyRelative("ageGroup");
+                    EditorGUILayout.PropertyField(ageGroupProp, new GUIContent("Age Group"));
+                }
                 var waitForInputProp = actionProp.FindPropertyRelative("waitForInput");
                 waitForInputProp.intValue = EditorGUILayout.Popup(waitForInputProp.displayName, waitForInputProp.intValue, new[] {"No", "Yes"});
 
+                EditorGUILayout.Space();
                 EditorGUILayout.BeginHorizontal();
 
                 if (GUILayout.Button("Remove Action"))
@@ -94,6 +115,12 @@ namespace TFM.Entities
                 }
 
                 EditorGUILayout.EndHorizontal();
+                EditorGUILayout.Space();
+            }
+            
+            if (GUILayout.Button("Add Show Message Action"))
+            {
+                AddAction<MessageShowAction>();
             }
 
             if (GUILayout.Button("Add Show Dialogue Action"))
@@ -114,6 +141,11 @@ namespace TFM.Entities
             if (GUILayout.Button("Add Trigger Event Action"))
             {
                 AddAction<EventTriggerAction>();
+            }
+            
+            if (GUILayout.Button("Add Change Age Group Action"))
+            {
+                AddAction<LevelChangeAgeGroupAction>();
             }
 
             serializedObject.ApplyModifiedProperties();
