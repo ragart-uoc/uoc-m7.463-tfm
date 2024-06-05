@@ -237,6 +237,8 @@ namespace TFM.Managers
             /// <param name="alpha">The alpha of the overlay.</param>
             public void ShowHideOverlay(bool show = true, float alpha = 1.0f)
             {
+                if (fadeOverlay == null)
+                    return;
                 if (show)
                 {
                     fadeOverlay.GetComponent<CanvasRenderer>().SetAlpha(alpha);

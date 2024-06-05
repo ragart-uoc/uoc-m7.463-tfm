@@ -36,8 +36,8 @@ MonoBehaviour:
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 4758097754426bb4680565bf187ee294, type: 2}
-        dialogueLine: Sir, you need to hover over them with your mouse and push the
-          mouse left button.
+        dialogueLine: Sir, you need to hover over them with your mouse and click
+          the left button.
         position: 1
     - rid: 2928997344236273674
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
@@ -51,7 +51,7 @@ MonoBehaviour:
       data:
         waitForInput: 1
         actor: {fileID: 11400000, guid: 4758097754426bb4680565bf187ee294, type: 2}
-        dialogueLine: Just hover over the item and hold the mouse right button. Select
+        dialogueLine: Just hover over the item and hold the right button. Select
           which object you want to use and then release the button
         position: 1
     - rid: 2928997344236273676
