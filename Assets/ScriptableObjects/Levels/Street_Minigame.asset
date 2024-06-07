@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
+  m_Name: Street_Minigame
+  m_EditorClassIdentifier: 
+  sceneName: Minigame_Street
+  sceneAsset: {fileID: 102900000, guid: 293accbdc2677b240a38078c5150aebb, type: 3}
+  initialAgeGroup: 1
+  levelSequenceEvents: []
+  currentAgeGroup: 0
+  activeShowableObjects: []
+  activeShowableObjectsIds: 

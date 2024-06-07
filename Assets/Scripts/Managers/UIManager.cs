@@ -65,6 +65,9 @@ namespace TFM.Managers
             
             /// <value>Property <c>dialogueText</c> represents the dialogue text.</value>
             public TextMeshProUGUI dialogueText;
+            
+            /// <value>Property <c>_dialogueCoroutine</c> represents the dialogue coroutine.</value>
+            private Coroutine _dialogueCoroutine;
         
         #endregion
         
@@ -195,6 +198,10 @@ namespace TFM.Managers
             /// <param name="position">The position of the actor. 0 is left, 1 is right.</param>
             public void ShowDialogue(DialogueActor actor, string text, int position = 0)
             {
+                // Stop the dialogue coroutine if it is running
+                if (_dialogueCoroutine != null)
+                    StopCoroutine(_dialogueCoroutine);
+
                 // Remove all childs of the dialogue actor container
                 foreach (Transform child in dialogueActorContainer)
                     Destroy(child.gameObject);
@@ -224,6 +231,37 @@ namespace TFM.Managers
             public void HideDialogue()
             {
                 dialogue.gameObject.SetActive(false);
+            }
+            
+            /// <summary>
+            /// Method <c>ShowDialogueTimed</c> shows a dialogue for a duration.
+            /// </summary>
+            /// <param name="actor">The actor object.</param>
+            /// <param name="text">The text.</param>
+            /// <param name="duration">The duration to show the dialogue.</param>
+            /// <param name="position">The position of the actor. 0 is left, 1 is right.</param>
+            public void ShowDialogueTimed(DialogueActor actor, string text, float duration = 3f, int position = 0)
+            {
+                // Stop the dialogue coroutine if it is running
+                if (_dialogueCoroutine != null)
+                    StopCoroutine(_dialogueCoroutine);
+                
+                // Show the dialogue for a duration
+                _dialogueCoroutine = StartCoroutine(ShowDialogueTimedCoroutine(actor, text, duration, position));
+            }
+
+            /// <summary>
+            /// Coroutine <c>ShowDialogueTimed</c> shows a dialogue for a duration.
+            /// </summary>
+            /// <param name="actor">The actor object.</param>
+            /// <param name="text">The text.</param>
+            /// <param name="duration">The duration to show the dialogue.</param>
+            /// <param name="position">The position of the actor. 0 is left, 1 is right.</param>
+            private IEnumerator ShowDialogueTimedCoroutine(DialogueActor actor, string text, float duration = 3f, int position = 0)
+            {
+                ShowDialogue(actor, text, position);
+                yield return new WaitForSeconds(duration);
+                HideDialogue();
             }
 
         #endregion

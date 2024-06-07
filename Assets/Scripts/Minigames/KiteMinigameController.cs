@@ -8,14 +8,12 @@ namespace TFM.Minigames
     /// </summary>
     public class KiteMinigameController : MonoBehaviour
     {
-        /// <value>Property <c>moveSpeed</c> represents the move speed.</value>
-        public float moveSpeed = 5f;
         
         /// <value>Property <c>mainCamera</c> represents the main camera.</value>
         public Camera mainCamera;
         
-        /// <value>Property <c>_isGameOver</c> represents if the game is over.</value>
-        private bool _isGameOver;
+        /// <value>Property <c>moveSpeed</c> represents the move speed.</value>
+        private float _moveSpeed;
         
         /// <value>Property <c>_moveInput</c> represents the move input.</value>
         private Vector2 _moveInput;
@@ -36,7 +34,7 @@ namespace TFM.Minigames
         /// </summary>
         private void Start()
         {
-            _isGameOver = false;
+            _moveSpeed = KiteMinigameManager.Instance.kiteMoveSpeed;
             mainCamera = mainCamera ?? Camera.main;
         }
         
@@ -70,12 +68,10 @@ namespace TFM.Minigames
         /// </summary>
         private void Update()
         {
-            if (_isGameOver)
-                return;
             var screenToWorldPosition = new Vector3(_moveInput.x, _moveInput.y, -mainCamera.transform.position.z);
             var mousePosition = mainCamera.ScreenToWorldPoint(screenToWorldPosition);
-            var newPosition = new Vector3(transform.position.x, Mathf.Clamp(mousePosition.y, -4.5f, 4.5f), transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, newPosition, moveSpeed * Time.deltaTime);
+            var newPosition = new Vector3(transform.position.x, Mathf.Clamp(mousePosition.y, 2.5f, 12f), transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, newPosition, _moveSpeed * Time.deltaTime);
         }
 
         /// <summary>
@@ -87,9 +83,7 @@ namespace TFM.Minigames
             switch (col.gameObject.tag)
             {
                 case "KiteObstacle":
-                    _isGameOver = true;
                     KiteMinigameManager.Instance.GameOver();
-                    gameObject.SetActive(false);
                     break;
                 case "KiteScore":
                     KiteMinigameManager.Instance.IncreaseScore();
