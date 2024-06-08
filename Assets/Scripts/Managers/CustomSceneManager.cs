@@ -65,6 +65,7 @@ namespace TFM.Managers
                 return;
             }
             Instance = this;
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
             
             // Get the current scene name
@@ -83,20 +84,28 @@ namespace TFM.Managers
         /// Method <c>LoadLevel</c> loads new level.
         /// </summary>
         /// <param name="levelName">The level name.</param>
-        public void LoadLevel(string levelName)
+        /// <param name="destroyPersistentManagers">Whether to destroy persistent managers.</param>
+        public void LoadLevel(string levelName, bool destroyPersistentManagers = false)
         {
-            StartCoroutine(LoadLevelCoroutine(levelName));
+            StartCoroutine(LoadLevelCoroutine(levelName, destroyPersistentManagers));
         }
 
         /// <summary>
         /// Method <c>LoadLevelCoroutine</c> loads the level.
         /// </summary>
         /// <param name="levelName">The level name.</param>
-        private IEnumerator LoadLevelCoroutine(string levelName)
+        /// <param name="destroyPersistentManagers">Whether to destroy persistent managers.</param>
+        private IEnumerator LoadLevelCoroutine(string levelName, bool destroyPersistentManagers = false)
         {
             OnUnloadLevel(_currentLevelName, _currentSceneName);
             _nextSceneName = _levels[levelName];
             _nextLevelName = levelName;
+            if (destroyPersistentManagers)
+            {
+                DestroyPersistentManagers();
+                SceneManager.LoadScene(_nextSceneName, LoadSceneMode.Single);
+                yield break;
+            }
             var asyncLevelLoad = SceneManager.LoadSceneAsync(_nextSceneName, LoadSceneMode.Single);
             while (!asyncLevelLoad!.isDone)
                 yield return null;
@@ -111,6 +120,16 @@ namespace TFM.Managers
         private void OnUnloadLevel(string levelName, string sceneName)
         {
             UnloadedLevel?.Invoke(levelName, sceneName);
+        }
+        
+        /// <summary>
+        /// Method <c>DestroyPersistentManagers</c> destroys the persistent managers.
+        /// </summary>
+        private void DestroyPersistentManagers()
+        {
+            var persistentManagers = GameObject.FindGameObjectsWithTag("PersistentManager");
+            foreach (var manager in persistentManagers)
+                Destroy(manager.gameObject);
         }
     }
 }

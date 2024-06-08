@@ -48,6 +48,7 @@ namespace TFM.Managers
                 return;
             }
             Instance = this;
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
             
             // Initialize the events

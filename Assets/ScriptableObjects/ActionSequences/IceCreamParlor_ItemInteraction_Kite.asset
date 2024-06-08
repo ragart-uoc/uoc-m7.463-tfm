@@ -50,3 +50,4 @@ MonoBehaviour:
         waitForInput: 0
         level: {fileID: 11400000, guid: db4356b774dde1f45a5b5f7c0b0f8226, type: 2}
         fadeOverlay: 1
+        destroyPersistentManagers: 0

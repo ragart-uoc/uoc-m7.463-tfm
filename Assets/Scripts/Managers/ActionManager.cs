@@ -27,6 +27,7 @@ namespace TFM.Managers
                 return;
             }
             Instance = this;
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
         }
         
@@ -48,10 +49,10 @@ namespace TFM.Managers
         /// <returns>Returns the coroutine.</returns>
         private IEnumerator ExecuteSequenceCoroutine(List<ActionBase> sequenceActions, Action callback = null)
         {
-            UIManager.Instance.SetStatusBarText("");
+            UIManager.Instance?.SetStatusBarText("");
             foreach (var action in sequenceActions)
             {
-                UIManager.Instance.EnableInteractions(false);
+                UIManager.Instance?.EnableInteractions(false);
                 action.Execute();
                 yield return new WaitForSeconds(1f);
                 if (action.waitForInput == 1)

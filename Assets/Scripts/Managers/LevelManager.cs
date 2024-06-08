@@ -52,6 +52,7 @@ namespace TFM.Managers
                 return;
             }
             Instance = this;
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
         }
 
@@ -237,6 +238,15 @@ namespace TFM.Managers
         public string GetCurrentLevelName()
         {
             return _currentLevelName;
+        }
+        
+        /// <summary>
+        /// Method <c>CurrentLevelAllowsPause</c> checks if the current level allows pause.
+        /// </summary>
+        /// <returns>Whether the level allows pause.</returns>
+        public bool CurrentLevelAllowsPause()
+        {
+            return _levels[_currentLevelName].enablePause;
         }
 
         /// <summary>

@@ -85,8 +85,10 @@ namespace TFM.Entities
                 {
                     var levelProp = actionProp.FindPropertyRelative("level");
                     var fadeOverlayProp = actionProp.FindPropertyRelative("fadeOverlay");
+                    var destroyPersistentManagers = actionProp.FindPropertyRelative("destroyPersistentManagers");
                     EditorGUILayout.PropertyField(levelProp, new GUIContent("Level"));
                     fadeOverlayProp.intValue = EditorGUILayout.Popup(fadeOverlayProp.displayName, fadeOverlayProp.intValue, new[] {"No", "Yes"});
+                    destroyPersistentManagers.intValue = EditorGUILayout.Popup(destroyPersistentManagers.displayName, destroyPersistentManagers.intValue, new[] {"No", "Yes"});
                 }
                 else if (actionType.EndsWith("DialogueHideAction"))
                 {

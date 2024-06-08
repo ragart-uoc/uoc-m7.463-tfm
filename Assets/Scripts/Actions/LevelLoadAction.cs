@@ -15,13 +15,16 @@ namespace TFM.Actions
         /// <value>Property <c>fadeOverlay</c> represents the fade overlay.</value>
         public int fadeOverlay;
 
+        /// <value>Property <c>destroyPersistentManagers</c> represents the destroy persistent managers.</value>
+        public int destroyPersistentManagers;
+
         /// <summary>
         /// Method <c>Execute</c> executes the action.
         /// </summary>
         public override void Execute()
         {
             if (fadeOverlay == 1)
-                UIManager.Instance.FadeOverlay(1.0f, 3.0f, LevelLoad);
+                UIManager.Instance?.FadeOverlay(1.0f, 3.0f, LevelLoad);
             else
                 LevelLoad();
         }
@@ -31,7 +34,7 @@ namespace TFM.Actions
         /// </summary>
         private void LevelLoad()
         {
-            CustomSceneManager.Instance.LoadLevel(level.name);
+            CustomSceneManager.Instance.LoadLevel(level.name, destroyPersistentManagers == 1);
         }
     }
 }

@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 19681334}
   m_Layer: 0
-  m_Name: Non-Persistent Managers
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1253705713}
-  - {fileID: 1277280892}
+  - {fileID: 1319583079}
+  - {fileID: 1834432414}
+  - {fileID: 1640074629}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &293136234
@@ -739,24 +741,33 @@ MonoBehaviour:
   textContainer: {fileID: 759962752896896420}
   clipSource: {fileID: 1253705715}
   musicSource: {fileID: 951755844}
+  waitAfterLastFrame: 10
   introFrames:
   - text: I remember the laughter... the simple joys.
     audioClip: {fileID: 8300000, guid: 3d365f3a14caa6049b1741229a878a57, type: 3}
     image: {fileID: 21300000, guid: b798214720af95141be3f3237a17af5f, type: 3}
+    objectsToActivate: []
   - text: I remember the warmth of family... the bonds we shared.
     audioClip: {fileID: 8300000, guid: 9f2b4bebffc6b6343848e95a9e98fec2, type: 3}
     image: {fileID: 21300000, guid: 92627ff7dcf3aaf46a332f16f7f8c501, type: 3}
+    objectsToActivate: []
   - text: I remember the innocence of childhood... the excitement of those days.
     audioClip: {fileID: 8300000, guid: 06ecc7663f209be45bfbb733848ea235, type: 3}
     image: {fileID: 21300000, guid: 71c4e7f048b2e9a47a624a0e087ab358, type: 3}
+    objectsToActivate: []
   - text: I remember the loneliness... searching for my place.
     audioClip: {fileID: 8300000, guid: 614f241827e30774abb0201bf2160e83, type: 3}
     image: {fileID: 21300000, guid: 2670fa11ed27be34aa0e6707afa226af, type: 3}
+    objectsToActivate: []
   - text: I remember the pain... moments I wish I could forget.
     audioClip: {fileID: 8300000, guid: 025f9e0709de0024cbf1027f260d0f84, type: 3}
     image: {fileID: 21300000, guid: aab0d80bb21bb124aa943a6bead557f2, type: 3}
-  lastFrameAudio: {fileID: 8300000, guid: 22733f4f409e3e548afe8ded6355d081, type: 3}
-  lastFrameText: {fileID: 293136235}
+    objectsToActivate: []
+  - text: 
+    audioClip: {fileID: 8300000, guid: 22733f4f409e3e548afe8ded6355d081, type: 3}
+    image: {fileID: 0}
+    objectsToActivate:
+    - {fileID: 293136234}
 --- !u!82 &1253705715
 AudioSource:
   m_ObjectHideFlags: 0
@@ -853,62 +864,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1277280891
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1277280892}
-  - component: {fileID: 1277280893}
-  m_Layer: 0
-  m_Name: UIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1277280892
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277280891}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 19681334}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1277280893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277280891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ce13e92e4f3ff4eb670b05b8feac46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radialMenu: {fileID: 0}
-  statusBar: {fileID: 0}
-  notice: {fileID: 0}
-  noticeIcon: {fileID: 0}
-  noticeAction: {fileID: 0}
-  noticeText: {fileID: 0}
-  dialogue: {fileID: 0}
-  dialogueActorContainer: {fileID: 0}
-  dialogueActorName: {fileID: 0}
-  dialogueText: {fileID: 0}
-  fadeOverlay: {fileID: 0}
-  saveIndicator: {fileID: 0}
 --- !u!1 &1319583078
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +894,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 19681334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1319583080
 MonoBehaviour:
@@ -1091,7 +1046,7 @@ GameObject:
   - component: {fileID: 1640074630}
   m_Layer: 0
   m_Name: ActionManager
-  m_TagString: Untagged
+  m_TagString: PersistentManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1109,7 +1064,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 19681334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1640074630
 MonoBehaviour:
@@ -1213,7 +1168,7 @@ GameObject:
   - component: {fileID: 1834432413}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: PersistentManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1235,6 +1190,10 @@ MonoBehaviour:
     events: []
     levels: []
     items: []
+  gameStateSaveFilename: savegame.json
+  newGameLevel: {fileID: 11400000, guid: 0f97e745ad348d744ad0f7294b7a7a05, type: 2}
+  mainMenuLevel: {fileID: 11400000, guid: ae7bef56a368e45418f6feb0187d7954, type: 2}
+  continueLevel: {fileID: 11400000, guid: 2e8518a3628869549969d84a8dbea919, type: 2}
 --- !u!4 &1834432414
 Transform:
   m_ObjectHideFlags: 0
@@ -1248,7 +1207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 19681334}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2070367175
 GameObject:
@@ -1427,6 +1386,3 @@ SceneRoots:
   - {fileID: 1207991967}
   - {fileID: 1764079729}
   - {fileID: 19681334}
-  - {fileID: 1319583079}
-  - {fileID: 1834432414}
-  - {fileID: 1640074629}

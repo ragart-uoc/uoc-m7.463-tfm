@@ -87,6 +87,23 @@ namespace TFM.Managers
             
         #endregion
         
+        #region Pause menu
+        
+            /// <value>Property <c>pauseMenu</c> represents the pause menu game object.</value>
+            [Header("Pause Menu")]
+            public GameObject pauseMenu;
+            
+            /// <value>Property <c>pauseResumeButton</c> represents the pause resume button.</value>
+            public Button pauseResumeButton;
+            
+            /// <value>Property <c>pauseSettingsButton</c> represents the pause settings button.</value>
+            public Button pauseMainMenuButton;
+            
+            /// <value>Property <c>pauseQuitButton</c> represents the pause quit button.</value>
+            public Button pauseQuitButton;
+        
+        #endregion
+        
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
         /// </summary>
@@ -357,6 +374,18 @@ namespace TFM.Managers
                     yield return null;
                 }
                 saveIndicator.transform.rotation = Quaternion.identity;
+            }
+            
+        #endregion
+        
+        #region Pause menu
+        
+            /// <summary>
+            /// Method <c>TogglePauseMenu</c> toggles the pause menu.
+            /// </summary>
+            public void TogglePauseMenu()
+            {
+                pauseMenu.SetActive(!pauseMenu.activeSelf);
             }
             
         #endregion

@@ -23,6 +23,9 @@ namespace TFM.Entities
         
         /// <value>Property <c>activeShowableObjectsIds</c> represents the active showable objects IDs.</value>
         public int[] activeShowableObjectsIds;
+
+        /// <value>Property <c>enablePause</c> represents whether the pause is enabled.</value>
+        public bool enablePause;
         
         /// <summary>
         /// Method <c>LevelData</c> is the constructor of the class.
@@ -31,13 +34,15 @@ namespace TFM.Entities
         /// <param name="initialAgeGroup">The initial age group.</param>
         /// <param name="currentAgeGroup">The current age group.</param>
         /// <param name="activeShowableObjectsIds">The active showable objects IDs.</param>
-        public LevelData(string sceneName, AgeGroupProperties.Groups initialAgeGroup, AgeGroupProperties.Groups currentAgeGroup, int[] activeShowableObjectsIds)
+        /// <param name="enablePause">Whether the pause is enabled.</param>
+        public LevelData(string sceneName, AgeGroupProperties.Groups initialAgeGroup, AgeGroupProperties.Groups currentAgeGroup, int[] activeShowableObjectsIds, bool enablePause = true)
         {
             this.sceneName = sceneName;
             this.initialAgeGroup = initialAgeGroup;
             this.currentAgeGroup = currentAgeGroup;
             this.activeShowableObjects = Array.Empty<GameObject>();
             this.activeShowableObjectsIds = activeShowableObjectsIds;
+            this.enablePause = enablePause;
         }
         
         /// <summary>

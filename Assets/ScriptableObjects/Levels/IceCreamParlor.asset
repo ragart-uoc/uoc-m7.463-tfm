@@ -28,3 +28,4 @@ MonoBehaviour:
   currentAgeGroup: 0
   activeShowableObjects: []
   activeShowableObjectsIds: f28303004a8403005684030068840300728403008a8403009a840300a4840300be840300ea840300f4840300008503000a850300
+  enablePause: 1

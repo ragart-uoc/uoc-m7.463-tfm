@@ -18,7 +18,8 @@ MonoBehaviour:
   - rid: 2928997344236273697
   - rid: 2928997344236273698
   - rid: 2928997344236273699
-  - rid: 2928997344236273700
+  - rid: 3820998803169476608
+  - rid: 3820998803169476609
   references:
     version: 2
     RefIds:
@@ -52,9 +53,15 @@ MonoBehaviour:
       data:
         waitForInput: 0
         eventObject: {fileID: 11400000, guid: 8fcc92e6790176d4884ec6de9d37bed8, type: 2}
-    - rid: 2928997344236273700
+    - rid: 3820998803169476608
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 5a455f71de154e048b001579fe482b74, type: 2}
+    - rid: 3820998803169476609
       type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
         level: {fileID: 11400000, guid: 611c7b11c3321d04e87a96e336a04bb3, type: 2}
         fadeOverlay: 1
+        destroyPersistentManagers: 1

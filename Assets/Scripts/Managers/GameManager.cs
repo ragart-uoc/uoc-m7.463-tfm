@@ -32,9 +32,25 @@ namespace TFM.Managers
             
             /// <value>Property <c>gameStateData</c> represents the game state data.</value>
             public GameStateData gameStateData;
+            
+            /// <value>Property <c>gameStateSaveFilename</c> represents the name of the save file.</value>
+            public string gameStateSaveFilename = "savegame.json";
 
             /// <value>Property <c>_gameStateSavePath</c> represents the path to the save file.</value>
             private string _gameStateSavePath;
+            
+        #endregion
+        
+        #region Levels
+        
+            /// <value>Property <c>newGameLevel</c> represents the new game level.</value>
+            public Level newGameLevel;
+            
+            /// <value>Property <c>mainMenuLevel</c> represents the main menu level.</value>
+            public Level mainMenuLevel;
+            
+            /// <value>Property <c>continueLevel</c> represents the continue level.</value>
+            public Level continueLevel;
             
         #endregion
 
@@ -50,12 +66,11 @@ namespace TFM.Managers
                 return;
             }
             Instance = this;
-            
-            // Don't destroy the game manager on load
+            transform.parent = null;
             DontDestroyOnLoad(gameObject);
             
             // Set the path to the save file
-            _gameStateSavePath = Path.Combine(Application.persistentDataPath, "savegame.json");
+            _gameStateSavePath = Path.Combine(Application.persistentDataPath, gameStateSaveFilename);
         }
 
         /// <summary>
@@ -63,7 +78,7 @@ namespace TFM.Managers
         /// </summary>
         public void Start()
         {
-            UIManager.Instance.EnableInteractions(false);
+            UIManager.Instance?.EnableInteractions(false);
         }
 
         /// <summary>
@@ -100,7 +115,7 @@ namespace TFM.Managers
             }
             if (LevelManager.Instance != null)
                 LevelManager.Instance.LevelUpdated += HandleLevelUpdated;
-            UIManager.Instance.EnableInteractions(false);
+            UIManager.Instance?.EnableInteractions(false);
             Ready?.Invoke(levelName, sceneName);
         }
         
@@ -163,7 +178,7 @@ namespace TFM.Managers
         /// </summary>
         public void SaveGameState()
         {
-            UIManager.Instance.SetSaveIndicator(2.0f);
+            UIManager.Instance?.SetSaveIndicator(2.0f);
             var currentLevelName = LevelManager.Instance.GetCurrentLevelName();
             var events = EventManager.Instance.ExportData();
             var levels = LevelManager.Instance.ExportData();
@@ -185,6 +200,55 @@ namespace TFM.Managers
             if (loadScene
                     && !string.IsNullOrEmpty(gameStateData.currentLevelName))
                 CustomSceneManager.Instance.LoadLevel(gameStateData.currentLevelName);
+        }
+
+        /// <summary>
+        /// Method <c>StartGame</c> starts the game.
+        /// </summary>
+        public void StartGame()
+        {
+            // Destroy save file and GameManager
+            if (File.Exists(_gameStateSavePath))
+                File.Delete(_gameStateSavePath);
+            Destroy(GameManager.Instance.gameObject);
+            CustomSceneManager.Instance.LoadLevel(newGameLevel.name);
+        }
+        
+        /// <summary>
+        /// Method <c>LoadGame</c> loads the game.
+        /// </summary>
+        public void LoadGame()
+        {
+            CustomSceneManager.Instance.LoadLevel(continueLevel.name);
+        }
+        
+        /// <summary>
+        /// Method <c>MainMenu</c> loads the main menu.
+        /// </summary>
+        public void MainMenu()
+        {
+            StopAllCoroutines();
+            CustomSceneManager.Instance.LoadLevel(mainMenuLevel.name, true);
+        }
+
+        /// <summary>
+        /// Method <c>QuitGame</c> is used to quit the game.
+        /// </summary>
+        public void QuitGame()
+        {
+            Application.Quit();
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+            #endif
+        }
+        
+        /// <summary>
+        /// Method <c>ExistsSaveData</c> checks if save data exists.
+        /// </summary>
+        /// <returns>Whether save data exists.</returns>
+        public bool ExistsSaveData()
+        {
+            return File.Exists(_gameStateSavePath);
         }
     }
 }

@@ -19,3 +19,4 @@ MonoBehaviour:
   currentAgeGroup: 0
   activeShowableObjects: []
   activeShowableObjectsIds: 
+  enablePause: 1

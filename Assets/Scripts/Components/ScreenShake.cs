@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace TFM
+namespace TFM.Components
 {
     public class ScreenShake : MonoBehaviour
     {

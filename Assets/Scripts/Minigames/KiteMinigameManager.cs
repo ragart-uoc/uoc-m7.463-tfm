@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using TFM.Components;
 using TFM.Entities;
 using TFM.Managers;
 using Event = TFM.Entities.Event;

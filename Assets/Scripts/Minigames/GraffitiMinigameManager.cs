@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using TFM.Components;
 using TFM.Entities;
 using TFM.Managers;
 using Event = TFM.Entities.Event;

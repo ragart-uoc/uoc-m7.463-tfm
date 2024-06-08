@@ -15,10 +15,8 @@ MonoBehaviour:
   sceneName: ToBeContinued
   sceneAsset: {fileID: 102900000, guid: 44fea496e39b8d34697aaabe1e9c4b07, type: 3}
   initialAgeGroup: 4
-  levelSequenceEvents:
-  - triggerEvent: {fileID: 0}
-    actionSequence: {fileID: 11400000, guid: fd867009f350f6c458666947ad214730, type: 2}
-    completionEvent: {fileID: 11400000, guid: 5a455f71de154e048b001579fe482b74, type: 2}
+  levelSequenceEvents: []
   currentAgeGroup: 4
   activeShowableObjects: []
   activeShowableObjectsIds: 
+  enablePause: 0

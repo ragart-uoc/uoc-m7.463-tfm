@@ -15,8 +15,8 @@ namespace TFM.Entities
         public string sceneName;
         
         #if UNITY_EDITOR
-        /// <value>Property <c>sceneAsset</c> represents the scene asset.</value>
-        public SceneAsset sceneAsset;
+            /// <value>Property <c>sceneAsset</c> represents the scene asset.</value>
+            public SceneAsset sceneAsset;
         #endif
         
         /// <value>Property <c>initialAgeGroup</c> represents the initial age group.</value>
@@ -25,7 +25,7 @@ namespace TFM.Entities
         /// <value>Property <c>levelSequenceEvents</c> represents the level sequence events.</value>
         public List<EventTriggerActionSequence> levelSequenceEvents;
         
-        /// <value>Property <c>levelData</c> represents the level data.</value>
+        /// <value>Property <c>currentAgeGroup</c> represents the current age group.</value>
         [HideInInspector]
         public AgeGroupProperties.Groups currentAgeGroup;
         
@@ -36,5 +36,8 @@ namespace TFM.Entities
         /// <value>Property <c>activeShowableObjectsIds</c> represents the active showable objects IDs.</value>
         [HideInInspector]
         public int[] activeShowableObjectsIds;
+
+        /// <value>Property <c>enablePause</c> represents whether the pause is enabled.</value>
+        public bool enablePause;
     }
 }
