@@ -26,6 +26,9 @@ namespace TFM.Entities
         /// <value>Property <c>iconSprite</c> represents the icon image.</value>
         public Image icon;
         
+        /// <value>Property <c>radialMenu</c> represents the radial menu.</value>
+        public RadialMenu radialMenu;
+        
         /// <value>Property <c>radialMenuOption</c> represents the radial menu option.</value>
         public RadialMenuOption radialMenuOption;
         
@@ -35,12 +38,12 @@ namespace TFM.Entities
         /// <param name="eventData">The pointer event data.</param>
         public void OnPointerEnter(PointerEventData eventData)
         {
-            var color = background.color;
-            background.color = new Color(color.r, color.g, color.b, 1.0f);
+            SetBackgroundAlpha(radialMenu.backgroundAlphaEnter);
             switch (type)
             {
                 case Type.Inner:
                     UIManager.Instance.radialMenu.SpawnOuterMenu(radialMenuOption.type);
+                    UIManager.Instance.SetStatusBarText(radialMenuOption.type.ToString());
                     break;
                 case Type.Outer when radialMenuOption.item != null:
                     var targetName = UIManager.Instance.radialMenu.target.GetComponent<ObjectInteractable>().itemName;
@@ -56,18 +59,17 @@ namespace TFM.Entities
         /// <param name="eventData">The pointer event data.</param>
         public void OnPointerExit(PointerEventData eventData)
         {
+            SetBackgroundAlpha(radialMenu.backgroundAlphaExit);
+        }
+        
+        /// <summary>
+        /// Method <c>SetBackgroundAlpha</c> sets the background alpha.
+        /// </summary>
+        /// <param name="alpha">The alpha.</param>
+        public void SetBackgroundAlpha(float alpha)
+        {
             var color = background.color;
-            background.color = new Color(color.r, color.g, color.b, 0.5f);
-            switch (type)
-            {
-                case Type.Inner:
-                    break;
-                case Type.Outer when radialMenuOption.item != null:
-                    var targetName = UIManager.Instance.radialMenu.target.GetComponent<ObjectInteractable>().itemName;
-                    UIManager.Instance.radialMenu.targetItem = null;
-                    UIManager.Instance.SetStatusBarText(targetName);
-                    break;
-            }
+            background.color = new Color(color.r, color.g, color.b, alpha);
         }
     }
 }

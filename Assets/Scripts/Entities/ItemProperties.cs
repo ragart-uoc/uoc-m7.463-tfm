@@ -12,7 +12,7 @@ namespace TFM.Entities
             Places,
             Things,
             Events,
-            Ideas
+            Feelings
         }
     }
 }

@@ -1427,24 +1427,24 @@ MonoBehaviour:
   target: {fileID: 0}
   targetItem: {fileID: 0}
   innerOptions:
-  - icon: {fileID: 21300000, guid: 4e12f993cf532e0408a28108527f46c0, type: 3}
+  - icon: {fileID: 21300000, guid: d09c441b9bb8a604b84b5a0aec5ca33c, type: 3}
     title: People
     type: 0
     item: {fileID: 0}
-  - icon: {fileID: 21300000, guid: ec4b309bc04e59a42bf14f0519d8cc24, type: 3}
+  - icon: {fileID: 21300000, guid: 4d0161dce4460d6408d6aa250388cd0d, type: 3}
     title: Places
     type: 1
     item: {fileID: 0}
-  - icon: {fileID: 21300000, guid: a305e58f47f14e44c8c07c86b559513f, type: 3}
-    title: Events
-    type: 3
-    item: {fileID: 0}
-  - icon: {fileID: 21300000, guid: eba0fcdb40e363d4ab7ae829067f091f, type: 3}
+  - icon: {fileID: 21300000, guid: dca676f73179ced43ae338c7a269a118, type: 3}
     title: Things
     type: 2
     item: {fileID: 0}
-  - icon: {fileID: 21300000, guid: 0e7267cddd061e448b514fdc46ad8efc, type: 3}
-    title: Ideas
+  - icon: {fileID: 21300000, guid: 5ce619576c22588489890d917d7b5e6f, type: 3}
+    title: Events
+    type: 3
+    item: {fileID: 0}
+  - icon: {fileID: 21300000, guid: 746a321dd432fba4580d47bacd69f604, type: 3}
+    title: Feelings
     type: 4
     item: {fileID: 0}
   innerOptionPrefab: {fileID: 4662982921955760164, guid: 3972cb2cb8b453d4b842246ef1bd31da, type: 3}

@@ -19,6 +19,12 @@ namespace TFM.Entities
             /// <value>Property <c>targetItem</c> represents the target item.</value>
             public Item targetItem;
             
+            /// <value>Property <c>backgroundAlphaEnter</c> represents the background alpha when the pointer enters the object.</value>
+            public float backgroundAlphaEnter = 0.5f;
+            
+            /// <value>Property <c>backgroundAlphaExit</c> represents the background alpha when the pointer exits the object.</value>
+            public float backgroundAlphaExit = 0.1f;
+            
         #endregion
 
         #region Inner menu
@@ -125,6 +131,9 @@ namespace TFM.Entities
                 // Instantiate the radial menu option UI prefab
                 radialMenuOptionUIs[i] = Instantiate(radialMenuOptionUIPrefab, radialMenuOptionContainer ?? transform);
                 
+                // Set the radial menu reference
+                radialMenuOptionUIs[i].radialMenu = this;
+                
                 // Set the radial menu option
                 radialMenuOptionUIs[i].radialMenuOption = radialMenuOptions[i];
                 
@@ -132,8 +141,7 @@ namespace TFM.Entities
                 radialMenuOptionUIs[i].background.fillAmount = (1.0f / radialMenuOptions.Length) - (GapBetweenOptions / 360.0f);
                 radialMenuOptionUIs[i].background.transform.localRotation = Quaternion.Euler(
                     0, 0, degreesPerOption / 2.0f + GapBetweenOptions / 2.0f + i * degreesPerOption);
-                var optionColor = radialMenuOptionUIs[i].background.color;
-                radialMenuOptionUIs[i].background.color = new Color(optionColor.r, optionColor.g, optionColor.b, 0.5f);
+                radialMenuOptionUIs[i].SetBackgroundAlpha(backgroundAlphaExit);
                 
                 // Set the icon and position
                 radialMenuOptionUIs[i].icon.sprite = radialMenuOptions[i].icon;

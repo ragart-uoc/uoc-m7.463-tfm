@@ -1,7 +1,8 @@
 using System;
-using TFM.Actions;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using TFM.Actions;
 using TFM.Managers;
 
 namespace TFM.Entities
@@ -215,6 +216,7 @@ namespace TFM.Entities
             _isKeyPressed = true;
             UIManager.Instance.EnableInteractions(false);
             UIManager.Instance.radialMenu.Open(transform);
+            Mouse.current.WarpCursorPosition(new Vector2(Screen.width / 2.0f, Screen.height / 2.0f));
         }
         
         /// <summary>
@@ -223,6 +225,7 @@ namespace TFM.Entities
         private void HandleRightClickUp()
         {
             _isKeyPressed = false;
+            UIManager.Instance.SetStatusBarText(string.Empty);
             UIManager.Instance.EnableInteractions();
             UIManager.Instance.radialMenu.Close();
         }

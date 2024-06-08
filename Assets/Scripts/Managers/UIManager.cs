@@ -177,6 +177,7 @@ namespace TFM.Managers
             private IEnumerator ShowMessageCoroutine(string message, float duration = 3f, string afterMessage = "")
             {
                 statusBar.text = message;
+                statusBar.transform.parent.gameObject.SetActive(!string.IsNullOrEmpty(message));
                 yield return new WaitForSeconds(duration);
                 statusBar.text = afterMessage;
                 statusBar.transform.parent.gameObject.SetActive(!string.IsNullOrEmpty(afterMessage));

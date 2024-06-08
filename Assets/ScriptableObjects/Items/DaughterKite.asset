@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde683cf73e203643a212087956f3f36, type: 3}
   m_Name: DaughterKite
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: a9f19237ba8fe594083d072e3769eb92, type: 3}
+  icon: {fileID: 21300000, guid: a1172d63dc7af3442b939948c5b7042c, type: 3}
   title: Daughter's kite
   description: My daughter's kite
   type: 2
