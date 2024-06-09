@@ -15,8 +15,10 @@ MonoBehaviour:
   sceneName: Minigame_Street
   sceneAsset: {fileID: 102900000, guid: 293accbdc2677b240a38078c5150aebb, type: 3}
   initialAgeGroup: 1
-  levelSequenceEvents: []
   currentAgeGroup: 0
   activeShowableObjects: []
   activeShowableObjectsIds: 
   enablePause: 1
+  enablePhotoAlbum: 0
+  photoAlbumRequiredEvents: []
+  levelSequenceEvents: []

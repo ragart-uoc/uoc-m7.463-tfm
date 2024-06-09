@@ -15,6 +15,12 @@ MonoBehaviour:
   sceneName: Level_Park
   sceneAsset: {fileID: 102900000, guid: ec85d4faffbd6894f99d9e7bef027e72, type: 3}
   initialAgeGroup: 2
+  currentAgeGroup: 2
+  activeShowableObjects: []
+  activeShowableObjectsIds: 
+  enablePause: 1
+  enablePhotoAlbum: 1
+  photoAlbumRequiredEvents: []
   levelSequenceEvents:
   - triggerEvent: {fileID: 0}
     actionSequence: {fileID: 11400000, guid: d274269cee653614e96b99d6a0877987, type: 2}
@@ -22,7 +28,3 @@ MonoBehaviour:
   - triggerEvent: {fileID: 11400000, guid: faae77205b64baa41b5cbd10c5f4a0db, type: 2}
     actionSequence: {fileID: 11400000, guid: 91a9d0b54cf10fc4782157f3e2237c6b, type: 2}
     completionEvent: {fileID: 11400000, guid: 19e901ed119049b4da0278334c115828, type: 2}
-  currentAgeGroup: 2
-  activeShowableObjects: []
-  activeShowableObjectsIds: 
-  enablePause: 1

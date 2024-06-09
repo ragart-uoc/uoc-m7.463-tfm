@@ -41,6 +41,7 @@ namespace TFM.Entities
                 var sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
                 // Update the scene name in the Level scriptable object
                 level.sceneName = sceneName;
+                EditorUtility.SetDirty(level);
                 // Add the level to the level list
                 if (!levelList.levels.Contains(level))
                     levelList.levels.Add(level);

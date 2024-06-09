@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
   m_Name: Street
   m_EditorClassIdentifier: 
-  sceneName: Street
+  sceneName: Level_Street
   sceneAsset: {fileID: 102900000, guid: 0e66ae632a6d39f4ea5420a26de0e2c5, type: 3}
   initialAgeGroup: 1
-  levelSequenceEvents: []
   currentAgeGroup: 0
   activeShowableObjects: []
   activeShowableObjectsIds: 
   enablePause: 1
+  enablePhotoAlbum: 1
+  photoAlbumRequiredEvents: []
+  levelSequenceEvents: []

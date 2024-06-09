@@ -101,11 +101,7 @@ namespace TFM.Managers
             _nextSceneName = _levels[levelName];
             _nextLevelName = levelName;
             if (destroyPersistentManagers)
-            {
                 DestroyPersistentManagers();
-                SceneManager.LoadScene(_nextSceneName, LoadSceneMode.Single);
-                yield break;
-            }
             var asyncLevelLoad = SceneManager.LoadSceneAsync(_nextSceneName, LoadSceneMode.Single);
             while (!asyncLevelLoad!.isDone)
                 yield return null;

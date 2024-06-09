@@ -15,6 +15,12 @@ MonoBehaviour:
   sceneName: Level_Room
   sceneAsset: {fileID: 102900000, guid: 762571b0f886e0f4e80a91aeaeff0687, type: 3}
   initialAgeGroup: 4
+  currentAgeGroup: 4
+  activeShowableObjects: []
+  activeShowableObjectsIds: 
+  enablePause: 1
+  enablePhotoAlbum: 0
+  photoAlbumRequiredEvents: []
   levelSequenceEvents:
   - triggerEvent: {fileID: 0}
     actionSequence: {fileID: 11400000, guid: 06168b2fbf89b1d4c881d66c688aa264, type: 2}
@@ -22,7 +28,3 @@ MonoBehaviour:
   - triggerEvent: {fileID: 11400000, guid: bc595c02200ac484ea9cd5955c3573a7, type: 2}
     actionSequence: {fileID: 11400000, guid: 58c8468471d2d2347bd7eb33371429a5, type: 2}
     completionEvent: {fileID: 11400000, guid: 982727ffe45fe4a45bd25db5a15031e7, type: 2}
-  currentAgeGroup: 4
-  activeShowableObjects: []
-  activeShowableObjectsIds: 8c7a0300ac7a0300e67a0300
-  enablePause: 1

@@ -9,40 +9,31 @@ namespace TFM.Entities
     [Serializable]
     public struct LevelData
     {
+        /// <value>Property <c>name</c> represents the name.</value>
+        public string name;
+
         /// <value>Property <c>sceneName</c> represents the scene name.</value>
         public string sceneName;
-        
-        /// <value>Property <c>initialAgeGroup</c> represents the initial age group.</value>
-        public AgeGroupProperties.Groups initialAgeGroup;
         
         /// <value>Property <c>currentAgeGroup</c> represents the current age group.</value>
         public AgeGroupProperties.Groups currentAgeGroup;
         
-        /// <value>Property <c>activeShowableObjects</c> represents the active showable objects.</value>
-        public GameObject[] activeShowableObjects;
-        
         /// <value>Property <c>activeShowableObjectsIds</c> represents the active showable objects IDs.</value>
         public int[] activeShowableObjectsIds;
-
-        /// <value>Property <c>enablePause</c> represents whether the pause is enabled.</value>
-        public bool enablePause;
         
         /// <summary>
         /// Method <c>LevelData</c> is the constructor of the class.
         /// </summary>
+        /// <param name="name">The level name.</param>
         /// <param name="sceneName">The scene name.</param>
-        /// <param name="initialAgeGroup">The initial age group.</param>
         /// <param name="currentAgeGroup">The current age group.</param>
         /// <param name="activeShowableObjectsIds">The active showable objects IDs.</param>
-        /// <param name="enablePause">Whether the pause is enabled.</param>
-        public LevelData(string sceneName, AgeGroupProperties.Groups initialAgeGroup, AgeGroupProperties.Groups currentAgeGroup, int[] activeShowableObjectsIds, bool enablePause = true)
+        public LevelData(string name, string sceneName, AgeGroupProperties.Groups currentAgeGroup, int[] activeShowableObjectsIds)
         {
+            this.name = name;
             this.sceneName = sceneName;
-            this.initialAgeGroup = initialAgeGroup;
             this.currentAgeGroup = currentAgeGroup;
-            this.activeShowableObjects = Array.Empty<GameObject>();
             this.activeShowableObjectsIds = activeShowableObjectsIds;
-            this.enablePause = enablePause;
         }
         
         /// <summary>

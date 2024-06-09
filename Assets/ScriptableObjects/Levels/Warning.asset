@@ -15,8 +15,10 @@ MonoBehaviour:
   sceneName: 2_Warning
   sceneAsset: {fileID: 102900000, guid: 49c01d50a067c7e448611d6707b7fd95, type: 3}
   initialAgeGroup: 4
-  levelSequenceEvents: []
   currentAgeGroup: 0
   activeShowableObjects: []
   activeShowableObjectsIds: 
   enablePause: 0
+  enablePhotoAlbum: 0
+  photoAlbumRequiredEvents: []
+  levelSequenceEvents: []

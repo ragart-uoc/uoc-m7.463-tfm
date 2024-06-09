@@ -73,6 +73,12 @@ namespace TFM.Managers
             GameManager.Instance.Ready -= HandleGameReady;
             EventManager.Instance.EventTriggered -= HandleEventTriggered;
         }
+
+        [SerializeField]
+        private Level[] showAvailableLevels;
+
+        [SerializeField]
+        private Level[] showLevels;
         
         /// <summary>
         /// Method <c>HandleGameReady</c> is called when the game is ready.
@@ -82,15 +88,19 @@ namespace TFM.Managers
         private void HandleGameReady(string levelName, string sceneName)
         {
             _currentLevelName = levelName;
-            
+
             // Initialize the levels
-            foreach (var level in CustomSceneManager.Instance.availableLevels.levels)
+            foreach (var level in CustomSceneManager.Instance.availableLevels.levels
+                         .Select(Level.CreateInstanceFromAnother))
             {
                 if (!_levels.TryAdd(level.name, level))
                     _levels[level.name] = level;
                 _levels[level.name].currentAgeGroup = level.initialAgeGroup;
                 _levels[level.name].activeShowableObjects = Array.Empty<GameObject>();
             }
+
+            showAvailableLevels = CustomSceneManager.Instance.availableLevels.levels.ToArray();
+            showLevels = _levels.Values.ToArray();
             
             // Import data
             ImportData(GameManager.Instance.gameStateData.levels);
@@ -181,7 +191,8 @@ namespace TFM.Managers
                     showableObject.SetActive(false);
                 var showableComponent = showableObject.GetComponent<ObjectShowable>();
                 var shouldShow = showableComponent.CheckConditions(EventManager.Instance.Events, currentLevel.currentAgeGroup);
-                var wasActive = activeShowableObjectsSet.Contains(showableObject) || activeShowableObjectsIdsSet.Contains(showableObject.GetInstanceID());
+                var wasActive = activeShowableObjectsSet.Contains(showableObject)
+                                || activeShowableObjectsIdsSet.Contains(showableObject.GetInstanceID());
                 var isActive = showableObject.activeSelf;
                 switch (shouldShow)
                 {
@@ -209,11 +220,14 @@ namespace TFM.Managers
                 .Select(showableObject => showableObject.GetInstanceID())
                 .ToArray();
             return _levels
-                .Select(levelObject => new LevelData(levelObject.Key, levelObject.Value.initialAgeGroup,
-                    levelObject.Value.currentAgeGroup, levelObject.Value.activeShowableObjectsIds))
+                .Select(levelObject => new LevelData(
+                    levelObject.Key,
+                    levelObject.Value.sceneName,
+                    levelObject.Value.currentAgeGroup,
+                    levelObject.Value.activeShowableObjectsIds))
                 .ToList();
         }
-        
+
         /// <summary>
         /// Method <c>ImportData</c> imports the data.
         /// </summary>
@@ -222,16 +236,15 @@ namespace TFM.Managers
         {
             if (data == null)
                 return;
-            foreach (var level in data
-                         .Select(levelData => CustomSceneManager.Instance.availableLevels.levels
-                             .Find(l => l.sceneName == levelData.sceneName))
-                         .Where(level => level != null))
+            foreach (var levelData in data)
             {
-                if (_levels.TryAdd(level.name, level))
-                    _levels[level.name] = level;
+                if (!_levels.TryGetValue(levelData.name, out var level))
+                    continue;
+                level.ImportData(levelData);
             }
+            showLevels = _levels.Values.ToArray(); // DEBUG
         }
-        
+
         /// <summary>
         /// Method <c>GetCurrentLevelName</c> gets the current level name.
         /// </summary>

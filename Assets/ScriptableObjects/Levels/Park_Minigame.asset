@@ -15,8 +15,10 @@ MonoBehaviour:
   sceneName: Minigame_Park
   sceneAsset: {fileID: 102900000, guid: 5a4c52a0df107f64eb2bf65270b9f95a, type: 3}
   initialAgeGroup: 2
-  levelSequenceEvents: []
   currentAgeGroup: 0
   activeShowableObjects: []
   activeShowableObjectsIds: 
   enablePause: 1
+  enablePhotoAlbum: 0
+  photoAlbumRequiredEvents: []
+  levelSequenceEvents: []

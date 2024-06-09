@@ -15,11 +15,13 @@ MonoBehaviour:
   sceneName: Level_Tutorial
   sceneAsset: {fileID: 102900000, guid: 9e4af7afe2bb86e4abe3d35193b72a0e, type: 3}
   initialAgeGroup: 4
+  currentAgeGroup: 4
+  activeShowableObjects: []
+  activeShowableObjectsIds: 
+  enablePause: 1
+  enablePhotoAlbum: 0
+  photoAlbumRequiredEvents: []
   levelSequenceEvents:
   - triggerEvent: {fileID: 0}
     actionSequence: {fileID: 11400000, guid: 9cda38806e519d24b95b72a823a99d73, type: 2}
     completionEvent: {fileID: 11400000, guid: 8e5151ccf1c251c4f8ea5d78b8fa0b4d, type: 2}
-  currentAgeGroup: 4
-  activeShowableObjects: []
-  activeShowableObjectsIds: 2c4601004c460100
-  enablePause: 1

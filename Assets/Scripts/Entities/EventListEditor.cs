@@ -35,6 +35,7 @@ namespace TFM.Entities
                 var eventFile = AssetDatabase.LoadAssetAtPath<Event>(AssetDatabase.GUIDToAssetPath(eventAsset));
                 // Set the event name from the event file name
                 eventFile.eventName = eventFile.name;
+                EditorUtility.SetDirty(eventFile);
                 // Add the event to the event list
                 if (!eventList.events.Contains(eventFile))
                     eventList.events.Add(eventFile);

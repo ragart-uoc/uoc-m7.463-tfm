@@ -15,6 +15,12 @@ MonoBehaviour:
   sceneName: Level_IceCreamParlor
   sceneAsset: {fileID: 102900000, guid: 5311e5d2783592f4a982e74de9c12f03, type: 3}
   initialAgeGroup: 0
+  currentAgeGroup: 0
+  activeShowableObjects: []
+  activeShowableObjectsIds: 
+  enablePause: 1
+  enablePhotoAlbum: 1
+  photoAlbumRequiredEvents: []
   levelSequenceEvents:
   - triggerEvent: {fileID: 0}
     actionSequence: {fileID: 11400000, guid: c15f46e8289cc8a43be49d103b2553b8, type: 2}
@@ -25,7 +31,3 @@ MonoBehaviour:
   - triggerEvent: {fileID: 11400000, guid: f52130651b9d56f4b849d41c77172545, type: 2}
     actionSequence: {fileID: 11400000, guid: cfd122a73d7109848b82c616a68116ec, type: 2}
     completionEvent: {fileID: 11400000, guid: 2b0b2db3c69c3964ba12bb55d2971fb8, type: 2}
-  currentAgeGroup: 0
-  activeShowableObjects: []
-  activeShowableObjectsIds: f28303004a8403005684030068840300728403008a8403009a840300a4840300be840300ea840300f4840300008503000a850300
-  enablePause: 1

@@ -26,6 +26,9 @@ namespace TFM.Managers.SceneManagers
                 return;
             }
             Instance = this;
+            // Enable the time scale and audio listener in case it comes from the pause menu
+            Time.timeScale = 1;
+            AudioListener.pause = false;
         }
 
         /// <summary>
