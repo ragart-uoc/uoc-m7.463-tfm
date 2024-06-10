@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Childhood
+  m_text: Region
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3a9c938d77819f443aa9b6b096d863f4, type: 2}
   m_sharedMaterial: {fileID: -7243883169250763323, guid: 3a9c938d77819f443aa9b6b096d863f4, type: 2}
@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 2035587402302924958}
   - component: {fileID: 1663011765889844764}
   - component: {fileID: 4119191666773644060}
+  - component: {fileID: 7530319615422194125}
   m_Layer: 5
   m_Name: AlbumPhotoPlaceholder
   m_TagString: Untagged
@@ -209,6 +210,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7530319615422194125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203028454609840285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6123a1b9171533a428b28f48e881fafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 11400000, guid: 95a3d47454fbe264db1833881b6fe962, type: 2}
 --- !u!1 &2836060089840734075
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,6 +234,7 @@ GameObject:
   - component: {fileID: 2984665317936242772}
   - component: {fileID: 7712662169526029868}
   - component: {fileID: 4856173907018159688}
+  - component: {fileID: 1013245800209250342}
   m_Layer: 5
   m_Name: AlbumPhotoPlaceholder
   m_TagString: Untagged
@@ -284,6 +299,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1013245800209250342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2836060089840734075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6123a1b9171533a428b28f48e881fafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 0}
 --- !u!1 &3299813796550172841
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +323,7 @@ GameObject:
   - component: {fileID: 6591174086899525545}
   - component: {fileID: 6990268682384053237}
   - component: {fileID: 4432339832449083182}
+  - component: {fileID: 3650401201308191378}
   m_Layer: 5
   m_Name: AlbumPhotoPlaceholder
   m_TagString: Untagged
@@ -359,6 +388,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3650401201308191378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3299813796550172841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6123a1b9171533a428b28f48e881fafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 11400000, guid: db4356b774dde1f45a5b5f7c0b0f8226, type: 2}
 --- !u!1 &3529047140087509982
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3100667045406445793}
+  - component: {fileID: 5386556496131927288}
   m_Layer: 5
   m_Name: UI_AlbumRegion
   m_TagString: Untagged
@@ -397,6 +440,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5386556496131927288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3529047140087509982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a020ef9c44406d347a36466e2cb7a832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ageGroup: 4
+  lockedRegionIndicator: {fileID: 2918906484662158633}
 --- !u!1 &5413660727698983393
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +465,7 @@ GameObject:
   - component: {fileID: 5926943313869634882}
   - component: {fileID: 7569956451110701961}
   - component: {fileID: 2804092046651142702}
+  - component: {fileID: 988742029157524385}
   m_Layer: 5
   m_Name: AlbumPhotoPlaceholder
   m_TagString: Untagged
@@ -472,6 +530,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &988742029157524385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5413660727698983393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6123a1b9171533a428b28f48e881fafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 11400000, guid: f43a65bfc32fd46469b60a473f7d3e36, type: 2}
 --- !u!1 &6138423016555790513
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,6 +554,7 @@ GameObject:
   - component: {fileID: 7261891086179595363}
   - component: {fileID: 7553536411289071291}
   - component: {fileID: 6890068744496020216}
+  - component: {fileID: 5237813968812909515}
   m_Layer: 5
   m_Name: AlbumPhotoPlaceholder
   m_TagString: Untagged
@@ -547,6 +619,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5237813968812909515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6138423016555790513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6123a1b9171533a428b28f48e881fafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 0}
 --- !u!1 &6627453853078128471
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +643,7 @@ GameObject:
   - component: {fileID: 127425700052567641}
   - component: {fileID: 5952584487297830838}
   - component: {fileID: 3505052413313416090}
+  - component: {fileID: 1460610877914216552}
   m_Layer: 5
   m_Name: AlbumPhotoPlaceholder
   m_TagString: Untagged
@@ -622,6 +708,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1460610877914216552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6627453853078128471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6123a1b9171533a428b28f48e881fafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 0}
 --- !u!1 &7105679651788037348
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +732,7 @@ GameObject:
   - component: {fileID: 9164696969521256450}
   - component: {fileID: 5763274572469898647}
   - component: {fileID: 4641605487547327070}
+  - component: {fileID: 2735793695202136206}
   m_Layer: 5
   m_Name: AlbumPhotoPlaceholder
   m_TagString: Untagged
@@ -697,6 +797,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2735793695202136206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7105679651788037348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6123a1b9171533a428b28f48e881fafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 0}
 --- !u!1 &7187153976097775462
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,8 +823,9 @@ GameObject:
   - component: {fileID: 2487825615559678557}
   - component: {fileID: 4069027644734398020}
   - component: {fileID: 536697428390790774}
+  - component: {fileID: 6490825218438292857}
   m_Layer: 5
-  m_Name: AlbumRegionPhotos
+  m_Name: AlbumPhotoPlaceholders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -820,6 +934,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!114 &6490825218438292857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7187153976097775462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 0, b: 0, a: 0}
+  m_EffectDistance: {x: 4, y: 4}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7377891419790556074
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +960,7 @@ GameObject:
   - component: {fileID: 4540053555860740670}
   - component: {fileID: 6378484198238115012}
   - component: {fileID: 6506425978012308329}
+  - component: {fileID: 3156193679861312208}
   m_Layer: 5
   m_Name: AlbumPhotoPlaceholder
   m_TagString: Untagged
@@ -895,6 +1025,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3156193679861312208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7377891419790556074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6123a1b9171533a428b28f48e881fafe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 0}
 --- !u!1 &7924397845840940585
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,12 +1050,12 @@ GameObject:
   - component: {fileID: 3705765321179843758}
   - component: {fileID: 5591164202871766190}
   m_Layer: 5
-  m_Name: AlbumRegionCrossed
+  m_Name: AlbumRegionLocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2918906484662158633
 RectTransform:
   m_ObjectHideFlags: 0

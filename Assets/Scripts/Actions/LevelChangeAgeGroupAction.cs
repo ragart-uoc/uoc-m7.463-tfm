@@ -17,7 +17,7 @@ namespace TFM.Actions
         /// </summary>
         public override void Execute()
         {
-            LevelManager.Instance.ChangeAgeGroup(ageGroup);
+            LevelManager.Instance.CurrentLevelChangeAgeGroup(ageGroup);
         }
     }
 }

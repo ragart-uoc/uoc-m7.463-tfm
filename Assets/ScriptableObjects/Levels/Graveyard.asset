@@ -19,8 +19,11 @@ MonoBehaviour:
   activeShowableObjects: []
   activeShowableObjectsIds: 
   enablePause: 1
-  enablePhotoAlbum: 0
-  photoAlbumRequiredEvents: []
+  hasAlbumPhoto: 0
+  albumPhotoImage: {fileID: 0}
+  albumPhotoRequiredEvents: []
+  showPhotoAlbumIndicator: 0
+  photoAlbumIndicatorRequiredEvents: []
   levelSequenceEvents:
   - triggerEvent: {fileID: 0}
     actionSequence: {fileID: 11400000, guid: a5227547efcb9c84fa53eca7e5b479a3, type: 2}

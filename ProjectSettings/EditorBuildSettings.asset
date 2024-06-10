@@ -39,6 +39,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_Graveyard.unity
     guid: 1e6bf02d3c1ae164ba97cc7a6348e628
   - enabled: 1
+    path: Assets/Scenes/Level_Street.unity
+    guid: 0e66ae632a6d39f4ea5420a26de0e2c5
+  - enabled: 1
+    path: Assets/Scenes/Level_Album.unity
+    guid: 1eba4a066e68d3d4daa117b15180f189
+  - enabled: 1
+    path: Assets/Scenes/Minigame_Street.unity
+    guid: 293accbdc2677b240a38078c5150aebb
+  - enabled: 1
     path: Assets/Scenes/Level_Park.unity
     guid: ec85d4faffbd6894f99d9e7bef027e72
   - enabled: 1

@@ -416,6 +416,7 @@ MonoBehaviour:
   pauseResumeButton: {fileID: 3644697527636089163}
   pauseMainMenuButton: {fileID: 5650232935177565096}
   pauseQuitButton: {fileID: 8101067895353568799}
+  photoAlbumIndicator: {fileID: 7909788372723486344}
 --- !u!1 &8512100045266064326
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,6 +759,17 @@ MonoBehaviour:
 --- !u!114 &7229363228059273632 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8866880496553878389, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
+  m_PrefabInstance: {fileID: 2260428062310034133}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7909788372723486344 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8258354618399106141, guid: af99b22a749595f48b5d0e36cc3fac86, type: 3}
   m_PrefabInstance: {fileID: 2260428062310034133}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

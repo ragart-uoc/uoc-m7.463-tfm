@@ -1,7 +1,8 @@
 using System.Collections.Generic;
-using UnityEngine;
-using TFM.Actions;
 using UnityEditor;
+using UnityEngine;
+using UnityEngine.UI;
+using TFM.Actions;
 
 namespace TFM.Entities
 {
@@ -11,40 +12,78 @@ namespace TFM.Entities
     [CreateAssetMenu(fileName = "Level", menuName = "Custom/Level")]
     public class Level : ScriptableObject
     {
-        /// <value>Property <c>sceneName</c> represents the scene name.</value>
-        public string sceneName;
+        #region Scene
         
-        #if UNITY_EDITOR
-            /// <value>Property <c>sceneAsset</c> represents the scene asset.</value>
-            public SceneAsset sceneAsset;
-        #endif
+            /// <value>Property <c>sceneName</c> represents the scene name.</value>
+            [Header("Scene")]
+            public string sceneName;
+            
+            #if UNITY_EDITOR
+                /// <value>Property <c>sceneAsset</c> represents the scene asset.</value>
+                public SceneAsset sceneAsset;
+            #endif
         
-        /// <value>Property <c>initialAgeGroup</c> represents the initial age group.</value>
-        public AgeGroupProperties.Groups initialAgeGroup;
+        #endregion
         
-        /// <value>Property <c>currentAgeGroup</c> represents the current age group.</value>
-        //[HideInInspector]
-        public AgeGroupProperties.Groups currentAgeGroup;
+        #region Age group
         
-        /// <value>Property <c>activeShowableObjects</c> represents the active showable objects.</value>
-        //[HideInInspector]
-        public GameObject[] activeShowableObjects;
+            /// <value>Property <c>initialAgeGroup</c> represents the initial age group.</value>
+            [Header("Age group")]
+            public AgeGroupProperties.Groups initialAgeGroup;
+            
+            /// <value>Property <c>currentAgeGroup</c> represents the current age group.</value>
+            [HideInInspector]
+            public AgeGroupProperties.Groups currentAgeGroup;
+            
+        #endregion
         
-        /// <value>Property <c>activeShowableObjectsIds</c> represents the active showable objects IDs.</value>
-        //[HideInInspector]
-        public int[] activeShowableObjectsIds;
+        #region Showable objects
+            
+            /// <value>Property <c>activeShowableObjects</c> represents the active showable objects.</value>
+            [HideInInspector]
+            public GameObject[] activeShowableObjects;
+            
+            /// <value>Property <c>activeShowableObjectsIds</c> represents the active showable objects IDs.</value>
+            [HideInInspector]
+            public int[] activeShowableObjectsIds;
+            
+        #endregion
 
-        /// <value>Property <c>enablePause</c> represents whether the pause is enabled.</value>
-        public bool enablePause;
+        #region Pause
 
-        /// <value>Property <c>enablePhotoAlbum</c> represents whether the photo album can be enabled.</value>
-        public bool enablePhotoAlbum;
+            /// <value>Property <c>enablePause</c> represents whether the pause is enabled.</value>
+            [Header("Pause")]
+            public bool enablePause;
+            
+        #endregion
         
-        /// <value>Property <c>photoAlbumRequiredEvents</c> represents the events required to show the photo album.</value>
-        public List<Event> photoAlbumRequiredEvents;
+        #region Photo album
+        
+            /// <value>Property <c>hasAlbumPhoto</c> represents whether the level has an album photo.</value>
+            [Header("Photo album")]
+            public bool hasAlbumPhoto;
+            
+            /// <value>Property <c>albumPhotoImage</c> represents the album photo image.</value>
+            public Sprite albumPhotoImage;
+            
+            /// <value>Property <c>albumPhotoRequiredEvents</c> represents the events required to show the photo in the album.</value>
+            public List<Event> albumPhotoRequiredEvents;
+            
+            /// <value>Property <c>showPhotoAlbumIndicator</c> represents whether the photo album indicator can be shown in the level.</value>
+            public bool showPhotoAlbumIndicator;
+            
+            /// <value>Property <c>photoAlbumRequiredEvents</c> represents the events required to show the photo album indicator.</value>
+            public List<Event> photoAlbumIndicatorRequiredEvents;
+            
+        #endregion
+        
+        #region Level sequence events
+            
+            /// <value>Property <c>levelSequenceEvents</c> represents the level sequence events.</value>
+            [Header("Level sequence events")]
+            public List<EventTriggerActionSequence> levelSequenceEvents;
 
-        /// <value>Property <c>levelSequenceEvents</c> represents the level sequence events.</value>
-        public List<EventTriggerActionSequence> levelSequenceEvents;
+        #endregion
         
         /// <summary>
         /// Method <c>CreateInstance</c> creates an instance of the class.
@@ -80,8 +119,11 @@ namespace TFM.Entities
             newLevel.activeShowableObjects = level.activeShowableObjects;
             newLevel.activeShowableObjectsIds = level.activeShowableObjectsIds;
             newLevel.enablePause = level.enablePause;
-            newLevel.enablePhotoAlbum = level.enablePhotoAlbum;
-            newLevel.photoAlbumRequiredEvents = level.photoAlbumRequiredEvents;
+            newLevel.hasAlbumPhoto = level.hasAlbumPhoto;
+            newLevel.albumPhotoImage = level.albumPhotoImage;
+            newLevel.albumPhotoRequiredEvents = level.albumPhotoRequiredEvents;
+            newLevel.showPhotoAlbumIndicator = level.showPhotoAlbumIndicator;
+            newLevel.photoAlbumIndicatorRequiredEvents = level.photoAlbumIndicatorRequiredEvents;
             return newLevel;
         }
         

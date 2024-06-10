@@ -19,6 +19,9 @@ MonoBehaviour:
   activeShowableObjects: []
   activeShowableObjectsIds: 
   enablePause: 1
-  enablePhotoAlbum: 0
-  photoAlbumRequiredEvents: []
+  hasAlbumPhoto: 0
+  albumPhotoImage: {fileID: 0}
+  albumPhotoRequiredEvents: []
+  showPhotoAlbumIndicator: 0
+  photoAlbumIndicatorRequiredEvents: []
   levelSequenceEvents: []

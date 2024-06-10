@@ -104,6 +104,14 @@ namespace TFM.Managers
         
         #endregion
         
+        #region Photo album
+        
+            /// <value>Property <c>saveIndicator</c> represents the save indicator.</value>
+            [Header("Photo Album Indicator")]
+            public Image photoAlbumIndicator;
+
+        #endregion
+        
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
         /// </summary>
@@ -389,6 +397,18 @@ namespace TFM.Managers
                 pauseMenu.SetActive(!pauseMenu.activeSelf);
             }
             
+        #endregion
+        
+        #region Photo album
+
+            /// <summary>
+            /// Method <c>ShowPhotoAlbumIndicator</c> shows the photo album indicator.
+            /// </summary>
+            public void ShowPhotoAlbumIndicator()
+            {
+                photoAlbumIndicator.gameObject.SetActive(true);
+            }
+
         #endregion
     }
 }

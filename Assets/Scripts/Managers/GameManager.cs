@@ -31,6 +31,7 @@ namespace TFM.Managers
         #region Game State
             
             /// <value>Property <c>gameStateData</c> represents the game state data.</value>
+            [HideInInspector]
             public GameStateData gameStateData;
             
             /// <value>Property <c>gameStateSaveFilename</c> represents the name of the save file.</value>

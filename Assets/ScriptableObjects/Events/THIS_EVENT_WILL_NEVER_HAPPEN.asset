@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2187c67a5ab9122488ee63db785c0b9a, type: 3}
-  m_Name: Room_Intro_AfterIceCreamParlor_Completed
+  m_Name: THIS_EVENT_WILL_NEVER_HAPPEN
   m_EditorClassIdentifier: 
-  eventName: Room_Intro_AfterIceCreamParlor_Completed
+  eventName: THIS_EVENT_WILL_NEVER_HAPPEN

@@ -195,7 +195,10 @@ namespace TFM.Entities
                     || ItemManager.Instance.IsItemPickedOrDiscarded(pickableItem))
                 return;
             ItemManager.Instance.AddItem(pickableItem);
-            StartCoroutine(UIManager.Instance.ShowItemNotice(pickableItem.Icon, "Picked", pickableItem.Title));
+            StartCoroutine(UIManager.Instance.ShowItemNotice(
+                pickableItem.Icon,
+                pickableItem.Type.ToString(),
+                pickableItem.Title));
             pickableItem = null;
         }
         

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
-  m_Name: Hospital
+  m_Name: Album
   m_EditorClassIdentifier: 
-  sceneName: Level_Hospital
-  sceneAsset: {fileID: 102900000, guid: 48f7ab0152c3be34989d1933b46fa1c1, type: 3}
+  sceneName: Level_Album
+  sceneAsset: {fileID: 102900000, guid: 1eba4a066e68d3d4daa117b15180f189, type: 3}
   initialAgeGroup: 4
   currentAgeGroup: 4
   activeShowableObjects: []
@@ -24,7 +24,4 @@ MonoBehaviour:
   albumPhotoRequiredEvents: []
   showPhotoAlbumIndicator: 0
   photoAlbumIndicatorRequiredEvents: []
-  levelSequenceEvents:
-  - triggerEvent: {fileID: 0}
-    actionSequence: {fileID: 11400000, guid: 66940899e2bbdd34ca09699326fa5cf3, type: 2}
-    completionEvent: {fileID: 11400000, guid: 8fcc92e6790176d4884ec6de9d37bed8, type: 2}
+  levelSequenceEvents: []

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2187c67a5ab9122488ee63db785c0b9a, type: 3}
   m_Name: IceCreamParlor_Interacted_KIte
   m_EditorClassIdentifier: 
-  eventName: IceCreamParlor_Interacted_SpilledIceCream
+  eventName: IceCreamParlor_Interacted_KIte

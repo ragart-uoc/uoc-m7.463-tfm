@@ -73,12 +73,6 @@ namespace TFM.Managers
             GameManager.Instance.Ready -= HandleGameReady;
             EventManager.Instance.EventTriggered -= HandleEventTriggered;
         }
-
-        [SerializeField]
-        private Level[] showAvailableLevels;
-
-        [SerializeField]
-        private Level[] showLevels;
         
         /// <summary>
         /// Method <c>HandleGameReady</c> is called when the game is ready.
@@ -87,8 +81,8 @@ namespace TFM.Managers
         /// <param name="sceneName">The name of the scene.</param>
         private void HandleGameReady(string levelName, string sceneName)
         {
+            // Set the current level name
             _currentLevelName = levelName;
-
             // Initialize the levels
             foreach (var level in CustomSceneManager.Instance.availableLevels.levels
                          .Select(Level.CreateInstanceFromAnother))
@@ -98,15 +92,16 @@ namespace TFM.Managers
                 _levels[level.name].currentAgeGroup = level.initialAgeGroup;
                 _levels[level.name].activeShowableObjects = Array.Empty<GameObject>();
             }
-
-            showAvailableLevels = CustomSceneManager.Instance.availableLevels.levels.ToArray();
-            showLevels = _levels.Values.ToArray();
             
             // Import data
             ImportData(GameManager.Instance.gameStateData.levels);
             
             // Ready event
             Ready?.Invoke(_levels[_currentLevelName]);
+            
+            // Show the photo album
+            if (CurrentLevelsEnablesPhotoAlbum())
+                UIManager.Instance.ShowPhotoAlbumIndicator();
             
             // Show the overlay
             UIManager.Instance.ShowHideOverlay();
@@ -123,6 +118,8 @@ namespace TFM.Managers
         /// </summary>
         private void HandleEventTriggered(Event e)
         {
+            if (CurrentLevelsEnablesPhotoAlbum())
+                UIManager.Instance.ShowPhotoAlbumIndicator();
             ExecuteActionSequences(UpdateLevel);
         }
 
@@ -242,7 +239,6 @@ namespace TFM.Managers
                     continue;
                 level.ImportData(levelData);
             }
-            showLevels = _levels.Values.ToArray(); // DEBUG
         }
 
         /// <summary>
@@ -261,16 +257,60 @@ namespace TFM.Managers
         {
             return _levels[_currentLevelName].enablePause;
         }
+        
+        /// <summary>
+        /// Method <c>CurrentLevelsEnablesPhotoAlbum</c> checks if the current level enables the photo album.
+        /// </summary>
+        /// <returns></returns>
+        private bool CurrentLevelsEnablesPhotoAlbum()
+        {
+            var level = _levels[_currentLevelName];
+            if (!level.showPhotoAlbumIndicator)
+                return false;
+            var requiredEvents = _levels[_currentLevelName].photoAlbumIndicatorRequiredEvents;
+            var meetsEvents= requiredEvents == null
+                             || requiredEvents.Count == 0
+                             || requiredEvents.All(e => EventManager.Instance.GetEventState(e));
+            return meetsEvents;
+        }
+        
+        /// <summary>
+        /// Method <c>CurrentLevelChangeAgeGroup</c> changes the age group of the current level.
+        /// </summary>
+        /// <param name="ageGroup">The age group.</param>
+        public void CurrentLevelChangeAgeGroup(AgeGroupProperties.Groups ageGroup)
+        {
+            UIManager.Instance.EnableInteractions(false);
+            ChangeAgeGroup(_currentLevelName, ageGroup);
+        }
 
         /// <summary>
         /// Method <c>ChangeAgeGroup</c> changes the age group.
         /// </summary>
+        /// <param name="levelName">The name of the level.</param>
         /// <param name="ageGroup">The age group.</param>
-        public void ChangeAgeGroup(AgeGroupProperties.Groups ageGroup)
+        public void ChangeAgeGroup(string levelName, AgeGroupProperties.Groups ageGroup)
         {
-            UIManager.Instance.EnableInteractions(false);
-            _levels[_currentLevelName].currentAgeGroup = ageGroup;
-            UpdateLevel();
+            _levels[levelName].currentAgeGroup = ageGroup;
+            if (_currentLevelName == levelName)
+                UpdateLevel();
+            else
+                LevelUpdated?.Invoke(_levels[levelName]);
+        }
+        
+        /// <summary>
+        /// Method <c>GetAlbumLevels</c> gets the album levels.
+        /// </summary>
+        public List<Level> GetAlbumLevels()
+        {
+            var albumLevels = _levels.Values.Where(level => level.hasAlbumPhoto).ToList();
+            return (from level in albumLevels
+                let requiredEvents = level.albumPhotoRequiredEvents
+                let meetsEvents = requiredEvents == null
+                                  || requiredEvents.Count == 0
+                                  || requiredEvents.All(e => EventManager.Instance.GetEventState(e))
+                where meetsEvents
+                select level).ToList();
         }
     }
 }
