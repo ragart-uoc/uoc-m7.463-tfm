@@ -646,6 +646,14 @@ PrefabInstance:
       propertyPath: ageGroup
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5386556496131927288, guid: 8a1734b2026a1b14fa70a8775ebbe348, type: 3}
+      propertyPath: requiredEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386556496131927288, guid: 8a1734b2026a1b14fa70a8775ebbe348, type: 3}
+      propertyPath: requiredEvents.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c609e45a407e1204fbe94ddb1f5a9c9c, type: 2}
     - target: {fileID: 5926943313869634882, guid: 8a1734b2026a1b14fa70a8775ebbe348, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1163,6 +1171,14 @@ PrefabInstance:
       propertyPath: ageGroup
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5386556496131927288, guid: 8a1734b2026a1b14fa70a8775ebbe348, type: 3}
+      propertyPath: requiredEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386556496131927288, guid: 8a1734b2026a1b14fa70a8775ebbe348, type: 3}
+      propertyPath: requiredEvents.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 34584eca3e4f88f4abcb9678c45a27a7, type: 2}
     - target: {fileID: 5926943313869634882, guid: 8a1734b2026a1b14fa70a8775ebbe348, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1675,7 +1691,8 @@ MonoBehaviour:
   albumPhotoPrefab: {fileID: 7043045337965915976, guid: 863d494780ca9f747b6f032b70b15e7b, type: 3}
   rootCanvas: {fileID: 350726851}
   dragEnabled: 0
-  dragRequiredEvents: []
+  dragRequiredEvents:
+  - {fileID: 11400000, guid: 8268e1ff31764af4f99a078d72197773, type: 2}
 --- !u!1001 &3351582745017085721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1874,6 +1891,14 @@ PrefabInstance:
       propertyPath: ageGroup
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5386556496131927288, guid: 8a1734b2026a1b14fa70a8775ebbe348, type: 3}
+      propertyPath: requiredEvents.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386556496131927288, guid: 8a1734b2026a1b14fa70a8775ebbe348, type: 3}
+      propertyPath: requiredEvents.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: aed5626441a6cb2468a71567d95fb49f, type: 2}
     - target: {fileID: 5926943313869634882, guid: 8a1734b2026a1b14fa70a8775ebbe348, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L0_NONE_I3_INT_KITE_ALBUM
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998918383337657
+  - rid: 3820998918383337658
+  - rid: 3820998918383337659
+  - rid: 3820998918383337660
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998918383337657
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: Maybe here...?
+        position: 0
+    - rid: 3820998918383337658
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337659
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 34584eca3e4f88f4abcb9678c45a27a7, type: 2}
+    - rid: 3820998918383337660
+      type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        level: {fileID: 11400000, guid: db4356b774dde1f45a5b5f7c0b0f8226, type: 2}
+        fadeOverlay: 1
+        destroyPersistentManagers: 0

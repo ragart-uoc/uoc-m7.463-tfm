@@ -3359,7 +3359,7 @@ MonoBehaviour:
   minGraffitiPaintingSpeed: 3
   maxGraffitiPaintingSpeed: 5
   police: {fileID: 6267557322407905479}
-  completionEvent: {fileID: 11400000, guid: 0b26324eeeffe0546b7cbd10cf23e3db, type: 2}
+  completionEvent: {fileID: 11400000, guid: a17a0115df7c9f74281dca0d8ca8d9c7, type: 2}
   nextLevel: {fileID: 11400000, guid: 95a3d47454fbe264db1833881b6fe962, type: 2}
   mainCamera: {fileID: 680993244}
   scoreText: {fileID: 1093368227}

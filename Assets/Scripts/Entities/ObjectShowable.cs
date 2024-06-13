@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace TFM.Entities
     /// <summary>
     /// Class <c>ObjectShowable</c> represents an object that can be shown.
     /// </summary>
-    [System.Serializable]
+    [Serializable]
     public class ObjectShowable : MonoBehaviour
     {
         /// <value>Property <c>showEvents</c> represents the events required for showing the object.</value>
@@ -20,6 +21,9 @@ namespace TFM.Entities
         /// <value>Property <c>requiredAgeGroups</c> represents the required age groups.</value>
         public List<AgeGroupProperties.Groups> availableAgeGroups;
         
+        /// <value>Property <c>_originalMode</c> represents the original mode.</value>
+        private float _originalMode;
+        
         /// <value>Property <c>_originalSrcBlend</c> represents the original source blend.</value>
         private int _originalSrcBlend;
         
@@ -28,6 +32,9 @@ namespace TFM.Entities
         
         /// <value>Property <c>_originalZWrite</c> represents the original z write.</value>
         private int _originalZWrite;
+
+        /// <value>Property <c>Mode</c> represents the mode.</value>
+        private static readonly int Mode = Shader.PropertyToID("_Mode");
 
         /// <value>Property <c>SrcBlend</c> represents the source blend.</value>
         private static readonly int SrcBlend = Shader.PropertyToID("_SrcBlend");
@@ -61,20 +68,28 @@ namespace TFM.Entities
         public void Fade(float targetAlpha, float duration)
         {
             // Get all the mesh renderers
-            var meshRenderers = GetComponentsInChildren<Renderer>();
+            var parentRenderers = GetComponents<Renderer>() ?? Array.Empty<Renderer>();
+            var childRenderers = GetComponentsInChildren<Renderer>() ?? Array.Empty<Renderer>();
+            var meshRenderers = parentRenderers.Concat(childRenderers).ToArray();
             
             // Loop through all mesh renderers
             foreach (var meshRenderer in meshRenderers)
             {
+                // Fail-safe
+                if (meshRenderer == null || meshRenderer.materials == null)
+                    continue;
+
                 // Loop through all materials
                 foreach (var material in meshRenderer.materials)
                 {
                     // Store the current blend mode
+                    _originalMode = material.GetFloat(Mode);
                     _originalSrcBlend = material.GetInt(SrcBlend);
                     _originalDstBlend = material.GetInt(DstBlend);
                     _originalZWrite = material.GetInt(ZWrite);
 
                     // Change blend mode to fade
+                    material.SetFloat(Mode, 3.0f);
                     material.SetInt(SrcBlend, (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
                     material.SetInt(DstBlend, (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
                     material.SetInt(ZWrite, 0);
@@ -134,6 +149,7 @@ namespace TFM.Entities
             // If target alpha is greater than 0, restore the original blend mode
             if (!(targetAlpha > 0))
                 yield break;
+            material.SetFloat(Mode, material.GetFloat(Mode) == 0 ? _originalMode : material.GetFloat(Mode));
             material.SetInt(SrcBlend, material.GetInt(SrcBlend) == 0 ? _originalSrcBlend : material.GetInt(SrcBlend));
             material.SetInt(DstBlend, material.GetInt(DstBlend) == 0 ? _originalDstBlend : material.GetInt(DstBlend));
             material.SetInt(ZWrite, material.GetInt(ZWrite) == 0 ? _originalZWrite : material.GetInt(ZWrite));

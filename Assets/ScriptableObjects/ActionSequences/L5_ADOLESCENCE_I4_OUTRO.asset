@@ -1,0 +1,187 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L5_ADOLESCENCE_I4_OUTRO
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998918383337623
+  - rid: 3820998918383337624
+  - rid: 3820998918383337625
+  - rid: 3820998918383337626
+  - rid: 3820998918383337627
+  - rid: 3820998918383337629
+  - rid: 3820998918383337630
+  - rid: 3820998918383337631
+  - rid: 3820998918383337632
+  - rid: 3820998918383337633
+  - rid: 3820998918383337634
+  - rid: 3820998918383337635
+  - rid: 3820998918383337636
+  - rid: 3820998918383337637
+  - rid: 3820998918383337638
+  - rid: 3820998918383337640
+  - rid: 3820998918383337641
+  - rid: 3820998918383337642
+  - rid: 3820998918383337643
+  - rid: 3820998918383337644
+  - rid: 3820998918383337698
+  - rid: 3820998918383337699
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998918383337623
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 604469533b09bf74389f69697ae1a06d, type: 2}
+        dialogueLine: I can't believe we got to this point. I tried to help you.
+          I tried to show you the way.
+        position: 1
+    - rid: 3820998918383337624
+      type: {class: ScreenShakeAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337625
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 6d5d6ac370924c546aff40a7313bafe2, type: 2}
+        dialogueLine: Even her couldn't save you. You're a lost cause.
+        position: 1
+    - rid: 3820998918383337626
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: ...
+        position: 0
+    - rid: 3820998918383337627
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 604469533b09bf74389f69697ae1a06d, type: 2}
+        dialogueLine: I'm sorry, kid. I really am.
+        position: 1
+    - rid: 3820998918383337629
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: That's when I reached my breaking point. I couldn't keep the
+          mask on anymore.
+        position: 0
+    - rid: 3820998918383337630
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: I couldn't keep pretending that everything was fine. I couldn't
+          keep pretending that I was fine.
+        position: 0
+    - rid: 3820998918383337631
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: So I told her. I told her everything. I told her about my grandma,
+          her illness, the way she died...
+        position: 0
+    - rid: 3820998918383337632
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: I told her about my parents, their fights, their deaths...
+        position: 0
+    - rid: 3820998918383337633
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: I told her about my brother... The drugs... The overdose...
+        position: 0
+    - rid: 3820998918383337634
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: And I cried. I cried like I never cried before.
+        position: 0
+    - rid: 3820998918383337635
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: And she hugged me. She hugged me like I was her own son.
+        position: 0
+    - rid: 3820998918383337636
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 604469533b09bf74389f69697ae1a06d, type: 2}
+        dialogueLine: It's going to be okay. I promise. It's going to be okay.
+        position: 1
+    - rid: 3820998918383337637
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: And I believed her. I believed her like I never believed anyone
+          before.
+        position: 0
+    - rid: 3820998918383337638
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 604469533b09bf74389f69697ae1a06d, type: 2}
+        dialogueLine: Listen, kid. This is what we're going to do. You're going to
+          stay with me until you figure things out.
+        position: 1
+    - rid: 3820998918383337640
+      type: {class: ScreenShakeAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337641
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 604469533b09bf74389f69697ae1a06d, type: 2}
+        dialogueLine: What do you say if we start by having some ice cream?
+        position: 1
+    - rid: 3820998918383337642
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: Huh? Ice cream...?
+        position: 0
+    - rid: 3820998918383337643
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337644
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 0c14a64194db9d0449f79820bd301538, type: 2}
+    - rid: 3820998918383337698
+      type: {class: ItemPickAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        item: {fileID: 11400000, guid: ac714130632e132469c97b7a8f465e2c, type: 2}
+    - rid: 3820998918383337699
+      type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        level: {fileID: 11400000, guid: 7260493f853e700448fe8fa5ea41c438, type: 2}
+        fadeOverlay: 0
+        destroyPersistentManagers: 0

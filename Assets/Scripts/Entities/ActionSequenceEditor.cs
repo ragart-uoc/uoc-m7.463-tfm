@@ -43,36 +43,27 @@ namespace TFM.Entities
                 
                 switch (actionName)
                 {
-                    case "MessageShowAction":
-                        EditorGUILayout.LabelField("Show Message Action", EditorStyles.boldLabel);
-                        break;
                     case "DialogueShowAction":
-                        EditorGUILayout.LabelField("Show Dialogue Action", EditorStyles.boldLabel);
+                        EditorGUILayout.LabelField("Dialogue - Show", EditorStyles.boldLabel);
                         break;
                     case "DialogueHideAction":
-                        EditorGUILayout.LabelField("Hide Dialogue Action", EditorStyles.boldLabel);
-                        break;
-                    case "LevelLoadAction":
-                        EditorGUILayout.LabelField("Load Level Action", EditorStyles.boldLabel);
+                        EditorGUILayout.LabelField("Dialogue - Hide", EditorStyles.boldLabel);
                         break;
                     case "EventTriggerAction":
-                        EditorGUILayout.LabelField("Trigger Event Action", EditorStyles.boldLabel);
+                        EditorGUILayout.LabelField("Event - Trigger", EditorStyles.boldLabel);
+                        break;
+                    case "LevelLoadAction":
+                        EditorGUILayout.LabelField("Level - Load", EditorStyles.boldLabel);
                         break;
                     case "LevelChangeAgeGroupAction":
-                        EditorGUILayout.LabelField("Change Age Group Action", EditorStyles.boldLabel);
+                        EditorGUILayout.LabelField("Level - Change Age Group", EditorStyles.boldLabel);
+                        break;
+                    case "MessageShowAction":
+                        EditorGUILayout.LabelField("Message - Show", EditorStyles.boldLabel);
                         break;
                 }
-
-                if (actionType.EndsWith("MessageShowAction"))
-                {
-                    var messageProp = actionProp.FindPropertyRelative("message");
-                    var durationProp = actionProp.FindPropertyRelative("duration");
-                    var afterMessageProp = actionProp.FindPropertyRelative("afterMessage");
-                    EditorGUILayout.PropertyField(messageProp, new GUIContent("Message"));
-                    EditorGUILayout.PropertyField(durationProp, new GUIContent("Duration"));
-                    EditorGUILayout.PropertyField(afterMessageProp, new GUIContent("After Message"));
-                }
-                else if (actionType.EndsWith("DialogueShowAction"))
+                
+                if (actionType.EndsWith("DialogueShowAction"))
                 {
                     var actorProp = actionProp.FindPropertyRelative("actor");
                     var dialogueLineProp = actionProp.FindPropertyRelative("dialogueLine");
@@ -80,15 +71,6 @@ namespace TFM.Entities
                     EditorGUILayout.PropertyField(actorProp, new GUIContent("Actor"));
                     EditorGUILayout.PropertyField(dialogueLineProp, new GUIContent("Dialogue Line"));
                     positionProp.intValue = EditorGUILayout.Popup(positionProp.displayName, positionProp.intValue, new[] {"Left", "Right"});
-                }
-                else if (actionType.EndsWith("LevelLoadAction"))
-                {
-                    var levelProp = actionProp.FindPropertyRelative("level");
-                    var fadeOverlayProp = actionProp.FindPropertyRelative("fadeOverlay");
-                    var destroyPersistentManagers = actionProp.FindPropertyRelative("destroyPersistentManagers");
-                    EditorGUILayout.PropertyField(levelProp, new GUIContent("Level"));
-                    fadeOverlayProp.intValue = EditorGUILayout.Popup(fadeOverlayProp.displayName, fadeOverlayProp.intValue, new[] {"No", "Yes"});
-                    destroyPersistentManagers.intValue = EditorGUILayout.Popup(destroyPersistentManagers.displayName, destroyPersistentManagers.intValue, new[] {"No", "Yes"});
                 }
                 else if (actionType.EndsWith("DialogueHideAction"))
                 {
@@ -99,10 +81,42 @@ namespace TFM.Entities
                     var eventObjectProp = actionProp.FindPropertyRelative("eventObject");
                     EditorGUILayout.PropertyField(eventObjectProp, new GUIContent("Event"));
                 }
+                else if (actionType.EndsWith("ItemPickAction"))
+                {
+                    var itemProp = actionProp.FindPropertyRelative("item");
+                    EditorGUILayout.PropertyField(itemProp, new GUIContent("Item"));
+                }
+                else if (actionType.EndsWith("ItemDiscardAction"))
+                {
+                    var itemProp = actionProp.FindPropertyRelative("item");
+                    EditorGUILayout.PropertyField(itemProp, new GUIContent("Item"));
+                }
+                else if (actionType.EndsWith("LevelLoadAction"))
+                {
+                    var levelProp = actionProp.FindPropertyRelative("level");
+                    var fadeOverlayProp = actionProp.FindPropertyRelative("fadeOverlay");
+                    var destroyPersistentManagers = actionProp.FindPropertyRelative("destroyPersistentManagers");
+                    EditorGUILayout.PropertyField(levelProp, new GUIContent("Level"));
+                    fadeOverlayProp.intValue = EditorGUILayout.Popup(fadeOverlayProp.displayName, fadeOverlayProp.intValue, new[] {"No", "Yes"});
+                    destroyPersistentManagers.intValue = EditorGUILayout.Popup(destroyPersistentManagers.displayName, destroyPersistentManagers.intValue, new[] {"No", "Yes"});
+                }
                 else if (actionType.EndsWith("LevelChangeAgeGroupAction"))
                 {
                     var ageGroupProp = actionProp.FindPropertyRelative("ageGroup");
                     EditorGUILayout.PropertyField(ageGroupProp, new GUIContent("Age Group"));
+                }
+                else if (actionType.EndsWith("MessageShowAction"))
+                {
+                    var messageProp = actionProp.FindPropertyRelative("message");
+                    var durationProp = actionProp.FindPropertyRelative("duration");
+                    var afterMessageProp = actionProp.FindPropertyRelative("afterMessage");
+                    EditorGUILayout.PropertyField(messageProp, new GUIContent("Message"));
+                    EditorGUILayout.PropertyField(durationProp, new GUIContent("Duration"));
+                    EditorGUILayout.PropertyField(afterMessageProp, new GUIContent("After Message"));
+                }
+                else if (actionType.EndsWith("ScreenShakeAction"))
+                {
+                    // No properties to display
                 }
                 var waitForInputProp = actionProp.FindPropertyRelative("waitForInput");
                 waitForInputProp.intValue = EditorGUILayout.Popup(waitForInputProp.displayName, waitForInputProp.intValue, new[] {"No", "Yes"});
@@ -119,35 +133,50 @@ namespace TFM.Entities
                 EditorGUILayout.EndHorizontal();
                 EditorGUILayout.Space();
             }
-            
-            if (GUILayout.Button("Add Show Message Action"))
-            {
-                AddAction<MessageShowAction>();
-            }
 
-            if (GUILayout.Button("Add Show Dialogue Action"))
+            if (GUILayout.Button("Dialogue - Show"))
             {
                 AddAction<DialogueShowAction>();
             }
             
-            if (GUILayout.Button("Add Hide Dialogue Action"))
+            if (GUILayout.Button("Dialogue - Hide"))
             {
                 AddAction<DialogueHideAction>();
             }
+            
+            if (GUILayout.Button("Event - Trigger"))
+            {
+                AddAction<EventTriggerAction>();
+            }
 
-            if (GUILayout.Button("Add Load Level Action"))
+            if (GUILayout.Button("Item - Pick"))
+            {
+                AddAction<ItemPickAction>();
+            }
+            
+            if (GUILayout.Button("Item - Discard"))
+            {
+                AddAction<ItemDiscardAction>();
+            }
+
+            if (GUILayout.Button("Level - Load"))
             {
                 AddAction<LevelLoadAction>();
             }
             
-            if (GUILayout.Button("Add Trigger Event Action"))
-            {
-                AddAction<EventTriggerAction>();
-            }
-            
-            if (GUILayout.Button("Add Change Age Group Action"))
+            if (GUILayout.Button("Level - Change Age Group"))
             {
                 AddAction<LevelChangeAgeGroupAction>();
+            }
+            
+            if (GUILayout.Button("Message - Show"))
+            {
+                AddAction<MessageShowAction>();
+            }
+            
+            if (GUILayout.Button("Screen - Shake"))
+            {
+                AddAction<ScreenShakeAction>();
             }
 
             serializedObject.ApplyModifiedProperties();

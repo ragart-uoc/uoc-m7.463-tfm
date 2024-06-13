@@ -50,6 +50,9 @@ namespace TFM.Managers
             
             /// <value>Property <c>_nextLevelName</c> represents the next level name.</value>
             private string _nextLevelName;
+            
+            /// <value>Property <c>_isLevelLoading</c> represents if the level is loading.</value>
+            private bool _isLevelLoading;
 
         #endregion
 
@@ -97,6 +100,8 @@ namespace TFM.Managers
         /// <param name="destroyPersistentManagers">Whether to destroy persistent managers.</param>
         private IEnumerator LoadLevelCoroutine(string levelName, bool destroyPersistentManagers = false)
         {
+            _isLevelLoading = true;
+            UIManager.Instance?.EnableInteractions(false);
             OnUnloadLevel(_currentLevelName, _currentSceneName);
             _nextSceneName = _levels[levelName];
             _nextLevelName = levelName;
@@ -105,6 +110,7 @@ namespace TFM.Managers
             var asyncLevelLoad = SceneManager.LoadSceneAsync(_nextSceneName, LoadSceneMode.Single);
             while (!asyncLevelLoad!.isDone)
                 yield return null;
+            _isLevelLoading = false;
             LoadedLevel?.Invoke(_nextLevelName, _nextSceneName);
         }
 
@@ -126,6 +132,14 @@ namespace TFM.Managers
             var persistentManagers = GameObject.FindGameObjectsWithTag("PersistentManager");
             foreach (var manager in persistentManagers)
                 Destroy(manager.gameObject);
+        }
+        
+        /// <summary>
+        /// Method <c>IsLevelLoading</c> checks if the level is loading.
+        /// </summary>
+        public bool IsLevelLoading()
+        {
+            return _isLevelLoading;
         }
     }
 }

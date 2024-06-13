@@ -98,7 +98,7 @@ namespace TFM.Entities
         /// </summary>
         private void Update()
         {
-            _isInteractionPossible = UIManager.Instance.InteractionsEnabled();
+            _isInteractionPossible = UIManager.Instance.AreInteractionsEnabled();
             Highlight();
         }
         
@@ -173,6 +173,13 @@ namespace TFM.Entities
         /// </summary>
         private void HandleLeftClickDown()
         {
+        }
+        
+        /// <summary>
+        /// Method <c>HandleLeftClickUp</c> handles the left click up event.
+        /// </summary>
+        private void HandleLeftClickUp()
+        {
             if (!_isInteractionPossible)
                 return;
             // Check if a sequence has been defined and has not been completed
@@ -191,22 +198,10 @@ namespace TFM.Entities
                 UIManager.Instance.ShowMessage(message, 3f, itemName);
             }
             // Pick the item
-            if (pickableItem == null
-                    || ItemManager.Instance.IsItemPickedOrDiscarded(pickableItem))
+            if (pickableItem == null)
                 return;
-            ItemManager.Instance.AddItem(pickableItem);
-            StartCoroutine(UIManager.Instance.ShowItemNotice(
-                pickableItem.Icon,
-                pickableItem.Type.ToString(),
-                pickableItem.Title));
+            ItemManager.Instance.PickItem(pickableItem);
             pickableItem = null;
-        }
-        
-        /// <summary>
-        /// Method <c>HandleLeftClickUp</c> handles the left click up event.
-        /// </summary>
-        private void HandleLeftClickUp()
-        {
         }
         
         /// <summary>

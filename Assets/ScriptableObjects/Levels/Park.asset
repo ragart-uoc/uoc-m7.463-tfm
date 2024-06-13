@@ -21,13 +21,15 @@ MonoBehaviour:
   enablePause: 1
   hasAlbumPhoto: 1
   albumPhotoImage: {fileID: 21300000, guid: fa3c58e0491ee72498879c3656983fc8, type: 3}
-  albumPhotoRequiredEvents: []
-  showPhotoAlbumIndicator: 0
-  photoAlbumIndicatorRequiredEvents: []
+  albumPhotoRequiredEvents:
+  - {fileID: 11400000, guid: 34584eca3e4f88f4abcb9678c45a27a7, type: 2}
+  showPhotoAlbumIndicator: 1
+  photoAlbumIndicatorRequiredEvents:
+  - {fileID: 11400000, guid: 5951da29c3f515c41a0458a739319330, type: 2}
   levelSequenceEvents:
-  - triggerEvent: {fileID: 0}
-    actionSequence: {fileID: 11400000, guid: d274269cee653614e96b99d6a0877987, type: 2}
-    completionEvent: {fileID: 11400000, guid: 0e50f57a8b794ed489c33c9f0efe3ec9, type: 2}
-  - triggerEvent: {fileID: 11400000, guid: faae77205b64baa41b5cbd10c5f4a0db, type: 2}
-    actionSequence: {fileID: 11400000, guid: 91a9d0b54cf10fc4782157f3e2237c6b, type: 2}
-    completionEvent: {fileID: 11400000, guid: 19e901ed119049b4da0278334c115828, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: 34584eca3e4f88f4abcb9678c45a27a7, type: 2}
+    actionSequence: {fileID: 11400000, guid: a013d2734a451884997919a1d29e7212, type: 2}
+    completionEvent: {fileID: 11400000, guid: 0a7bbac774c08ed4b90efba99cbc6a5e, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: 69e14462cee7fd047bc7304798fd7c94, type: 2}
+    actionSequence: {fileID: 11400000, guid: 773ea8b5ccdfeb3459bfcf544dc48743, type: 2}
+    completionEvent: {fileID: 11400000, guid: 627759800cb0d3e4cbe2b42391b96796, type: 2}

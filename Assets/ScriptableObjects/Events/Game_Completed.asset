@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2187c67a5ab9122488ee63db785c0b9a, type: 3}
-  m_Name: Game_Completed
+  m_Name: GAME_COMPLETED
   m_EditorClassIdentifier: 
-  eventName: Game_Completed
+  eventName: GAME_COMPLETED

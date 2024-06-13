@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L3_ADOLESCENCE_ROAM2_INT_COIN_ARCADE
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998918383337710
+  - rid: 3820998918383337711
+  - rid: 3820998918383337712
+  - rid: 3820998918383337713
+  - rid: 3820998918383337714
+  - rid: 3820998918383337715
+  - rid: 3820998918383337716
+  - rid: 3820998918383337717
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998918383337710
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: The new owner replaced the jukebox with an arcade machine.
+          It probably was one of the reasons they didn't go bankrupt.
+        position: 0
+    - rid: 3820998918383337711
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: I didn't have any money to play, but after I decided to focus
+          on music, I started to gather some extra money.
+        position: 0
+    - rid: 3820998918383337712
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: I started to played a lot. And I got really good at it.
+        position: 0
+    - rid: 3820998918383337713
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: A lot of people started to watch me play... including my old
+          friends.
+        position: 0
+    - rid: 3820998918383337714
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: I also started to open up to people again. I felt my life was
+          finally getting back on track.
+        position: 0
+    - rid: 3820998918383337715
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337716
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 6679ac1a2e4bcf04aa20d2fb484a5d2f, type: 2}
+    - rid: 3820998918383337717
+      type: {class: ItemPickAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        item: {fileID: 11400000, guid: 4f7f2ff39242dd849bbf7444a9e1d121, type: 2}

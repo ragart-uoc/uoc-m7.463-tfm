@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L5_ADOLESCENCE_I3_INT_BRICK_POLICECAR
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998918383337628
+  - rid: 3820998918383337577
+  - rid: 3820998918383337578
+  - rid: 3820998918383337579
+  - rid: 3820998918383337580
+  - rid: 3820998918383337581
+  - rid: 3820998918383337582
+  - rid: 3820998918383337583
+  - rid: 3820998918383337584
+  - rid: 3820998918383337585
+  - rid: 3820998918383337586
+  - rid: 3820998918383337587
+  - rid: 3820998918383337588
+  - rid: 3820998918383337589
+  - rid: 3820998918383337590
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998918383337628
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 604469533b09bf74389f69697ae1a06d, type: 2}
+        dialogueLine: What are you doing, kid? Stop that! Now I'm going to have to
+          take you in!
+        position: 1
+    - rid: 3820998918383337577
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: I was a fool. I was a menace. I was a criminal in the making.
+        position: 0
+    - rid: 3820998918383337578
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: I was just a nobody.
+        position: 0
+    - rid: 3820998918383337579
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: I remember running away from her. And I remember her not chasing
+          me.
+        position: 0
+    - rid: 3820998918383337580
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: And even though she gave me an opportunity to change, I didn't
+          take it.
+        position: 0
+    - rid: 3820998918383337581
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: I just wanted to paint. Problem was, getting paint was not
+          easy. If I didn't find any, I'd have to steal it.
+        position: 0
+    - rid: 3820998918383337582
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: I don't remember stealing... But... I must have.
+        position: 0
+    - rid: 3820998918383337583
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: I remember the police. I remember the fuss. I remember the
+          chase.
+        position: 0
+    - rid: 3820998918383337584
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: But I don't remember the consequences. Did it really happen?
+          Did I really get away with it?
+        position: 0
+    - rid: 3820998918383337585
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: There is something I'm missing. Something I'm not seeing. Something
+          I'm not remembering.
+        position: 0
+    - rid: 3820998918383337586
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: Maybe my memories are all mixed up. Maybe I need to rearrange
+          them.
+        position: 0
+    - rid: 3820998918383337587
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: Let's see... How could I...?
+        position: 0
+    - rid: 3820998918383337588
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337589
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 7060766abdd8c564b98d70a3b3da636f, type: 2}
+    - rid: 3820998918383337590
+      type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        level: {fileID: 11400000, guid: 002d0b8ef3f36f34f91e3841ee211508, type: 2}
+        fadeOverlay: 1
+        destroyPersistentManagers: 0

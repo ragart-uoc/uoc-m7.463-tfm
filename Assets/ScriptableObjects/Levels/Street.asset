@@ -21,7 +21,27 @@ MonoBehaviour:
   enablePause: 1
   hasAlbumPhoto: 1
   albumPhotoImage: {fileID: 21300000, guid: 3330f241a1856d545bc1a28f47880c8e, type: 3}
-  albumPhotoRequiredEvents: []
-  showPhotoAlbumIndicator: 0
-  photoAlbumIndicatorRequiredEvents: []
-  levelSequenceEvents: []
+  albumPhotoRequiredEvents:
+  - {fileID: 11400000, guid: c609e45a407e1204fbe94ddb1f5a9c9c, type: 2}
+  showPhotoAlbumIndicator: 1
+  photoAlbumIndicatorRequiredEvents:
+  - {fileID: 11400000, guid: 8268e1ff31764af4f99a078d72197773, type: 2}
+  levelSequenceEvents:
+  - triggerEvent: {fileID: 11400000, guid: c609e45a407e1204fbe94ddb1f5a9c9c, type: 2}
+    actionSequence: {fileID: 11400000, guid: 44ba0e972dc77db45869b8f30e0d78ad, type: 2}
+    completionEvent: {fileID: 11400000, guid: 44c7c6882fb068946aa372ca5e95b4aa, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: a17a0115df7c9f74281dca0d8ca8d9c7, type: 2}
+    actionSequence: {fileID: 11400000, guid: 5f08b59576c6a7a4992b68ac6e3882e2, type: 2}
+    completionEvent: {fileID: 11400000, guid: 0c14a64194db9d0449f79820bd301538, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: 627759800cb0d3e4cbe2b42391b96796, type: 2}
+    actionSequence: {fileID: 11400000, guid: 62a672dc57f1bdc428f6fb458c09995e, type: 2}
+    completionEvent: {fileID: 11400000, guid: eaba58475560d0d43b0ce51c4eb7b90a, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: 3fb9c61ec2e41c945b70d5d8342fdbf4, type: 2}
+    actionSequence: {fileID: 11400000, guid: 4dc4b55201317d34c869f76c1091e413, type: 2}
+    completionEvent: {fileID: 11400000, guid: fe8467487fbb89145974972c008202c1, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: 5289c59772fe1f84a8863e73806fc04e, type: 2}
+    actionSequence: {fileID: 11400000, guid: 2c19925a7f2972b47a610b54666375cf, type: 2}
+    completionEvent: {fileID: 11400000, guid: 6c9b8c94b2cde024688cb3a9d62c1742, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: bb2f8c44cf6ea0148ab92c0bdfceec56, type: 2}
+    actionSequence: {fileID: 11400000, guid: e85b41785f700984fbc9142ec2847d53, type: 2}
+    completionEvent: {fileID: 11400000, guid: eef1630cd29d6bb47a0ed84cbbb60575, type: 2}

@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L1_NONE_I1_TUTORIAL_INTERACTION
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998886834307080
+  - rid: 3820998886834307081
+  - rid: 3820998886834307082
+  - rid: 3820998886834307083
+  - rid: 3820998886834307084
+  - rid: 3820998886834307085
+  - rid: 3820998886834307086
+  - rid: 3820998886834307088
+  - rid: 3820998886834307093
+  - rid: 3820998886834307094
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998886834307080
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: Hey, young man. Can you explain me again how to use this darn
+          thing? How can I take a closer look at my things?
+        position: 0
+    - rid: 3820998886834307081
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 4758097754426bb4680565bf187ee294, type: 2}
+        dialogueLine: Yes, sir. You just need to <color="red">[hover]</color> your
+          cursor over the object and <color="red">[left click]</color> on it to <color="red">[interact]</color>.
+        position: 1
+    - rid: 3820998886834307082
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: Oh, I see... What if I want to <color="red">[pick up]</color>
+          the object?
+        position: 0
+    - rid: 3820998886834307083
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 4758097754426bb4680565bf187ee294, type: 2}
+        dialogueLine: Any object that can be picked up will be collected automatically
+          when you <color="red">[interact]</color> with it. No need to worry about
+          that.
+        position: 1
+    - rid: 3820998886834307084
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: Got it. And how do I <color="red">[use]</color> the object
+          once I have it?
+        position: 0
+    - rid: 3820998886834307085
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 4758097754426bb4680565bf187ee294, type: 2}
+        dialogueLine: You can <color="red">[use]</color> the object on other objects
+          or characters by <color="red">[hovering]</color> over them and holding
+          the <color="red">[right click]</color> button. This will open a radial
+          menu with your collected items. Just <color="red">[release]</color> the
+          button when you have selected the one you desire to <color="red">[use]</color>.
+        position: 1
+    - rid: 3820998886834307086
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: That sounds easy enough. Thanks for the help, son.
+        position: 0
+    - rid: 3820998886834307088
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998886834307093
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 5954daaa41fae884580aa44a6784ab79, type: 2}
+    - rid: 3820998886834307094
+      type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        level: {fileID: 11400000, guid: 7260493f853e700448fe8fa5ea41c438, type: 2}
+        fadeOverlay: 0
+        destroyPersistentManagers: 0

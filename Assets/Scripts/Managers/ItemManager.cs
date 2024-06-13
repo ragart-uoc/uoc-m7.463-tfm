@@ -74,12 +74,27 @@ namespace TFM.Managers
             ImportData(GameManager.Instance.gameStateData.items);
             Ready?.Invoke();
         }
+
+        /// <summary>
+        /// Method <c>PicItem</c> picks an item.
+        /// </summary>
+        /// <param name="item">The item to pick.</param>
+        public void PickItem(Item item)
+        {
+            if (IsItemPickedOrDiscarded(item))
+                return;
+            AddItem(item);
+            StartCoroutine(UIManager.Instance.ShowItemNotice(
+                item.Icon,
+                item.Type.ToString(),
+                item.Title));
+        }
         
         /// <summary>
         /// Method <c>AddItem</c> adds an item to the picked items.
         /// </summary>
         /// <param name="item">The item to add.</param>
-        public void AddItem(Item item)
+        private void AddItem(Item item)
         {
             if (pickedItems.Contains(item))
                 return;

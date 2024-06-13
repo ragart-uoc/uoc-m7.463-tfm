@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L6_ADULTHOOD_I4_OUTRO
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998918383337779
+  - rid: 3820998918383337780
+  - rid: 3820998918383337781
+  - rid: 3820998918383337782
+  - rid: 3820998918383337783
+  - rid: 3820998918383337784
+  - rid: 3820998918383337785
+  - rid: 3820998918383337786
+  - rid: 3820998918383337787
+  - rid: 3820998918383337798
+  - rid: 3820998918383337799
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998918383337779
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: The siren of the ambulance roared closer. I knew what was happening.
+        position: 0
+    - rid: 3820998918383337780
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 132de42840037ee4981920e51686a154, type: 2}
+        dialogueLine: Daddy, what's happening?
+        position: 1
+    - rid: 3820998918383337781
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: I don't know, sweety. Come on, let's go find mom.
+        position: 0
+    - rid: 3820998918383337782
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: But my wife was already inside the ambulance.
+        position: 0
+    - rid: 3820998918383337783
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: The conversation we had just minutes before was the last one
+          we would ever have.
+        position: 0
+    - rid: 3820998918383337784
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: It just broke us.
+        position: 0
+    - rid: 3820998918383337785
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: It broke me.
+        position: 0
+    - rid: 3820998918383337786
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337787
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 627759800cb0d3e4cbe2b42391b96796, type: 2}
+    - rid: 3820998918383337798
+      type: {class: ItemPickAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        item: {fileID: 11400000, guid: 03490d2370cb11948af4e993736c5987, type: 2}
+    - rid: 3820998918383337799
+      type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        level: {fileID: 11400000, guid: 95a3d47454fbe264db1833881b6fe962, type: 2}
+        fadeOverlay: 1
+        destroyPersistentManagers: 0

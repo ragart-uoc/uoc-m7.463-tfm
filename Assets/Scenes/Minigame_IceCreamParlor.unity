@@ -1304,7 +1304,7 @@ MonoBehaviour:
   minigameDuration: 60
   maxRoundTime: 10
   minRoundTime: 3
-  completionEvent: {fileID: 11400000, guid: dd6a79f81b3403846bad572de79e48e9, type: 2}
+  completionEvent: {fileID: 11400000, guid: f43d7309c286aab4d9c88fed04ac9b1d, type: 2}
   nextLevel: {fileID: 11400000, guid: f43a65bfc32fd46469b60a473f7d3e36, type: 2}
   mainCamera: {fileID: 1355620118}
   customerSelectionPanel: {fileID: 2024167769}

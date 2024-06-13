@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L6_ADULTHOOD_ROAM2_INT_KITE_DAUGHTER
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998918383337768
+  - rid: 3820998918383337769
+  - rid: 3820998918383337770
+  - rid: 3820998918383337771
+  - rid: 3820998918383337772
+  - rid: 3820998918383337774
+  - rid: 3820998918383337775
+  - rid: 3820998918383337778
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998918383337768
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 132de42840037ee4981920e51686a154, type: 2}
+        dialogueLine: Daddy! You forgot the kite! Haha, you're so forgetful.
+        position: 1
+    - rid: 3820998918383337769
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: I'm sorry, sweetie. Let's fly it now.
+        position: 0
+    - rid: 3820998918383337770
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: There was nothing that could ruin that moment.
+        position: 0
+    - rid: 3820998918383337771
+      type: {class: ScreenShakeAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337772
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 6d5d6ac370924c546aff40a7313bafe2, type: 2}
+        dialogueLine: ...
+        position: 1
+    - rid: 3820998918383337774
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337775
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 88b575b1de53ad34bbaca295606482a2, type: 2}
+    - rid: 3820998918383337778
+      type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        level: {fileID: 11400000, guid: be9d9a925366a53488c596bd6870df6f, type: 2}
+        fadeOverlay: 1
+        destroyPersistentManagers: 0

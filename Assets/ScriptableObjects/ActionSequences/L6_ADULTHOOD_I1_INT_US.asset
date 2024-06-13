@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L6_ADULTHOOD_I1_INT_US
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998918383337671
+  - rid: 3820998918383337672
+  - rid: 3820998918383337673
+  - rid: 3820998918383337674
+  - rid: 3820998918383337675
+  - rid: 3820998918383337676
+  - rid: 3820998918383337677
+  - rid: 3820998918383337678
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998918383337671
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: I remember that day. We were having a good time. We were laughing,
+          playing, eating ice cream.
+        position: 0
+    - rid: 3820998918383337672
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: I remember my wife. She was so beautiful. She was so happy.
+        position: 0
+    - rid: 3820998918383337673
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: And what I could say about my daughter? She was the light of
+          my life.
+        position: 0
+    - rid: 3820998918383337674
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: I remember the three of us. We were so happy. We were so content.
+          We were... fine.
+        position: 0
+    - rid: 3820998918383337675
+      type: {class: ScreenShakeAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337676
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 7660ff51fd64f214d9ebc90b933934e3, type: 2}
+        dialogueLine: We... were... fine.
+        position: 0
+    - rid: 3820998918383337677
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337678
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: ee261473e88708348a989646c652e486, type: 2}

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde683cf73e203643a212087956f3f36, type: 3}
+  m_Name: THING_ICECREAM
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 21501f7ae57af8e40807707575cc6555, type: 3}
+  title: Ice Cream
+  description: A strawberry and vanilla ice cream cone. It was my grandma's favorite.
+  type: 2

@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L3_CHILD_I1_INT_VENDOR
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998899519455245
+  - rid: 3820998899519455246
+  - rid: 3820998899519455247
+  - rid: 3820998899519455248
+  - rid: 3820998899519455249
+  - rid: 3820998899519455250
+  - rid: 3820998899519455253
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998899519455245
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
+        dialogueLine: I remember her. She was always so kind to me. I think she was
+          my first love. A childish love, of course.
+        position: 0
+    - rid: 3820998899519455246
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 767f872d1879b564ba64c6439145d528, type: 2}
+        dialogueLine: Hello! How is my favorite customer doing today? Would you like
+          to try our new flavor?
+        position: 1
+    - rid: 3820998899519455247
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
+        dialogueLine: I'd love to, but I just want an ice cream cone for my grandmother.
+        position: 0
+    - rid: 3820998899519455248
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 767f872d1879b564ba64c6439145d528, type: 2}
+        dialogueLine: Oh, that's so sweet. Here you go. It's on the house.
+        position: 1
+    - rid: 3820998899519455249
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
+        dialogueLine: Thank you. I hope she likes it.
+        position: 0
+    - rid: 3820998899519455250
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998899519455253
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: aaf4dbae7c1284044a06f58c29385faa, type: 2}

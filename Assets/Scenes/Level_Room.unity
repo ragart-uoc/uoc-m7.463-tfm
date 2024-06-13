@@ -249,40 +249,16 @@ Transform:
   - {fileID: 833910810}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &161317636
+--- !u!1 &161317636 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2915601559770456065, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+  m_PrefabInstance: {fileID: 8135731978241189563}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 161317637}
-  - component: {fileID: 161317639}
-  - component: {fileID: 161317638}
-  m_Layer: 0
-  m_Name: ConeFigurine
-  m_TagString: DynamicElement
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &161317637
+--- !u!4 &161317637 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 283746927518417768, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+  m_PrefabInstance: {fileID: 8135731978241189563}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 161317636}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.1, y: -1.7, z: -4.9}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 227256821}
-  m_Father: {fileID: 457214686}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &161317638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,13 +272,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Ice cream figure
-  itemDescription: A figure representing an ice cream.<br>It was part of my childhood.
-  itemUnpickedDescription: A <color="red">figure</color> representing an ice cream.<br>It
-    was part of my childhood.
+  itemDescription: I got this figurine from an ice cream parlor that I used to visit
+    with my family.
+  itemUnpickedDescription: I got this figurine from an ice cream parlor that I used
+    to visit with my family.
   actionSequence:
-    triggerEvent: {fileID: 0}
-    actionSequence: {fileID: 11400000, guid: c994c39c35509b54cad9dcd2e8a0ef62, type: 2}
-    completionEvent: {fileID: 11400000, guid: a85c68c27bde45a46a53832fcab1a473, type: 2}
+    triggerEvent: {fileID: 11400000, guid: 410ce01644c033d4992a48b464f7a2ca, type: 2}
+    actionSequence: {fileID: 11400000, guid: 30fbc367ebb581d4ea2a2e954ddfd21b, type: 2}
+    completionEvent: {fileID: 11400000, guid: 1bc577158af22734b9c99d6b819fe4bd, type: 2}
   pickableItem: {fileID: 11400000, guid: 6174f8e4661118744932981e35c804f4, type: 2}
   objectInteracions: []
 --- !u!114 &161317639
@@ -320,68 +297,6 @@ MonoBehaviour:
   showEvents: []
   hideEvents: []
   availableAgeGroups: 04000000
---- !u!1001 &227256820
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 161317637}
-    m_Modifications:
-    - target: {fileID: 7943436872780346400, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
-      propertyPath: m_Name
-      value: ConeFigurine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800922029809287764, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800922029809287764, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800922029809287764, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800922029809287764, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800922029809287764, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800922029809287764, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800922029809287764, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800922029809287764, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800922029809287764, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8800922029809287764, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
---- !u!4 &227256821 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8800922029809287764, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
-  m_PrefabInstance: {fileID: 227256820}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &457214685
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,8 +329,58 @@ Transform:
   - {fileID: 161317637}
   - {fileID: 1073437971}
   - {fileID: 7096242850864234545}
+  - {fileID: 562822255}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &562822254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7999961996292141998, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+  m_PrefabInstance: {fileID: 3468096255788780223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &562822255 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8412527607857861523, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+  m_PrefabInstance: {fileID: 3468096255788780223}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &562822256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562822254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7db24e542d2d248b854f951791d0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Spray can
+  itemDescription: I used to draw graffiti on the walls of the street when I was
+    a teenager.
+  itemUnpickedDescription: I used to draw graffiti on the walls of the street when
+    I was a teenager.
+  actionSequence:
+    triggerEvent: {fileID: 11400000, guid: f4cca362945d1c54bb894f2149361d6c, type: 2}
+    actionSequence: {fileID: 11400000, guid: a6caede46f7b5094da839196caff5117, type: 2}
+    completionEvent: {fileID: 11400000, guid: 45a4dd5fa25849646b53357a950bda19, type: 2}
+  pickableItem: {fileID: 11400000, guid: 09d919ef89140644c94232dedaaed906, type: 2}
+  objectInteracions: []
+--- !u!114 &562822257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 562822254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd459c9d151ab6045a50271922bb62c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showEvents:
+  - {fileID: 11400000, guid: f4cca362945d1c54bb894f2149361d6c, type: 2}
+  hideEvents: []
+  availableAgeGroups: 04000000
 --- !u!1001 &825249680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -731,8 +696,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Photo album
-  itemDescription: An album containing photos from my life
-  itemUnpickedDescription: An album containing photos from my life
+  itemDescription: This album contains the memories of my life.
+  itemUnpickedDescription: This album contains the memories of my life.
   actionSequence:
     triggerEvent: {fileID: 0}
     actionSequence: {fileID: 0}
@@ -740,10 +705,13 @@ MonoBehaviour:
   pickableItem: {fileID: 0}
   objectInteracions:
   - item: {fileID: 11400000, guid: 6174f8e4661118744932981e35c804f4, type: 2}
-    actionSequence: {fileID: 11400000, guid: e824d4ff85db10a4cb4acdb288bf83c8, type: 2}
+    actionSequence: {fileID: 11400000, guid: ae94aa39aa4e1524d8cbd17bf363a283, type: 2}
+    discardItem: 1
+  - item: {fileID: 11400000, guid: 09d919ef89140644c94232dedaaed906, type: 2}
+    actionSequence: {fileID: 11400000, guid: fc4e01ace0ba0f84a8a9a9119ed1fc69, type: 2}
     discardItem: 1
   - item: {fileID: 11400000, guid: 256a242404876ed43b899bda7d31ec98, type: 2}
-    actionSequence: {fileID: 11400000, guid: 3bd904e9a1fae4c438c6c9955dfe4c64, type: 2}
+    actionSequence: {fileID: 11400000, guid: 2a1269d5ec1b4d24bbae81d03a7a60e8, type: 2}
     discardItem: 1
 --- !u!114 &1073437974
 MonoBehaviour:
@@ -758,7 +726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showEvents:
-  - {fileID: 11400000, guid: a85c68c27bde45a46a53832fcab1a473, type: 2}
+  - {fileID: 11400000, guid: 1bc577158af22734b9c99d6b819fe4bd, type: 2}
   hideEvents: []
   availableAgeGroups: 04000000
 --- !u!1001 &1806826297
@@ -907,11 +875,74 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3931625604756192686, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7096242850864234547}
+      addedObject: {fileID: 7096242850864234546}
     - targetCorrespondingSourceObject: {fileID: 3931625604756192686, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7096242850864234546}
+      addedObject: {fileID: 7096242850864234547}
   m_SourcePrefab: {fileID: 100100000, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
+--- !u!1001 &3468096255788780223
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 457214686}
+    m_Modifications:
+    - target: {fileID: 7999961996292141998, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+      propertyPath: m_Name
+      value: SprayCan
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412527607857861523, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412527607857861523, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412527607857861523, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412527607857861523, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412527607857861523, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412527607857861523, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412527607857861523, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412527607857861523, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412527607857861523, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8412527607857861523, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7999961996292141998, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 562822257}
+    - targetCorrespondingSourceObject: {fileID: 7999961996292141998, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 562822256}
+  m_SourcePrefab: {fileID: 100100000, guid: ce826e23e699b724f9b69726e6ee153f, type: 3}
 --- !u!1 &5422306483644812911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3931625604756192686, guid: 765f8e4b9729cee42ab3c67f385fe64f, type: 3}
@@ -935,7 +966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showEvents:
-  - {fileID: 11400000, guid: 982727ffe45fe4a45bd25db5a15031e7, type: 2}
+  - {fileID: 11400000, guid: b708e21bf304a8b4c9a994c7ea737881, type: 2}
   hideEvents: []
   availableAgeGroups: 04000000
 --- !u!114 &7096242850864234547
@@ -951,15 +982,78 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Kite
-  itemDescription: My precious kite.
-  itemUnpickedDescription: That's my <color="red">Kite</color>!<br> I thought I lost
-    it when I was a kid...
+  itemDescription: This kite belonged to my daughter. We used to fly it in the park.
+  itemUnpickedDescription: This kite belonged to my daughter. We used to fly it in
+    the park.
   actionSequence:
-    triggerEvent: {fileID: 0}
-    actionSequence: {fileID: 0}
-    completionEvent: {fileID: 0}
+    triggerEvent: {fileID: 11400000, guid: b708e21bf304a8b4c9a994c7ea737881, type: 2}
+    actionSequence: {fileID: 11400000, guid: a65253ec4f0b525439c2643bf58633f0, type: 2}
+    completionEvent: {fileID: 11400000, guid: 73a717d7f5b2b2d408ff2037120f68c4, type: 2}
   pickableItem: {fileID: 11400000, guid: 256a242404876ed43b899bda7d31ec98, type: 2}
   objectInteracions: []
+--- !u!1001 &8135731978241189563
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 457214686}
+    m_Modifications:
+    - target: {fileID: 283746927518417768, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 283746927518417768, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 283746927518417768, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 283746927518417768, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 283746927518417768, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283746927518417768, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283746927518417768, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283746927518417768, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283746927518417768, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 283746927518417768, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2915601559770456065, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+      propertyPath: m_Name
+      value: Figurine
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2915601559770456065, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 161317639}
+    - targetCorrespondingSourceObject: {fileID: 2915601559770456065, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 161317638}
+  m_SourcePrefab: {fileID: 100100000, guid: c4fe24adf4e081345b2712aee49f631d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L6_ADULTHOOD_I2_INT_WIFE
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998918383337679
+  - rid: 3820998918383337680
+  - rid: 3820998918383337681
+  - rid: 3820998918383337682
+  - rid: 3820998918383337683
+  - rid: 3820998918383337684
+  - rid: 3820998918383337685
+  - rid: 3820998918383337686
+  - rid: 3820998918383337687
+  - rid: 3820998918383337688
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998918383337679
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: There was something about that day that was off. I don't know
+          what it was.
+        position: 0
+    - rid: 3820998918383337680
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: Hey, honey. Are you okay?
+        position: 0
+    - rid: 3820998918383337681
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 82e8f17c02db7cc46b503ce4a09d00c2, type: 2}
+        dialogueLine: ...
+        position: 1
+    - rid: 3820998918383337682
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: Honey?
+        position: 0
+    - rid: 3820998918383337683
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 82e8f17c02db7cc46b503ce4a09d00c2, type: 2}
+        dialogueLine: Sorry, I'm fine. I'm just... tired.
+        position: 1
+    - rid: 3820998918383337684
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: I don't know what it was. I don't know what was wrong. I don't
+          know what was off.
+        position: 0
+    - rid: 3820998918383337685
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: Wait. Why does she also look like...?
+        position: 0
+    - rid: 3820998918383337686
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 82e8f17c02db7cc46b503ce4a09d00c2, type: 2}
+        dialogueLine: Come on, go play with your daughter. She's waiting for you.
+          She's really excited about the gift we got her.
+        position: 1
+    - rid: 3820998918383337687
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337688
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 5e84e8d454ab1d149884d0518f42c557, type: 2}

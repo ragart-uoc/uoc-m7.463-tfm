@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf71bdfcdd043504e9c68675acf4f459, type: 3}
+  m_Name: OLDMANADULT_DOUBLE
+  m_EditorClassIdentifier: 
+  actorImagePrefab: {fileID: 4428604033727658030, guid: 0b1438e067985af41b83636b594587d7, type: 3}
+  actorName: Old Man (???)

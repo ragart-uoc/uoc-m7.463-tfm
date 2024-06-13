@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L3_CHILD_I1_INT_ICECREAM_GRANDMA
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998899519455254
+  - rid: 3820998899519455255
+  - rid: 3820998899519455256
+  - rid: 3820998899519455257
+  - rid: 3820998899519455258
+  - rid: 3820998899519455259
+  - rid: 3820998899519455260
+  - rid: 3820998899519455261
+  - rid: 3820998899519455262
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998899519455254
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
+        dialogueLine: Here you go, Grandma. Your favorite strawberry and vanilla
+          ice cream cone.
+        position: 0
+    - rid: 3820998899519455255
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d864a838478a54a4d9e82781ef8dc4bd, type: 2}
+        dialogueLine: Oh, thank you, dear. You always know how to make me happy.
+        position: 1
+    - rid: 3820998899519455256
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
+        dialogueLine: I'm glad you like it. I love you, Grandma.
+        position: 0
+    - rid: 3820998899519455257
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d864a838478a54a4d9e82781ef8dc4bd, type: 2}
+        dialogueLine: I love you too, my little sunshine.
+        position: 1
+    - rid: 3820998899519455258
+      type: {class: ScreenShakeAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998899519455259
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: f9f11713a016f2b44b744722703d5eda, type: 2}
+        dialogueLine: Do you really think that's how it happened?
+        position: 1
+    - rid: 3820998899519455260
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
+        dialogueLine: What do you mean?
+        position: 0
+    - rid: 3820998899519455261
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998899519455262
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: bb1e301a7c11a7543bfdba58ff95b36a, type: 2}

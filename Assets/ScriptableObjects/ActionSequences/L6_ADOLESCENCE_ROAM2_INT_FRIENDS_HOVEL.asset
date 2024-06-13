@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L6_ADOLESCENCE_ROAM2_INT_FRIENDS_HOVEL
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998918383337760
+  - rid: 3820998918383337761
+  - rid: 3820998918383337762
+  - rid: 3820998918383337763
+  - rid: 3820998918383337764
+  - rid: 3820998918383337766
+  - rid: 3820998918383337767
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998918383337760
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: Opening up to my old friends was one of the best things that
+          I have ever done.
+        position: 0
+    - rid: 3820998918383337761
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: After that, they were always there for me. And I was there
+          for them.
+        position: 0
+    - rid: 3820998918383337762
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: Weeks after getting in touch with them, they threw me a surprise
+          birthday party.
+        position: 0
+    - rid: 3820998918383337763
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
+        dialogueLine: I was so happy. The light at the end of the tunnel was nearer
+          than ever.
+        position: 0
+    - rid: 3820998918383337764
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337766
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 74b6964a9c8bcc745af0cb47e888d39d, type: 2}
+    - rid: 3820998918383337767
+      type: {class: ItemPickAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        item: {fileID: 11400000, guid: edec7f2ca5f77964c88090514ffdc1fa, type: 2}

@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L5_MIXED_I4_INT_OLDMANOLD
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998918383337820
+  - rid: 3820998918383337821
+  - rid: 3820998918383337822
+  - rid: 3820998918383337823
+  - rid: 3820998918383337824
+  - rid: 3820998918383337825
+  - rid: 3820998918383337826
+  - rid: 3820998918383337827
+  - rid: 3820998918383337828
+  - rid: 3820998918383337829
+  - rid: 3820998918383337830
+  - rid: 3820998918383337831
+  - rid: 3820998918383337833
+  - rid: 3820998918383337834
+  - rid: 3820998918383337835
+  - rid: 3820998918383337836
+  - rid: 3820998918383337837
+  - rid: 3820998918383337838
+  - rid: 3820998918383337839
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998918383337820
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: I... I don't remember being here. Why am I here?
+        position: 0
+    - rid: 3820998918383337821
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: I was just telling my... she... who...?
+        position: 0
+    - rid: 3820998918383337822
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 6af9c69841b10144da1cc8ca530e2d27, type: 2}
+        dialogueLine: Sir, are you okay? Do you need help?
+        position: 1
+    - rid: 3820998918383337823
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: I... I don't remember... I don't remember...
+        position: 0
+    - rid: 3820998918383337824
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: I was just... I was just... I was just...
+        position: 0
+    - rid: 3820998918383337825
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 6af9c69841b10144da1cc8ca530e2d27, type: 2}
+        dialogueLine: Sir, what's your name? Can you tell me your name?
+        position: 1
+    - rid: 3820998918383337826
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: I... I... I...
+        position: 0
+    - rid: 3820998918383337827
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 6af9c69841b10144da1cc8ca530e2d27, type: 2}
+        dialogueLine: Is there anyone I can call for you? A family member? A friend?
+        position: 1
+    - rid: 3820998918383337828
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: Family...? Friends...?
+        position: 0
+    - rid: 3820998918383337829
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 6af9c69841b10144da1cc8ca530e2d27, type: 2}
+        dialogueLine: Dispatch, I need an ambulance at the corner of 5th and Main.
+        position: 1
+    - rid: 3820998918383337830
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: Where's she...? Where's... ah... my... no... the policewoman?
+          She was always around here. I was just telling her...
+        position: 0
+    - rid: 3820998918383337831
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 6af9c69841b10144da1cc8ca530e2d27, type: 2}
+        dialogueLine: Sir, I am the only officer in this area. I have been for years.
+        position: 1
+    - rid: 3820998918383337833
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: No... No, that can't be... She was just here... I was just
+          telling her... I was...
+        position: 0
+    - rid: 3820998918383337834
+      type: {class: ScreenShakeAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337835
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: What is happening to me...? Why can't I remember...?
+        position: 0
+    - rid: 3820998918383337836
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: Am I forgetting... myself...?
+        position: 0
+    - rid: 3820998918383337837
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337838
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: c900041a3032033419340ccd27777268, type: 2}
+    - rid: 3820998918383337839
+      type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        level: {fileID: 11400000, guid: fe926f823ab00774ea489ade07ebe4c0, type: 2}
+        fadeOverlay: 1
+        destroyPersistentManagers: 0

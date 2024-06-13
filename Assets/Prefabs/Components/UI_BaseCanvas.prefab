@@ -2230,6 +2230,7 @@ GameObject:
   - component: {fileID: 3566225429881432745}
   - component: {fileID: 2169143956955207568}
   - component: {fileID: 8258354618399106141}
+  - component: {fileID: 4621701510442708147}
   m_Layer: 5
   m_Name: AlbumIndicator
   m_TagString: Untagged
@@ -2294,6 +2295,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4621701510442708147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446442310315228617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0765d5e2296f59846aa6e15e2a0ab3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  albumName: Back to album
+  nextLevel: {fileID: 11400000, guid: 1166d3909bd801241b145be2687feab3, type: 2}
 --- !u!1 &7802074369758291966
 GameObject:
   m_ObjectHideFlags: 0

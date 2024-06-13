@@ -26,8 +26,14 @@ MonoBehaviour:
   photoAlbumIndicatorRequiredEvents: []
   levelSequenceEvents:
   - triggerEvent: {fileID: 0}
-    actionSequence: {fileID: 11400000, guid: 06168b2fbf89b1d4c881d66c688aa264, type: 2}
-    completionEvent: {fileID: 11400000, guid: 8e5151ccf1c251c4f8ea5d78b8fa0b4d, type: 2}
-  - triggerEvent: {fileID: 11400000, guid: bc595c02200ac484ea9cd5955c3573a7, type: 2}
-    actionSequence: {fileID: 11400000, guid: 58c8468471d2d2347bd7eb33371429a5, type: 2}
-    completionEvent: {fileID: 11400000, guid: 982727ffe45fe4a45bd25db5a15031e7, type: 2}
+    actionSequence: {fileID: 11400000, guid: 793d64c0f4ec8944c86f8fa6f1cbd687, type: 2}
+    completionEvent: {fileID: 11400000, guid: 4285e2fa85362af429d2d16b07f08a53, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: 5954daaa41fae884580aa44a6784ab79, type: 2}
+    actionSequence: {fileID: 11400000, guid: e2f4229796074ae49995b8a3a944542c, type: 2}
+    completionEvent: {fileID: 11400000, guid: 410ce01644c033d4992a48b464f7a2ca, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: fb0a93bed245eb24db9985339c3aa742, type: 2}
+    actionSequence: {fileID: 11400000, guid: 9b84b4cb9c2d38348867cb66d93ba947, type: 2}
+    completionEvent: {fileID: 11400000, guid: f4cca362945d1c54bb894f2149361d6c, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: 0c14a64194db9d0449f79820bd301538, type: 2}
+    actionSequence: {fileID: 11400000, guid: 1bf7bdf0c60ae5f49aa675f56b5b7fe5, type: 2}
+    completionEvent: {fileID: 11400000, guid: b708e21bf304a8b4c9a994c7ea737881, type: 2}

@@ -118,6 +118,7 @@ namespace TFM.Managers
         /// </summary>
         private void HandleEventTriggered(Event e)
         {
+            Debug.Log("Event triggered: " + e.eventName);
             if (CurrentLevelsEnablesPhotoAlbum())
                 UIManager.Instance.ShowPhotoAlbumIndicator();
             ExecuteActionSequences(UpdateLevel);
@@ -146,6 +147,7 @@ namespace TFM.Managers
                       || !EventManager.Instance.GetEventState(levelSequenceEvent.completionEvent)
                 select levelSequenceEvent)
             {
+                Debug.Log("EXECUTING LEVEL SEQUENCE EVENT: " + levelSequenceEvent.actionSequence.name);
                 levelSequenceEvent.actionSequence.ExecuteSequence(callback);
                 return;
             }
@@ -158,7 +160,7 @@ namespace TFM.Managers
         private void UpdateLevel()
         {
             RefreshSceneShowableObjects();
-            UIManager.Instance.EnableInteractions();
+            UIManager.Instance?.EnableInteractions();
             LevelUpdated?.Invoke(_levels[_currentLevelName]);
         }
         
@@ -280,7 +282,7 @@ namespace TFM.Managers
         /// <param name="ageGroup">The age group.</param>
         public void CurrentLevelChangeAgeGroup(AgeGroupProperties.Groups ageGroup)
         {
-            UIManager.Instance.EnableInteractions(false);
+            UIManager.Instance?.EnableInteractions(false);
             ChangeAgeGroup(_currentLevelName, ageGroup);
         }
 

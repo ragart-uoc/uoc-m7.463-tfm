@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L0_NONE_I1_INTRO_1
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998886834307072
+  - rid: 3820998886834307073
+  - rid: 3820998886834307074
+  - rid: 3820998886834307075
+  - rid: 3820998886834307076
+  - rid: 3820998886834307091
+  - rid: 3820998886834307092
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998886834307072
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: This room is so full of memories... I wonder where to start.
+        position: 0
+    - rid: 3820998886834307073
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: Maybe from the beginning. There must be something here that
+          can help me remember.
+        position: 0
+    - rid: 3820998886834307074
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: Ah! The ice cream figurine. I remember this from my childhood.
+          I'll take a closer look.
+        position: 0
+    - rid: 3820998886834307075
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: Hmmmm... Wait, how was I supposed to do that?
+        position: 0
+    - rid: 3820998886834307076
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998886834307091
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 4285e2fa85362af429d2d16b07f08a53, type: 2}
+    - rid: 3820998886834307092
+      type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        level: {fileID: 11400000, guid: 002d0b8ef3f36f34f91e3841ee211508, type: 2}
+        fadeOverlay: 0
+        destroyPersistentManagers: 0

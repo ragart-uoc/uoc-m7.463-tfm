@@ -63,7 +63,6 @@ namespace TFM.Managers.SceneManagers
         private void OnEnable()
         {
             LevelManager.Instance.Ready += HandleLevelReady;
-            EventManager.Instance.Ready += HandleEventManagerReady;
         }
         
         /// <summary>
@@ -72,7 +71,6 @@ namespace TFM.Managers.SceneManagers
         private void OnDisable()
         {
             LevelManager.Instance.Ready -= HandleLevelReady;
-            EventManager.Instance.Ready -= HandleEventManagerReady;
         }
         
         /// <summary>
@@ -89,20 +87,14 @@ namespace TFM.Managers.SceneManagers
             
             // Create the album photos
             CreateAlbumPhotos();
+            
+            // Check if the drag is enabled
+            dragEnabled = dragRequiredEvents == null
+                          || dragRequiredEvents.Count == 0
+                          || dragRequiredEvents.Any(reqE => EventManager.Instance.GetEventState(reqE));
 
             // Invoke the ready event
             Ready?.Invoke(_albumLevels);
-        }
-        
-        /// <summary>
-        /// Method <c>HandleEventManagerReady</c> handles the event manager ready event.
-        /// </summary>
-        /// <param name="e">The event.</param>
-        private void HandleEventManagerReady(Event e)
-        {
-            dragEnabled = dragRequiredEvents == null
-                              || dragRequiredEvents.Count == 0
-                              || dragRequiredEvents.Any(reqE => EventManager.Instance.GetEventState(reqE));
         }
         
         /// <summary>

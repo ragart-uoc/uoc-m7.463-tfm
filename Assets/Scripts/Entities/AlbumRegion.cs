@@ -57,12 +57,6 @@ namespace TFM.Entities
         /// <param name="levels">The levels in the scene album.</param>
         private void HandleSceneAlbumReady(List<Level> levels)
         {
-            foreach (var level in levels)
-            {
-                Debug.Log(level.name);
-                Debug.Log(level.initialAgeGroup.ToString());
-                Debug.Log(level.currentAgeGroup.ToString());
-            }
             var filteredLevels = levels
                 .Where(l => l.initialAgeGroup == ageGroup || l.currentAgeGroup == ageGroup)
                 .ToList();

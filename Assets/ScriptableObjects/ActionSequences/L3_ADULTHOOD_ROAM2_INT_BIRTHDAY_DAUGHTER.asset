@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L3_ADULTHOOD_ROAM2_INT_BIRTHDAY_DAUGHTER
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998918383337718
+  - rid: 3820998918383337719
+  - rid: 3820998918383337720
+  - rid: 3820998918383337721
+  - rid: 3820998918383337722
+  - rid: 3820998918383337723
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998918383337718
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: Of course she was excited. It was her birthday. We got her
+          a kite. She was really excited about it.
+        position: 0
+    - rid: 3820998918383337719
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: We gave it to her there, after blowing the candles.
+        position: 0
+    - rid: 3820998918383337720
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
+        dialogueLine: We were so excited that we forgot the kite there. Good thing
+          we went back to get it.
+        position: 0
+    - rid: 3820998918383337721
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998918383337722
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 5320dcbdc74e160479e203c5c8ab625c, type: 2}
+    - rid: 3820998918383337723
+      type: {class: ItemPickAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        item: {fileID: 11400000, guid: 35a422fed4ed8a24598b9d2be22b2d07, type: 2}

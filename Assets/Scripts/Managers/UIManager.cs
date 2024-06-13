@@ -15,8 +15,8 @@ namespace TFM.Managers
         /// <value>Property <c>Instance</c> represents the singleton instance of the class.</value>
         public static UIManager Instance;
         
-        /// <value>Property <c>disableInteractions</c> represents if the interactions are disabled.</value>
-        private bool _disableInteractions;
+        /// <value>Property <c>_interactionsEnabled</c> represents if the interactions are enabled.</value>
+        private bool _interactionsEnabled;
         
         #region Radial menu
         
@@ -132,15 +132,17 @@ namespace TFM.Managers
         /// <param name="enable">If the interactions are enabled.</param>
         public void EnableInteractions(bool enable = true)
         {
-            _disableInteractions = !enable;
+            _interactionsEnabled = !(ActionManager.Instance?.IsExecutingSequence() ?? false)
+                                   && !(CustomSceneManager.Instance?.IsLevelLoading() ?? false)
+                                   && enable;
         }
         
         /// <summary>
-        /// Method <c>InteractionsEnabled</c> checks if the interactions are enabled.
+        /// Method <c>AreInteractionsEnabled</c> checks if the interactions are enabled.
         /// </summary>
-        public bool InteractionsEnabled()
+        public bool AreInteractionsEnabled()
         {
-            return !_disableInteractions;
+            return _interactionsEnabled;
         }
         
         #region Status bar
@@ -379,7 +381,7 @@ namespace TFM.Managers
             {
                 while (saveIndicator.gameObject.activeSelf)
                 {
-                    saveIndicator.transform.Rotate(Vector3.forward, 360 * Time.deltaTime);
+                    saveIndicator.transform.Rotate(-Vector3.forward, 360 * Time.deltaTime);
                     yield return null;
                 }
                 saveIndicator.transform.rotation = Quaternion.identity;

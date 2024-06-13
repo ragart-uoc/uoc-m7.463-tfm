@@ -45,6 +45,9 @@ namespace TFM.Entities
         
             /// <value>Property <c>_isDragging</c> represents the dragging state of the album photo.</value>
             private bool _isDragging;
+        
+            /// <value>Property <c>_isInteractionPossible</c> represents if the interaction is possible.</value>
+            private bool _isInteractionPossible;
             
         #endregion
 
@@ -62,6 +65,14 @@ namespace TFM.Entities
             _currentParent = transform.parent;
             _rootCanvas = GetComponentInParent<Canvas>().rootCanvas.transform;
         }
+
+        /// <summary>
+        /// Method <c>Update</c> is called once per frame.
+        /// </summary>
+        private void Update()
+        {
+            _isInteractionPossible = UIManager.Instance.AreInteractionsEnabled();
+        }
         
         /// <summary>
         /// Method <c>OnBeginDrag</c> is called when a drag event is beginning.
@@ -69,11 +80,16 @@ namespace TFM.Entities
         /// <param name="eventData">The data of the event.</param>
         public void OnBeginDrag(PointerEventData eventData)
         {
-            if (SceneAlbumManager.Instance.dragEnabled == false)
-                return;
-
             // Set the dragging state to true
             _isDragging = true;
+
+            // Check if the drag is enabled
+            if (SceneAlbumManager.Instance.dragEnabled == false
+                || _isInteractionPossible == false)
+            {
+                eventData.pointerDrag = null;
+                return;
+            }
             
             // Disable the raycast target
             _image.raycastTarget = false;
@@ -104,6 +120,10 @@ namespace TFM.Entities
         /// <param name="eventData"></param>
         public void OnEndDrag(PointerEventData eventData)
         {
+            // Check if the drag is enabled
+            if (SceneAlbumManager.Instance.dragEnabled == false)
+                return;
+
             // If the parent is the root canvas, move back to the original parent and position
             if (transform.parent == _rootCanvas)
             {
@@ -129,6 +149,10 @@ namespace TFM.Entities
         /// <param name="eventData">The data of the event.</param>
         public void OnPointerDown(PointerEventData eventData)
         {
+            if (_isInteractionPossible == false)
+                return;
+            transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+            _isDragging = false;
         }
         
         /// <summary>
@@ -137,6 +161,9 @@ namespace TFM.Entities
         /// <param name="eventData">The data of the event.</param>
         public void OnPointerUp(PointerEventData eventData)
         {
+            if (_isInteractionPossible == false)
+                return;
+            transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             if (_isDragging)
                 return;
             CustomSceneManager.Instance.LoadLevel(levelName);

@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: L0_NONE_I1_INT_ICECREAMFIGURINE
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998886834307098
+  - rid: 3820998886834307099
+  - rid: 3820998886834307100
+  - rid: 3820998886834307101
+  - rid: 3820998899519455252
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998886834307098
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: This figurine belonged to an ice cream parlor where I used
+          to go with my family every Sunday. I got it when they closed down.
+        position: 0
+    - rid: 3820998886834307099
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: My grandmother loved that place. She'd be so happy to see this
+          again. I miss her so much...
+        position: 0
+    - rid: 3820998886834307100
+      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
+        dialogueLine: She's actually a good place to start. There must be a photo
+          of her in that album over there. I should <color="red">[use]</color> the
+          ice cream figurine on that photo album over there.
+        position: 0
+    - rid: 3820998886834307101
+      type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+    - rid: 3820998899519455252
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        eventObject: {fileID: 11400000, guid: 1bc577158af22734b9c99d6b819fe4bd, type: 2}

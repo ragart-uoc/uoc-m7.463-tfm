@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf71bdfcdd043504e9c68675acf4f459, type: 3}
-  m_Name: Unknown
+  m_Name: UNKNOWN
   m_EditorClassIdentifier: 
   actorImagePrefab: {fileID: 6318091460770958663, guid: fa505f97571da5c42aa5f9a06c08e3a1, type: 3}
   actorName: ???

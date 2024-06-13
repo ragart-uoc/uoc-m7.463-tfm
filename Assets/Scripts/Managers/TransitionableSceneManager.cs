@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using TFM.Entities;
+using UnityEngine.UI;
 
 namespace TFM.Managers
 {
@@ -13,11 +14,16 @@ namespace TFM.Managers
         /// <value>Property <c>Instance</c> represents the singleton instance of the class.</value>
         public static TransitionableSceneManager Instance;
         
-        #region general
-        
-            /// <value>Property <c>waitBeforeStart</c> represents the wait time before the scene starts.</value>
-            [Header("General")]
-            public float waitBeforeStart = 2.5f;
+        #region Delays
+
+            /// <value>Property <c>initialDelay</c> represents the initial delay.</value>
+            [Header("Delays")] public float initialDelay;
+            
+            /// <value>Property <c>startDelay</c> represents the start delay.</value>
+            public float startDelay = 2.5f;
+            
+            /// <value>Property <c>finalDelay</c> represents the final delay.</value>
+            public float finalDelay;
         
         #endregion
         
@@ -26,6 +32,9 @@ namespace TFM.Managers
             /// <value>Property <c>fadingTexts</c> represents the fadable texts.</value>
             [Header("Fade")]
             public TextMeshProUGUI[] fadingTexts;
+            
+            /// <value>Property <c>fadingImages</c> represents the fadable images.</value>
+            public Image[] fadingImages;
             
             /// <value>Property <c>fadeDuration</c> represents the duration of the fade.</value>
             public float fadeDuration = 1.5f;
@@ -98,26 +107,34 @@ namespace TFM.Managers
         {
             _inputReceived = false;
             _started = false;
+            yield return new WaitForSeconds(initialDelay);
             if (fadingTexts.Length > 0)
                 FadeTexts(fadingTexts, 1.0f, fadeDuration);
+            if (fadingImages.Length > 0)
+                FadeImages(fadingImages, 1.0f, fadeDuration);
             if (blinkingTexts.Length > 0)
                 BlinkTexts(blinkingTexts, blinkRate);
             if (rotatingObjects.Length > 0)
                 RotateObjects(rotatingObjects, rotateRate, rotateClockwise, rotateSpeed);
-            yield return new WaitForSeconds(waitBeforeStart);
+            yield return new WaitForSeconds(startDelay);
             if (requireInput)
             {
                 _started = true;
                 yield break;
             }
-            if (fadingTexts.Length > 0)
+            if (fadingTexts.Length > 0 || fadingImages.Length > 0)
             {
                 FadeTexts(fadingTexts, 0.0f, fadeDuration);
+                FadeImages(fadingImages, 0.0f, fadeDuration);
                 yield return new WaitForSeconds(fadeDuration);
             }
+            yield return new WaitForSeconds(finalDelay);
             CustomSceneManager.Instance.LoadLevel(nextLevel.name);
         }
 
+        /// <summary>
+        /// Method <c>Update</c> is called once per frame.
+        /// </summary>
         private void Update()
         {
             if (!_started || _inputReceived)
@@ -128,6 +145,12 @@ namespace TFM.Managers
             CustomSceneManager.Instance.LoadLevel(nextLevel.name);
         }
 
+        /// <summary>
+        /// Method <c>FadeTexts</c> fades the texts.
+        /// </summary>
+        /// <param name="texts">The texts to fade.</param>
+        /// <param name="targetAlpha">The target alpha.</param>
+        /// <param name="duration">The duration of the fade.</param>
         private void FadeTexts(TextMeshProUGUI[] texts, float targetAlpha, float duration)
         {
             foreach (var text in texts)
@@ -138,6 +161,27 @@ namespace TFM.Managers
             }
         }
         
+        /// <summary>
+        /// Method <c>FadeImages</c> fades the images.
+        /// </summary>
+        /// <param name="images">The images to fade.</param>
+        /// <param name="targetAlpha">The target alpha.</param>
+        /// <param name="duration">The duration of the fade.</param>
+        private void FadeImages(Image[] images, float targetAlpha, float duration)
+        {
+            foreach (var image in images)
+            {
+                if (targetAlpha > 0)
+                    image.canvasRenderer.SetAlpha(0.0f);
+                image.CrossFadeAlpha(targetAlpha, duration, false);
+            }
+        }
+        
+        /// <summary>
+        /// Method <c>BlinkTexts</c> blinks the texts.
+        /// </summary>
+        /// <param name="texts">The texts to blink.</param>
+        /// <param name="rate">The rate of the blink.</param>
         private void BlinkTexts(TextMeshProUGUI[] texts, float rate)
         {
             foreach (var text in texts)
@@ -146,6 +190,11 @@ namespace TFM.Managers
             }
         }
         
+        /// <summary>
+        /// Method <c>BlinkText</c> blinks the text.
+        /// </summary>
+        /// <param name="text">The text to blink.</param>
+        /// <param name="rate">The rate of the blink.</param>
         private IEnumerator BlinkText(TextMeshProUGUI text, float rate)
         {
             while (true)
@@ -155,6 +204,13 @@ namespace TFM.Managers
             }
         }
         
+        /// <summary>
+        /// Method <c>RotateObjects</c> rotates the objects.
+        /// </summary>
+        /// <param name="objects">The objects to rotate.</param>
+        /// <param name="rate">The rate of the rotation.</param>
+        /// <param name="clockwise">Whether the object should rotate clockwise.</param>
+        /// <param name="speed">The speed of the rotation.</param>
         private void RotateObjects(GameObject[] objects, float rate, bool clockwise, float speed)
         {
             foreach (var obj in objects)
@@ -163,6 +219,13 @@ namespace TFM.Managers
             }
         }
 
+        /// <summary>
+        /// Method <c>RotateObject</c> rotates the object.
+        /// </summary>
+        /// <param name="obj">The object to rotate.</param>
+        /// <param name="rate">The rate of the rotation.</param>
+        /// <param name="clockwise">Whether the object should rotate clockwise.</param>
+        /// <param name="speed">The speed of the rotation.</param>
         private IEnumerator RotateObject(GameObject obj, float rate, bool clockwise, float speed)
         {
             while (true)

@@ -12,7 +12,8 @@ namespace TFM.Entities
             Adolescence,
             Adulthood,
             OldAge,
-            None
+            None,
+            Mixed
         }
     }
 }

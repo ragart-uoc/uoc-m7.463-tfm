@@ -25,6 +25,6 @@ MonoBehaviour:
   showPhotoAlbumIndicator: 0
   photoAlbumIndicatorRequiredEvents: []
   levelSequenceEvents:
-  - triggerEvent: {fileID: 0}
-    actionSequence: {fileID: 11400000, guid: a5227547efcb9c84fa53eca7e5b479a3, type: 2}
-    completionEvent: {fileID: 11400000, guid: bc595c02200ac484ea9cd5955c3573a7, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: 84da12ed7776a8446a03d5f156ca4621, type: 2}
+    actionSequence: {fileID: 11400000, guid: 070fb7eb54541bf47897f3d21220cbb6, type: 2}
+    completionEvent: {fileID: 11400000, guid: fb0a93bed245eb24db9985339c3aa742, type: 2}
