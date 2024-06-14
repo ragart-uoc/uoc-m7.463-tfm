@@ -23,6 +23,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: That's my adolescent self. He was always so lonely, but there
           is something else in his eyes.
@@ -31,8 +32,10 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337803
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: fe8467487fbb89145974972c008202c1, type: 2}

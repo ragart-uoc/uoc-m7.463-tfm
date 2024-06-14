@@ -31,6 +31,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
         dialogueLine: I remember this place. I used to walk here all the time.
         position: 0
@@ -38,6 +39,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
         dialogueLine: I was kind of the outcast growing up. I didn't want any friends.
           I didn't need any.
@@ -46,6 +48,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
         dialogueLine: I thought I was better than them. I thought I was smarter.
           I thought I was... special.
@@ -54,6 +57,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
         dialogueLine: Looking at it now, I was a fool. I was just a kid, and I probably
           was just lost. Maybe I still am.
@@ -62,10 +66,12 @@ MonoBehaviour:
       type: {class: ScreenShakeAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337536
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 6d5d6ac370924c546aff40a7313bafe2, type: 2}
         dialogueLine: You're not lost. You're useless. You're a failure. You're nothing.
         position: 1
@@ -73,6 +79,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
         dialogueLine: Again? Who are you?
         position: 0
@@ -80,6 +87,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
         dialogueLine: Gone. What is happening?
         position: 0
@@ -87,6 +95,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
         dialogueLine: I should look around. Let's see what I can forget about this
           place.
@@ -95,8 +104,10 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337541
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: 44c7c6882fb068946aa372ca5e95b4aa, type: 2}

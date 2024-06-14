@@ -28,6 +28,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
         dialogueLine: The new owner replaced the jukebox with an arcade machine.
           It probably was one of the reasons they didn't go bankrupt.
@@ -36,6 +37,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
         dialogueLine: I didn't have any money to play, but after I decided to focus
           on music, I started to gather some extra money.
@@ -44,6 +46,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
         dialogueLine: I started to played a lot. And I got really good at it.
         position: 0
@@ -51,6 +54,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
         dialogueLine: A lot of people started to watch me play... including my old
           friends.
@@ -59,6 +63,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: d2daef7e07f6c2f4da34f55ffa745b1e, type: 2}
         dialogueLine: I also started to open up to people again. I felt my life was
           finally getting back on track.
@@ -67,13 +72,16 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337716
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: 6679ac1a2e4bcf04aa20d2fb484a5d2f, type: 2}
     - rid: 3820998918383337717
       type: {class: ItemPickAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         item: {fileID: 11400000, guid: 4f7f2ff39242dd849bbf7444a9e1d121, type: 2}

@@ -39,6 +39,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: I... I don't remember being here. Why am I here?
         position: 0
@@ -46,6 +47,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: I was just telling my... she... who...?
         position: 0
@@ -53,6 +55,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 6af9c69841b10144da1cc8ca530e2d27, type: 2}
         dialogueLine: Sir, are you okay? Do you need help?
         position: 1
@@ -60,6 +63,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: I... I don't remember... I don't remember...
         position: 0
@@ -67,6 +71,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: I was just... I was just... I was just...
         position: 0
@@ -74,6 +79,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 6af9c69841b10144da1cc8ca530e2d27, type: 2}
         dialogueLine: Sir, what's your name? Can you tell me your name?
         position: 1
@@ -81,6 +87,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: I... I... I...
         position: 0
@@ -88,6 +95,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 6af9c69841b10144da1cc8ca530e2d27, type: 2}
         dialogueLine: Is there anyone I can call for you? A family member? A friend?
         position: 1
@@ -95,6 +103,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: Family...? Friends...?
         position: 0
@@ -102,6 +111,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 6af9c69841b10144da1cc8ca530e2d27, type: 2}
         dialogueLine: Dispatch, I need an ambulance at the corner of 5th and Main.
         position: 1
@@ -109,6 +119,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: Where's she...? Where's... ah... my... no... the policewoman?
           She was always around here. I was just telling her...
@@ -117,6 +128,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 6af9c69841b10144da1cc8ca530e2d27, type: 2}
         dialogueLine: Sir, I am the only officer in this area. I have been for years.
         position: 1
@@ -124,6 +136,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: No... No, that can't be... She was just here... I was just
           telling her... I was...
@@ -132,10 +145,12 @@ MonoBehaviour:
       type: {class: ScreenShakeAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337835
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: What is happening to me...? Why can't I remember...?
         position: 0
@@ -143,6 +158,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: Am I forgetting... myself...?
         position: 0
@@ -150,15 +166,18 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337838
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: c900041a3032033419340ccd27777268, type: 2}
     - rid: 3820998918383337839
       type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 3
         level: {fileID: 11400000, guid: fe926f823ab00774ea489ade07ebe4c0, type: 2}
         fadeOverlay: 1
         destroyPersistentManagers: 0

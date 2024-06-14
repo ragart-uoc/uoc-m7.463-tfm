@@ -26,6 +26,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: ...
         position: 0
@@ -33,6 +34,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: Did that really happen? Did I go with her?
         position: 0
@@ -40,6 +42,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: And why would she look like...?
         position: 0
@@ -47,6 +50,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: I can't seem to find the piece I'm missing.
         position: 0
@@ -54,8 +58,10 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337651
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: b708e21bf304a8b4c9a994c7ea737881, type: 2}

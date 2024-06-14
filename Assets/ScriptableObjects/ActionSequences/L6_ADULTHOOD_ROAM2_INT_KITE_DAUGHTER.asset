@@ -28,6 +28,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 132de42840037ee4981920e51686a154, type: 2}
         dialogueLine: Daddy! You forgot the kite! Haha, you're so forgetful.
         position: 1
@@ -35,6 +36,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: I'm sorry, sweetie. Let's fly it now.
         position: 0
@@ -42,6 +44,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: There was nothing that could ruin that moment.
         position: 0
@@ -49,10 +52,12 @@ MonoBehaviour:
       type: {class: ScreenShakeAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337772
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 6d5d6ac370924c546aff40a7313bafe2, type: 2}
         dialogueLine: ...
         position: 1
@@ -60,15 +65,18 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337775
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: 88b575b1de53ad34bbaca295606482a2, type: 2}
     - rid: 3820998918383337778
       type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 3
         level: {fileID: 11400000, guid: be9d9a925366a53488c596bd6870df6f, type: 2}
         fadeOverlay: 1
         destroyPersistentManagers: 0

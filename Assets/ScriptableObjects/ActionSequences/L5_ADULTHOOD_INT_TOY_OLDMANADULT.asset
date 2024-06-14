@@ -30,6 +30,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: We were not fine.
         position: 0
@@ -37,6 +38,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: I was not fine.
         position: 0
@@ -44,6 +46,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: I was sitting on the edge of the sidewalk, with a briefcase
           open in the ground.
@@ -52,6 +55,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: My wife's sickness, the stress at work, the pressure of trying
           not to be like my parents...
@@ -60,6 +64,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: I was not fine.
         position: 0
@@ -67,6 +72,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: Hopefuly, there was a light in my life. When I looked at the
           toy, and the drawing that I always carried with me, I remembered that I
@@ -76,6 +82,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: My daughter was the beacon of hope that kept my life together.
           I don't know what I would do without her...
@@ -84,13 +91,16 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337748
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: c37ae374ecba6ee4f9b926133d90f714, type: 2}
     - rid: 3820998918383337749
       type: {class: ItemPickAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         item: {fileID: 11400000, guid: a109e965af3ebc94f965b343b88c0a07, type: 2}

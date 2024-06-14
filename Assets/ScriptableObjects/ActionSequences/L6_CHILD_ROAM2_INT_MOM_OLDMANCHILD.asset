@@ -30,6 +30,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: Grandma had one of her episodes that day.
         position: 0
@@ -37,6 +38,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: She got disoriented and forgot about me. When I went looking
           for her, I got lost.
@@ -45,6 +47,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: I couldn't stop crying. People asked my about my parents, but
           I was just a scared kid.
@@ -53,6 +56,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: Eventually, my mom found me. She had left me with grandma to
           get me a toy.
@@ -61,6 +65,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: She was so worried. She was so scared. She was so relieved
           when she found me.
@@ -69,6 +74,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: That day, I got a toy. I still have it. It's one of the few
           things I have from my childhood.
@@ -77,6 +83,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: But it was also the day that broke my parents' relationship.
           They never got along after that.
@@ -85,13 +92,16 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337758
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: bcae589cdf5216a47bff2a4e3f55cdde, type: 2}
     - rid: 3820998918383337759
       type: {class: ItemPickAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         item: {fileID: 11400000, guid: 019f2467450c025488291abd76d01211, type: 2}

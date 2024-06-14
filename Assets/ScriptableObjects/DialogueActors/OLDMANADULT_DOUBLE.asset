@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf71bdfcdd043504e9c68675acf4f459, type: 3}
   m_Name: OLDMANADULT_DOUBLE
   m_EditorClassIdentifier: 
-  actorImagePrefab: {fileID: 4428604033727658030, guid: 0b1438e067985af41b83636b594587d7, type: 3}
+  actorImagePrefab: {fileID: 4428604033727658030, guid: b8068222d853f6a479928a8752d32cd6, type: 3}
   actorName: Old Man (???)

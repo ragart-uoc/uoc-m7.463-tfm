@@ -24,6 +24,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: Loss. I lost my parents. I lost my friends. I lost my wife.
         position: 0
@@ -31,6 +32,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: I ended up losing... myself.
         position: 0
@@ -38,8 +40,10 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337816
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: bb2f8c44cf6ea0148ab92c0bdfceec56, type: 2}

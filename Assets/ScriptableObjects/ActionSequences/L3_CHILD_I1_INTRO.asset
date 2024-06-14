@@ -30,6 +30,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: I loved coming here with my family. They had the best sundaes
           in town.
@@ -38,6 +39,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: I wonder if my grandmother came with us that day. She always
           knew how to make me smile.
@@ -46,6 +48,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: The atmosphere, the colors, the smells... This was the happiest
           place on Earth for me.
@@ -54,10 +57,12 @@ MonoBehaviour:
       type: {class: ScreenShakeAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998899519455236
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: f9f11713a016f2b44b744722703d5eda, type: 2}
         dialogueLine: ...until it wasn't.
         position: 1
@@ -65,6 +70,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: Huh? Who are you? What do you mean?
         position: 0
@@ -72,6 +78,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: He's gone. I don't understand... What happened here?
         position: 0
@@ -79,6 +86,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: Hmmm... Let's see what memories this place holds.
         position: 0
@@ -86,8 +94,10 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998899519455242
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: b1ecfc3fb0cd64b4484abf11d83cd966, type: 2}

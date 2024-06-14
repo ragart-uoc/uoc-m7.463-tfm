@@ -30,6 +30,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: Hey, young man. Can you explain me again how to use this darn
           thing? How can I take a closer look at my things?
@@ -38,6 +39,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 4758097754426bb4680565bf187ee294, type: 2}
         dialogueLine: Yes, sir. You just need to <color="red">[hover]</color> your
           cursor over the object and <color="red">[left click]</color> on it to <color="red">[interact]</color>.
@@ -46,6 +48,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: Oh, I see... What if I want to <color="red">[pick up]</color>
           the object?
@@ -54,6 +57,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 4758097754426bb4680565bf187ee294, type: 2}
         dialogueLine: Any object that can be picked up will be collected automatically
           when you <color="red">[interact]</color> with it. No need to worry about
@@ -63,6 +67,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: Got it. And how do I <color="red">[use]</color> the object
           once I have it?
@@ -71,6 +76,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 4758097754426bb4680565bf187ee294, type: 2}
         dialogueLine: You can <color="red">[use]</color> the object on other objects
           or characters by <color="red">[hovering]</color> over them and holding
@@ -82,6 +88,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: That sounds easy enough. Thanks for the help, son.
         position: 0
@@ -89,15 +96,18 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998886834307093
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: 5954daaa41fae884580aa44a6784ab79, type: 2}
     - rid: 3820998886834307094
       type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 3
         level: {fileID: 11400000, guid: 7260493f853e700448fe8fa5ea41c438, type: 2}
         fadeOverlay: 0
         destroyPersistentManagers: 0

@@ -9,6 +9,9 @@ namespace TFM.Entities
         /// <value>Property <c>waitForInput</c> represents if an input is expected to continue.</value>
         public int waitForInput;
 
+        /// <value>Property <c>waitAfterAction</c> represents the time to wait after the action.</value>
+        public float waitAfterAction;
+
         /// <summary>
         /// Method <c>Execute</c> executes the action.
         /// </summary>

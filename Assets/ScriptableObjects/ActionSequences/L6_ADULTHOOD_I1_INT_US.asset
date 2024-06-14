@@ -28,6 +28,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: I remember that day. We were having a good time. We were laughing,
           playing, eating ice cream.
@@ -36,6 +37,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: I remember my wife. She was so beautiful. She was so happy.
         position: 0
@@ -43,6 +45,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: And what I could say about my daughter? She was the light of
           my life.
@@ -51,6 +54,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: I remember the three of us. We were so happy. We were so content.
           We were... fine.
@@ -59,10 +63,12 @@ MonoBehaviour:
       type: {class: ScreenShakeAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337676
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7660ff51fd64f214d9ebc90b933934e3, type: 2}
         dialogueLine: We... were... fine.
         position: 0
@@ -70,8 +76,10 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337678
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: ee261473e88708348a989646c652e486, type: 2}

@@ -31,6 +31,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: The siren of the ambulance roared closer. I knew what was happening.
         position: 0
@@ -38,6 +39,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 132de42840037ee4981920e51686a154, type: 2}
         dialogueLine: Daddy, what's happening?
         position: 1
@@ -45,6 +47,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: I don't know, sweety. Come on, let's go find mom.
         position: 0
@@ -52,6 +55,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: But my wife was already inside the ambulance.
         position: 0
@@ -59,6 +63,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: The conversation we had just minutes before was the last one
           we would ever have.
@@ -67,6 +72,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: It just broke us.
         position: 0
@@ -74,6 +80,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: It broke me.
         position: 0
@@ -81,20 +88,24 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337787
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: 627759800cb0d3e4cbe2b42391b96796, type: 2}
     - rid: 3820998918383337798
       type: {class: ItemPickAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         item: {fileID: 11400000, guid: 03490d2370cb11948af4e993736c5987, type: 2}
     - rid: 3820998918383337799
       type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 3
         level: {fileID: 11400000, guid: 95a3d47454fbe264db1833881b6fe962, type: 2}
         fadeOverlay: 1
         destroyPersistentManagers: 0

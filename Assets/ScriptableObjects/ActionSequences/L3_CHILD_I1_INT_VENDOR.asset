@@ -27,6 +27,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: I remember her. She was always so kind to me. I think she was
           my first love. A childish love, of course.
@@ -35,6 +36,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 767f872d1879b564ba64c6439145d528, type: 2}
         dialogueLine: Hello! How is my favorite customer doing today? Would you like
           to try our new flavor?
@@ -43,6 +45,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: I'd love to, but I just want an ice cream cone for my grandmother.
         position: 0
@@ -50,6 +53,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 767f872d1879b564ba64c6439145d528, type: 2}
         dialogueLine: Oh, that's so sweet. Here you go. It's on the house.
         position: 1
@@ -57,6 +61,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: Thank you. I hope she likes it.
         position: 0
@@ -64,8 +69,10 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998899519455253
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: aaf4dbae7c1284044a06f58c29385faa, type: 2}

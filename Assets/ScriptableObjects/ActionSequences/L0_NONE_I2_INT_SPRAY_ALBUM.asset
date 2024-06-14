@@ -24,6 +24,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 90341a25438bfc340bb8e7be503d2b96, type: 2}
         dialogueLine: Yes, it should be here somewhere.
         position: 0
@@ -31,15 +32,18 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337529
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: c609e45a407e1204fbe94ddb1f5a9c9c, type: 2}
     - rid: 3820998918383337530
       type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
-        level: {fileID: 11400000, guid: 1166d3909bd801241b145be2687feab3, type: 2}
+        waitAfterAction: 3
+        level: {fileID: 11400000, guid: 95a3d47454fbe264db1833881b6fe962, type: 2}
         fadeOverlay: 1
         destroyPersistentManagers: 0

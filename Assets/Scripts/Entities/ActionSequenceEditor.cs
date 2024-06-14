@@ -120,6 +120,8 @@ namespace TFM.Entities
                 }
                 var waitForInputProp = actionProp.FindPropertyRelative("waitForInput");
                 waitForInputProp.intValue = EditorGUILayout.Popup(waitForInputProp.displayName, waitForInputProp.intValue, new[] {"No", "Yes"});
+                var waitAfterActionProp = actionProp.FindPropertyRelative("waitAfterAction");
+                EditorGUILayout.PropertyField(waitAfterActionProp, new GUIContent("Wait Between Actions"));
 
                 EditorGUILayout.Space();
                 EditorGUILayout.BeginHorizontal();

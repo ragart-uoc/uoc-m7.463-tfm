@@ -22,8 +22,10 @@ namespace TFM.Managers
         /// <value>Property <c>_isExecutingSequence</c> represents if the sequence is executing.</value>
         private bool _isExecutingSequence;
         
+        /// <value>Property <c>_currentSequenceCoroutine</c> represents the current sequence coroutine.</value>
         private Coroutine _currentSequenceCoroutine;
         
+        /// <value>Property <c>_pendingSequences</c> represents the pending sequences.</value>
         private readonly Dictionary<List<ActionBase>, Action> _pendingSequences = new Dictionary<List<ActionBase>, Action>();
 
         /// <summary>
@@ -67,7 +69,7 @@ namespace TFM.Managers
                 _pendingSequences.Add(sequenceActions, callback);
                 return;
             }
-            StartCoroutine(ExecuteSequenceCoroutine(sequenceActions, callback));
+            _currentSequenceCoroutine = StartCoroutine(ExecuteSequenceCoroutine(sequenceActions, callback));
         }
 
         /// <summary>
@@ -86,10 +88,12 @@ namespace TFM.Managers
                 yield return new WaitForSeconds(waitBetweenActions);
                 if (action.waitForInput == 1)
                     yield return new WaitUntil(() => Mouse.current.leftButton.wasPressedThisFrame);
+                else
+                    yield return new WaitForSeconds(action.waitAfterAction);
             }
-            yield return waitBetweenActions;
             UIManager.Instance?.EnableInteractions();
             callback?.Invoke();
+            _currentSequenceCoroutine = null;
         }
         
         /// <summary>

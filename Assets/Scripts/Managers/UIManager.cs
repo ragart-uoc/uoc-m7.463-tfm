@@ -132,9 +132,7 @@ namespace TFM.Managers
         /// <param name="enable">If the interactions are enabled.</param>
         public void EnableInteractions(bool enable = true)
         {
-            _interactionsEnabled = !(ActionManager.Instance?.IsExecutingSequence() ?? false)
-                                   && !(CustomSceneManager.Instance?.IsLevelLoading() ?? false)
-                                   && enable;
+            _interactionsEnabled = enable;
         }
         
         /// <summary>
@@ -142,7 +140,12 @@ namespace TFM.Managers
         /// </summary>
         public bool AreInteractionsEnabled()
         {
-            return _interactionsEnabled;
+            Debug.Log("SEQUENCE EXECUTED: " + (ActionManager.Instance?.IsExecutingSequence() ?? false ? "YES" : "NO")
+                                            + " | LEVEL LOADING: " + (CustomSceneManager.Instance?.IsLevelLoading() ?? false ? "YES" : "NO")
+                                            + " | INTERACTIONS ENABLED: " + (_interactionsEnabled ? "YES" : "NO"));
+            return !(ActionManager.Instance?.IsExecutingSequence() ?? false)
+                   && !(CustomSceneManager.Instance?.IsLevelLoading() ?? false) 
+                   && _interactionsEnabled;
         }
         
         #region Status bar

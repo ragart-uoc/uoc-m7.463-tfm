@@ -118,7 +118,6 @@ namespace TFM.Managers
         /// </summary>
         private void HandleEventTriggered(Event e)
         {
-            Debug.Log("Event triggered: " + e.eventName);
             if (CurrentLevelsEnablesPhotoAlbum())
                 UIManager.Instance.ShowPhotoAlbumIndicator();
             ExecuteActionSequences(UpdateLevel);
@@ -147,7 +146,6 @@ namespace TFM.Managers
                       || !EventManager.Instance.GetEventState(levelSequenceEvent.completionEvent)
                 select levelSequenceEvent)
             {
-                Debug.Log("EXECUTING LEVEL SEQUENCE EVENT: " + levelSequenceEvent.actionSequence.name);
                 levelSequenceEvent.actionSequence.ExecuteSequence(callback);
                 return;
             }

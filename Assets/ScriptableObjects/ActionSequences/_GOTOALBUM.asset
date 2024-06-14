@@ -21,6 +21,7 @@ MonoBehaviour:
       type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 3
         level: {fileID: 11400000, guid: 1166d3909bd801241b145be2687feab3, type: 2}
         fadeOverlay: 0
         destroyPersistentManagers: 0

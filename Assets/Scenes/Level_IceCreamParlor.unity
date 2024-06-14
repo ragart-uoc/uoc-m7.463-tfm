@@ -1947,7 +1947,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Brother
-  itemDescription: When mom and dad fighted, my brother was always there for me.
+  itemDescription: When mom and dad fighted, my brother and I played serving ice
+    cream to keep us distracted.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}

@@ -67,6 +67,9 @@ namespace TFM.Minigames
             [Header("UI")]
             public Transform customerSelectionPanel;
             
+            /// <value>Property <c>scoreText</c> represents the score text.</value>
+            public TextMeshProUGUI scoreText;
+            
             /// <value>Property <c>timerText</c> represents the timer text.</value>
             public TextMeshProUGUI timerText;
             
@@ -235,6 +238,7 @@ namespace TFM.Minigames
                     return;
                 }
                 _score++;
+                UpdateScoreText();
                 ShowSuccessDialogue(StartNewOrder);
             }
             else
@@ -252,6 +256,14 @@ namespace TFM.Minigames
             yield return new WaitForSeconds(3f);
             EventManager.Instance.UpsertEventState(completionEvent, true);
             CustomSceneManager.Instance.LoadLevel(nextLevel.name);
+        }
+
+        /// <summary>
+        /// Method <c>UpdateScore</c> updates the score text
+        /// </summary>
+        private void UpdateScoreText()
+        {
+            scoreText.text = _score.ToString();
         }
         
         /// <summary>

@@ -29,6 +29,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: My brother was always there for me. He knew how to make me
           feel better.
@@ -37,6 +38,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 172b4a38f45121e4fb5a1af3ce0f2e91, type: 2}
         dialogueLine: Hey, little bro. What's wrong? Why are you crying?
         position: 1
@@ -44,6 +46,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: Mom and dad are fighting again. I don't like it.
         position: 0
@@ -51,6 +54,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 172b4a38f45121e4fb5a1af3ce0f2e91, type: 2}
         dialogueLine: I know, I know. It's hard. But we'll get through this together.
           Here, let me help you.
@@ -59,6 +63,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 7482fc3eaaf408d48b1b077e84dd1be9, type: 2}
         dialogueLine: Thanks, big bro. I love you.
         position: 0
@@ -66,6 +71,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 172b4a38f45121e4fb5a1af3ce0f2e91, type: 2}
         dialogueLine: I love you too, little bro. Now, let's serve some ice cream.
           That always makes you feel better.
@@ -74,15 +80,18 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337494
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: d1c6b4ff3b1e9f04eb39e87f5ae54b9d, type: 2}
     - rid: 3820998918383337495
       type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 3
         level: {fileID: 11400000, guid: cf83a682043ec544a9a80246101bcccc, type: 2}
         fadeOverlay: 1
         destroyPersistentManagers: 0

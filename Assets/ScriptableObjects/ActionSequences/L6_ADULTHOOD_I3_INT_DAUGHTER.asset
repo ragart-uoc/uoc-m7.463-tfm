@@ -17,7 +17,6 @@ MonoBehaviour:
   - rid: 3820998918383337690
   - rid: 3820998918383337691
   - rid: 3820998918383337692
-  - rid: 3820998918383337693
   - rid: 3820998918383337694
   - rid: 3820998918383337695
   - rid: 3820998918383337696
@@ -29,6 +28,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: We were so happy. My daughter was really excited because she
           got a kite for her birthday.
@@ -37,6 +37,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 132de42840037ee4981920e51686a154, type: 2}
         dialogueLine: Daddy, daddy! Let's fly the kite!
         position: 1
@@ -44,6 +45,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: Sure thing, sweetie.
         position: 0
@@ -51,22 +53,16 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: I was worried about my wife. She was always so happy. I don't
           know what was wrong with her that day.
-        position: 0
-    - rid: 3820998918383337693
-      type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
-      data:
-        waitForInput: 1
-        actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
-        dialogueLine: I don't know what was wrong with her that day. I don't know
-          what was wrong with her that day.
         position: 0
     - rid: 3820998918383337694
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: But I didn't want to ruin my daughter's joy. I didn't want
           to ruin her day.
@@ -75,6 +71,7 @@ MonoBehaviour:
       type: {class: DialogueShowAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 1
+        waitAfterAction: 0
         actor: {fileID: 11400000, guid: 01a125ad445e21f4ba67035f340d20d5, type: 2}
         dialogueLine: But the kite was nowhere to be found. Did we forget it somewhere?
         position: 0
@@ -82,8 +79,10 @@ MonoBehaviour:
       type: {class: DialogueHideAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
     - rid: 3820998918383337697
       type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
       data:
         waitForInput: 0
+        waitAfterAction: 0
         eventObject: {fileID: 11400000, guid: 5951da29c3f515c41a0458a739319330, type: 2}
