@@ -82,6 +82,17 @@ namespace TFM.Minigames
             /// <value>Property <c>_score</c> represents the score.</value>
             private int _score;
             
+            /// <value>Property <c>Difficulty</c> represents the available difficulties.</value>
+            private enum Difficulty
+            {
+                Easy,
+                Normal,
+                Hard
+            }
+
+            /// <value>Property <c>difficulty</c> represents the difficulty.</value>
+            private float _difficulty = (float) Difficulty.Normal;
+            
         #endregion
         
         #region Camera
@@ -123,6 +134,16 @@ namespace TFM.Minigames
             
         #endregion
 
+        #region Sounds
+        
+            /// <value>Property <c>successSound</c> represents the success sound.</value>
+            public AudioClip successSound;
+            
+            /// <value>Property <c>failSound</c> represents the fail sound.</value>
+            public AudioClip failSound;
+            
+        #endregion
+        
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
         /// </summary>
@@ -142,14 +163,22 @@ namespace TFM.Minigames
         /// </summary>
         private IEnumerator Start()
         {
-            // Set the times
+            // Get the difficulty from the player preferences
+            if (PlayerPrefs.HasKey("Difficulty"))
+                _difficulty = PlayerPrefs.GetFloat("Difficulty");
+
+            // Set the timer
             _minigameTimer = minigameDuration;
             
             // Set the obstacle spawn rate
-            _obstacleSpawnRate = maxObstacleSpawnRate;
+            _obstacleSpawnRate = Mathf.Approximately(_difficulty, (float) Difficulty.Hard)
+                ? minObstacleSpawnRate
+                : maxObstacleSpawnRate;
             
             // Set the obstacle move speed
-            obstacleMoveSpeed = minObstacleMoveSpeed;
+            obstacleMoveSpeed = Mathf.Approximately(_difficulty, (float) Difficulty.Hard)
+                ? maxObstacleMoveSpeed
+                : minObstacleMoveSpeed;
             
             // Set the score text
             _score = 0;
@@ -175,6 +204,8 @@ namespace TFM.Minigames
             // Set the obstacle spawn rate and the obstacle move speed
             var elapsedTime = minigameDuration - _minigameTimer;
             var timeRatio = Mathf.Clamp01(elapsedTime / (minigameDuration * 0.75f));
+            if (!Mathf.Approximately(_difficulty, (float)Difficulty.Normal))
+                return;
             _obstacleSpawnRate = Mathf.Lerp(maxObstacleSpawnRate, minObstacleSpawnRate, timeRatio);
             obstacleMoveSpeed = Mathf.Lerp(minObstacleMoveSpeed, maxObstacleMoveSpeed, timeRatio);
         }
@@ -248,6 +279,7 @@ namespace TFM.Minigames
             var message = failDialogues[_failDialogueIndex];
             _failDialogueIndex = Mathf.Clamp(_failDialogueIndex + 1, 0, failDialogues.Length - 1);
             UIManager.Instance.ShowDialogueTimed(failActor, message);
+            SoundManager.Instance.PlaySound(failSound);
             callback?.Invoke();
         }
 
@@ -258,6 +290,7 @@ namespace TFM.Minigames
         {
             _score++;
             UpdateScoreText();
+            SoundManager.Instance.PlaySound(successSound);
             if (_score % 5 == 0)
                 ShowSuccessDialogue();
         }

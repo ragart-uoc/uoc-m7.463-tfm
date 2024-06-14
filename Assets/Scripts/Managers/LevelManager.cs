@@ -83,6 +83,7 @@ namespace TFM.Managers
         {
             // Set the current level name
             _currentLevelName = levelName;
+
             // Initialize the levels
             foreach (var level in CustomSceneManager.Instance.availableLevels.levels
                          .Select(Level.CreateInstanceFromAnother))
@@ -98,6 +99,10 @@ namespace TFM.Managers
             
             // Ready event
             Ready?.Invoke(_levels[_currentLevelName]);
+            
+            // Play the background music
+            if (_levels[_currentLevelName].backgroundMusic != null)
+                SoundManager.Instance?.PlayMusic(_levels[_currentLevelName].backgroundMusic);
             
             // Show the photo album
             if (CurrentLevelsEnablesPhotoAlbum())

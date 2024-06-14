@@ -45,6 +45,16 @@ namespace TFM.Managers
             public List<Item> discardedItems;
             
         #endregion
+        
+        #region Sounds
+
+            /// <value>Property <c>itemPickSound</c> represents the item pick sound.</value>
+            public AudioClip itemPickSound;
+            
+            /// <value>Property <c>itemDiscardSound</c> represents the item discard sound.</value>
+            public AudioClip itemDiscardSound;
+
+        #endregion
 
         /// <summary>
         /// Method <c>Awake</c> is called when the script instance is being loaded.
@@ -83,6 +93,8 @@ namespace TFM.Managers
         {
             if (IsItemPickedOrDiscarded(item))
                 return;
+            if (itemPickSound != null)
+                SoundManager.Instance.PlaySound(itemPickSound);
             AddItem(item);
             StartCoroutine(UIManager.Instance.ShowItemNotice(
                 item.Icon,
@@ -110,6 +122,8 @@ namespace TFM.Managers
         {
             if (!pickedItems.Contains(item))
                 return;
+            if (itemDiscardSound != null)
+                SoundManager.Instance.PlaySound(itemDiscardSound);
             pickedItems.Remove(item);
             discardedItems.Add(item);
             ItemDiscarded?.Invoke(item);

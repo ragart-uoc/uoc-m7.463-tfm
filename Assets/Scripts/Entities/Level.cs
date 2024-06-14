@@ -85,6 +85,14 @@ namespace TFM.Entities
 
         #endregion
         
+        #region Music
+        
+            /// <value>Property <c>backgroundMusic</c> represents the background music.</value>
+            [Header("Music")]
+            public AudioClip backgroundMusic;
+        
+        #endregion
+        
         /// <summary>
         /// Method <c>CreateInstance</c> creates an instance of the class.
         /// </summary>
@@ -124,6 +132,7 @@ namespace TFM.Entities
             newLevel.albumPhotoRequiredEvents = level.albumPhotoRequiredEvents;
             newLevel.showPhotoAlbumIndicator = level.showPhotoAlbumIndicator;
             newLevel.photoAlbumIndicatorRequiredEvents = level.photoAlbumIndicatorRequiredEvents;
+            newLevel.backgroundMusic = level.backgroundMusic;
             return newLevel;
         }
         

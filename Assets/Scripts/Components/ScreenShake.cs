@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using TFM.Managers;
 
 namespace TFM.Components
 {
@@ -10,6 +11,9 @@ namespace TFM.Components
     {
         /// <value>Property <c>duration</c> represents the duration of the screen shake.</value>
         public float duration = 1.0f;
+
+        /// <value>Property <c>clip</c> represents the audio clip of the screen shake.</value>
+        public AudioClip clip;
         
         /// <value>Property <c>curve</c> represents the curve of the screen shake.</value>
         public AnimationCurve curve;
@@ -29,6 +33,8 @@ namespace TFM.Components
         {
             var startPosition = transform.position;
             var elapsedTime = 0.0f;
+            if (clip != null)
+                SoundManager.Instance.PlaySound(clip);
             while (elapsedTime < duration)
             {
                 elapsedTime += Time.deltaTime;

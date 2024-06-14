@@ -140,9 +140,6 @@ namespace TFM.Managers
         /// </summary>
         public bool AreInteractionsEnabled()
         {
-            Debug.Log("SEQUENCE EXECUTED: " + (ActionManager.Instance?.IsExecutingSequence() ?? false ? "YES" : "NO")
-                                            + " | LEVEL LOADING: " + (CustomSceneManager.Instance?.IsLevelLoading() ?? false ? "YES" : "NO")
-                                            + " | INTERACTIONS ENABLED: " + (_interactionsEnabled ? "YES" : "NO"));
             return !(ActionManager.Instance?.IsExecutingSequence() ?? false)
                    && !(CustomSceneManager.Instance?.IsLevelLoading() ?? false) 
                    && _interactionsEnabled;

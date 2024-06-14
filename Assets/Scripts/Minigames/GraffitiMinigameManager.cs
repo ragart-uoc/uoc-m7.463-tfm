@@ -83,6 +83,17 @@ namespace TFM.Minigames
 
             /// <value>Property <c>_victoryCount</c> represents the victory count.</value>
             private int _score;
+            
+            /// <value>Property <c>Difficulty</c> represents the available difficulties.</value>
+            private enum Difficulty
+            {
+                Easy,
+                Normal,
+                Hard
+            }
+
+            /// <value>Property <c>difficulty</c> represents the difficulty.</value>
+            private float _difficulty = (float) Difficulty.Normal;
 
         #endregion
 
@@ -147,14 +158,22 @@ namespace TFM.Minigames
         /// </summary>
         private IEnumerator Start()
         {
+            // Get the difficulty from the player preferences
+            if (PlayerPrefs.HasKey("Difficulty"))
+                _difficulty = PlayerPrefs.GetFloat("Difficulty");
+
             // Set the times
             _minigameTimer = minigameDuration;
 
             // Set the police turn rate
-            _topPoliceTurnRate = maxPoliceTurnRate;
+            _topPoliceTurnRate = Mathf.Approximately(_difficulty, (float)Difficulty.Hard)
+                ? minPoliceTurnRate
+                : maxPoliceTurnRate;
 
             // Set the graffiti painting speed
-            _graffitiPaintingSpeed = maxGraffitiPaintingSpeed;
+            _graffitiPaintingSpeed = Mathf.Approximately(_difficulty, (float)Difficulty.Hard)
+                ? minGraffitiPaintingSpeed
+                : maxGraffitiPaintingSpeed;
 
             // Save the police original transform
             _policeOriginalRotation = police.transform.rotation;
@@ -184,8 +203,11 @@ namespace TFM.Minigames
             // Set the police turn rate and the graffiti painting speed
             var elapsedTime = minigameDuration - _minigameTimer;
             var timeRatio = Mathf.Clamp01(elapsedTime / (minigameDuration * 0.75f));
-            _topPoliceTurnRate = Mathf.Lerp(maxPoliceTurnRate, minPoliceTurnRate, timeRatio);
-            _graffitiPaintingSpeed = Mathf.Lerp(minGraffitiPaintingSpeed, maxGraffitiPaintingSpeed, timeRatio);
+            if (Mathf.Approximately(_difficulty, (float)Difficulty.Normal))
+            {
+                _topPoliceTurnRate = Mathf.Lerp(maxPoliceTurnRate, minPoliceTurnRate, timeRatio);
+                _graffitiPaintingSpeed = Mathf.Lerp(minGraffitiPaintingSpeed, maxGraffitiPaintingSpeed, timeRatio);
+            }
             // Check four mouse input
             if (Mouse.current.leftButton.wasPressedThisFrame)
                 _isPainting = true;

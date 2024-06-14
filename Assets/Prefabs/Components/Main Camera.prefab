@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
+  clip: {fileID: 8300000, guid: f70504b6689c46b49a3806c5049f4263, type: 3}
   curve:
     serializedVersion: 2
     m_Curve:

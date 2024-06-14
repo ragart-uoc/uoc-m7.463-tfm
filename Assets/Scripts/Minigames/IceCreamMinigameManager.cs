@@ -31,10 +31,10 @@ namespace TFM.Minigames
             private float _minigameTimer;
         
             /// <value>Property <c>maxRoundTime</c> represents the max time limit for the round.</value>
-            public float maxRoundTime = 10f;
+            public float maxRoundTime = 7.0f;
 
             /// <value>Property <c>minRoundTime</c> represents the min time limit for the round.</value>
-            public float minRoundTime = 3f;
+            public float minRoundTime = 2.5f;
 
             /// <value>Property <c>_roundTimer</c> represents the timer for the round.</value>
             private float _roundTimer;
@@ -50,6 +50,17 @@ namespace TFM.Minigames
         
             /// <value>Property <c>_victoryCount</c> represents the victory count.</value>
             private int _score;
+            
+            /// <value>Property <c>Difficulty</c> represents the available difficulties.</value>
+            private enum Difficulty
+            {
+                Easy,
+                Normal,
+                Hard
+            }
+
+            /// <value>Property <c>difficulty</c> represents the difficulty.</value>
+            private float _difficulty = (float) Difficulty.Normal;
             
         #endregion
         
@@ -149,9 +160,15 @@ namespace TFM.Minigames
         /// </summary>
         private IEnumerator Start()
         {
+            // Get the difficulty from the player preferences
+            if (PlayerPrefs.HasKey("Difficulty"))
+                _difficulty = PlayerPrefs.GetFloat("Difficulty");
+
             // Set the times
             _minigameTimer = minigameDuration;
-            _roundTimer = maxRoundTime;
+            _roundTimer = Mathf.Approximately(_difficulty, (float)Difficulty.Hard)
+                ? minRoundTime
+                : maxRoundTime;
 
             // Set the colors for the player selection button
             foreach (Transform child in playerSelectionPanel)
@@ -220,7 +237,12 @@ namespace TFM.Minigames
             // Set the round timer
             var elapsedTime = minigameDuration - _minigameTimer;
             var timeRatio = Mathf.Clamp01(elapsedTime / (minigameDuration * 0.75f));
-            _roundTimer = Mathf.Lerp(maxRoundTime, minRoundTime, timeRatio);
+            if (Mathf.Approximately(_difficulty, (float) Difficulty.Easy))
+                _roundTimer = maxRoundTime;
+            else if (Mathf.Approximately(_difficulty, (float) Difficulty.Hard))
+                _roundTimer = minRoundTime;
+            else
+                _roundTimer = Mathf.Lerp(maxRoundTime, minRoundTime, timeRatio);
             // Set the game as active
             _gameActive = true;
         }

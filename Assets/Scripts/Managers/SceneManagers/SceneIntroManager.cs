@@ -49,12 +49,6 @@ namespace TFM.Managers.SceneManagers
             /// <value>Property <c>textContainer</c> represents the text container.</value>
             public TextMeshProUGUI textContainer;
             
-            /// <value>Property <c>clipSource</c> represents the clip source.</value>
-            public AudioSource clipSource;
-            
-            /// <value>Property <c>musicSource</c> represents the music source.</value>
-            public AudioSource musicSource;
-            
             /// <value>Property <c>waitAfterLastFrame</c> represents the wait time after the last frame.</value>
             public float waitAfterLastFrame = 5.0f;
         
@@ -121,13 +115,12 @@ namespace TFM.Managers.SceneManagers
                 // If the frame has an audio clip, play it
                 if (frame.audioClip != null)
                 {
-                    clipSource.clip = frame.audioClip;
-                    clipSource.Play();
+                    SoundManager.Instance.PlaySound(frame.audioClip);
                     yield return new WaitForSeconds(frame.audioClip.length);
                 }
                 // If the frame is the last one, fade the music and load the next level
                 if (frame.Equals(introFrames[^1]))
-                    StartCoroutine(FadeMusic(waitAfterLastFrame, LoadNextLevel));
+                    SoundManager.Instance.FadeOutMusic(waitAfterLastFrame, LoadNextLevel);
                 else
                     FadeText(frame.text, textContainer, 0.0f, 0.5f);
             }
@@ -161,25 +154,6 @@ namespace TFM.Managers.SceneManagers
                 container.canvasRenderer.SetAlpha(0.0f);
             container.text = text;
             container.CrossFadeAlpha(targetAlpha, duration, false);
-        }
-
-        /// <summary>
-        /// Method <c>FadeMusic</c> fades the music.
-        /// </summary>
-        /// <param name="duration">The duration of the fade.</param>
-        /// <param name="callback">The callback to be executed after the fade.</param>
-        /// <returns></returns>
-        private IEnumerator FadeMusic(float duration, Action callback = null)
-        {
-            var startVolume = musicSource.volume;
-            var startTime = Time.time;
-            while (Time.time < startTime + duration)
-            {
-                musicSource.volume = startVolume * (1 - ((Time.time - startTime) / duration));
-                yield return null;
-            }
-            musicSource.Stop();
-            callback?.Invoke();
         }
 
         /// <summary>
