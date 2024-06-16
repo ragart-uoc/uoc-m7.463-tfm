@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2187c67a5ab9122488ee63db785c0b9a, type: 3}
-  m_Name: L1_NONE_I2_TUTORIAL_SWITCHANGES_COMPLETED
+  m_Name: L1_NONE_I2_TUTORIAL_SWITCHAGES_COMPLETED
   m_EditorClassIdentifier: 
-  eventName: L1_NONE_I2_TUTORIAL_SWITCHANGES_COMPLETED
+  eventName: L1_NONE_I2_TUTORIAL_SWITCHAGES_COMPLETED

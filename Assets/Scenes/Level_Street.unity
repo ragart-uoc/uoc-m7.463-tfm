@@ -3020,7 +3020,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: PIzza parlor
-  itemDescription: The pizza parlor opened when I was a kid, but it didn't last long.
+  itemDescription: The <color="red">pizza parlor</color> opened when I was a kid,
+    but it <color="red">closed</color> almost immediately.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}
@@ -7841,7 +7842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Me
-  itemDescription: My adult self. He seems so lost. So... empty.
+  itemDescription: My adult self. He seems so <color="red">lost</color>. So... empty.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}
@@ -10699,8 +10700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Me
-  itemDescription: My adolescent self. He was always so lonely, but there is something
-    else in his eyes.
+  itemDescription: My adolescent self. He was always so lonely, so <color="red">angry</color>.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}
@@ -26510,7 +26510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Me
-  itemDescription: My child self. He was always happy... but he feels sad.
+  itemDescription: My child self. He was always happy... no, he was <color="red">afraid</color>.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}
@@ -26922,7 +26922,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Me
-  itemDescription: My child self. He was always happy... but he feels sad.
+  itemDescription: My child self. He loved <color="red">drawing</color>. He always
+    welcomed any inspiration.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}
@@ -30641,8 +30642,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Me
-  itemDescription: My adolescent self. He was always so lonely, but there is something
-    else in his eyes.
+  itemDescription: My adolescent self. He only thought about <color="red">graffiti</color>
+    and <color="red">music</color>.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}
@@ -30813,7 +30814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showEvents:
-  - {fileID: 11400000, guid: 18c69370489cf1c4c9906968cd01eee7, type: 2}
+  - {fileID: 11400000, guid: a7615db6351375d4187f93f76b5b6b2d, type: 2}
   hideEvents: []
   availableAgeGroups: 01000000
 --- !u!114 &2106779814322204589
@@ -30829,7 +30830,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Police car
-  itemDescription: Even if people didn't care about the graffiti, the police did.
+  itemDescription: I hated the police. I always thought of <color="red">smashing</color>
+    their cars.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}
@@ -31060,7 +31062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Me
-  itemDescription: My adult self. He seems so lost. So... empty.
+  itemDescription: My adult self. He has forgotten how to <color="red">play</color>.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}

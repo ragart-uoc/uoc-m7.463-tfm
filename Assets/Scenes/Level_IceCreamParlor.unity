@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Cash register
-  itemDescription: The parlor was always full of people.<br>The register was probably
+  itemDescription: The parlor was always full of people. The register was probably
     full of money all the time.
   itemUnpickedDescription: 
   actionSequence:
@@ -1640,7 +1640,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Grandma
-  itemDescription: Grandma. She was the heart of our family.
+  itemDescription: Grandma. She was the heart of our family And she really liked
+    her <color="red">ice cream</color>!
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}
@@ -1947,8 +1948,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Brother
-  itemDescription: When mom and dad fighted, my brother and I played serving ice
-    cream to keep us distracted.
+  itemDescription: When mom and dad fighted, my brother would take a <color="red">scoop</color>
+    and playe with me.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}
@@ -3668,8 +3669,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Daughter
-  itemDescription: My daughter was the light of my life. That day she was especially
-    excited.
+  itemDescription: My daughter was the light of my life. That day was <color="red">special</color>
+    for her.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}
@@ -3832,8 +3833,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Arcade
-  itemDescription: They replaced the jukebox with an arcade machine. It probably
-    was one of the reasons they didn't go bankrupt.
+  itemDescription: They replaced the jukebox with an arcade machine. I  didn't have
+    any <color="red">money</color> to play.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}
@@ -3887,8 +3888,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: New vendor
-  itemDescription: The new proprietor of the ice cream parlor. I wonder what happened
-    to the old one.
+  itemDescription: The new proprietor of the ice cream parlor. She was really excited
+    about the <color="red">opening</color>.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}
@@ -4191,7 +4192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Jukebox
-  itemDescription: They had the best music playing all the time.
+  itemDescription: They had the best music playing all the time. It had the best
+    <color="red">discs</color>.
   itemUnpickedDescription: 
   actionSequence:
     triggerEvent: {fileID: 0}

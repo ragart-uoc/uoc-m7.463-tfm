@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
-  m_Name: L1_NONE_I2_TUTORIAL_SWITCHANGES
+  m_Name: L1_NONE_I2_TUTORIAL_SWITCHAGES
   m_EditorClassIdentifier: 
   sequenceActions:
   - rid: 3820998918383337591
