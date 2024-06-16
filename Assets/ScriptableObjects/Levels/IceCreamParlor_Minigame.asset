@@ -25,3 +25,4 @@ MonoBehaviour:
   showPhotoAlbumIndicator: 0
   photoAlbumIndicatorRequiredEvents: []
   levelSequenceEvents: []
+  backgroundMusic: {fileID: 0}

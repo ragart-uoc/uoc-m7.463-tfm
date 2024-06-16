@@ -152,5 +152,13 @@ namespace TFM.Managers.SceneManagers
         {
             creditsPanel.SetActive(!optionsPanel.activeSelf);
         }
+        
+        /// <summary>
+        /// Method <c>MainMenu</c> loads the main menu.
+        /// </summary>
+        public void LetMeTellYouAStory()
+        {
+            CustomSceneManager.Instance.LoadLevel("scene_0_level", true);
+        }
     }
 }

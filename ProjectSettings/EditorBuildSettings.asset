@@ -59,5 +59,38 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ToBeContinued.unity
     guid: 44fea496e39b8d34697aaabe1e9c4b07
+  - enabled: 1
+    path: Assets/TFMODE/scene_intro.unity
+    guid: 0ff1dcdda106d7d4c9a26cf6ef19a53a
+  - enabled: 1
+    path: Assets/TFMODE/scene_1.unity
+    guid: f9b90c5ab83657e468f7c48b2103d374
+  - enabled: 1
+    path: Assets/TFMODE/scene_2.unity
+    guid: f6467024805b8a44bbf25c72697d8a1c
+  - enabled: 1
+    path: Assets/TFMODE/scene_3.unity
+    guid: 67a317a1bc38a4f40b0d0ed86e93f30a
+  - enabled: 1
+    path: Assets/TFMODE/scene_4.unity
+    guid: e129e26f5a2ff004d8afdf628b31ca73
+  - enabled: 1
+    path: Assets/TFMODE/scene_5.unity
+    guid: d045fbb3eeb127f4aa422396f6fd70b4
+  - enabled: 1
+    path: Assets/TFMODE/scene_6.unity
+    guid: 19a9b83f934e1b344b7d8bc61f2703fb
+  - enabled: 1
+    path: Assets/TFMODE/scene_7.unity
+    guid: 9e40ee71be318bb43b79e56390498dad
+  - enabled: 1
+    path: Assets/TFMODE/scene_8.unity
+    guid: 3e2defe1bce4d8749979989661d28273
+  - enabled: 1
+    path: Assets/TFMODE/scene_9.unity
+    guid: 846d5059cbd1f154ea6a4b84a2697229
+  - enabled: 1
+    path: Assets/TFMODE/scene_0.unity
+    guid: 77cecffe0181d404a95532d91cb0ee58
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0b12e1385c24b4f468f9fc89bf9028e2, type: 2}

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
+  m_Name: scene_intro_level
+  m_EditorClassIdentifier: 
+  sceneName: scene_intro
+  sceneAsset: {fileID: 102900000, guid: 0ff1dcdda106d7d4c9a26cf6ef19a53a, type: 3}
+  initialAgeGroup: 4
+  currentAgeGroup: 0
+  activeShowableObjects: []
+  activeShowableObjectsIds: 
+  enablePause: 1
+  hasAlbumPhoto: 0
+  albumPhotoImage: {fileID: 0}
+  albumPhotoRequiredEvents: []
+  showPhotoAlbumIndicator: 0
+  photoAlbumIndicatorRequiredEvents: []
+  levelSequenceEvents:
+  - triggerEvent: {fileID: 0}
+    actionSequence: {fileID: 11400000, guid: 6af2cc2960d0ce440bcf939626435a94, type: 2}
+    completionEvent: {fileID: 11400000, guid: 5a11d2bdc27e1414a8a15443b9b45895, type: 2}
+  backgroundMusic: {fileID: 8300000, guid: 85bef6f7e16a18d4996c0409b16c9a46, type: 3}

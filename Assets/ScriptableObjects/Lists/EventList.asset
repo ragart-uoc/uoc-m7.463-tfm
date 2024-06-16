@@ -71,4 +71,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88b575b1de53ad34bbaca295606482a2, type: 2}
   - {fileID: 11400000, guid: bcae589cdf5216a47bff2a4e3f55cdde, type: 2}
   - {fileID: 11400000, guid: 4b6b37d256284f3468bb52d26cf51cf3, type: 2}
+  - {fileID: 11400000, guid: 5a11d2bdc27e1414a8a15443b9b45895, type: 2}
+  - {fileID: 11400000, guid: 4a3bff5ed641d8e448f8cb793e19089b, type: 2}
+  - {fileID: 11400000, guid: 429f101c9e7af534dbe813668de264f6, type: 2}
+  - {fileID: 11400000, guid: 72100909aed7e654286418e189cbf833, type: 2}
+  - {fileID: 11400000, guid: 985ff41ab38ddd24c958dffc16dee78c, type: 2}
+  - {fileID: 11400000, guid: e1a9e14a9536c384d9443876a5dace76, type: 2}
+  - {fileID: 11400000, guid: e1ba15a8a47ec854c80e1120a91cc5f6, type: 2}
+  - {fileID: 11400000, guid: 2b8b1d5b2eceb6d4e899332f09de96bc, type: 2}
+  - {fileID: 11400000, guid: 5ec64a7ebca50e8479c2a94d185f5bcf, type: 2}
+  - {fileID: 11400000, guid: 06914503cde45244395e7b598c37523f, type: 2}
+  - {fileID: 11400000, guid: 7ede6d9d45eddda4a9b76821ccef841a, type: 2}
+  - {fileID: 11400000, guid: b43fdbf6f366c2844aa9d3946cce7e4e, type: 2}
   eventsFolder: Assets/ScriptableObjects/Events

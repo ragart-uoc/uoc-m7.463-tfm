@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d2a8f6455e44149865cba6bb5c2dc0, type: 3}
+  m_Name: scene_0_level
+  m_EditorClassIdentifier: 
+  sceneName: scene_0
+  sceneAsset: {fileID: 102900000, guid: 77cecffe0181d404a95532d91cb0ee58, type: 3}
+  initialAgeGroup: 4
+  currentAgeGroup: 0
+  activeShowableObjects: []
+  activeShowableObjectsIds: 
+  enablePause: 1
+  hasAlbumPhoto: 0
+  albumPhotoImage: {fileID: 0}
+  albumPhotoRequiredEvents: []
+  showPhotoAlbumIndicator: 0
+  photoAlbumIndicatorRequiredEvents: []
+  levelSequenceEvents:
+  - triggerEvent: {fileID: 0}
+    actionSequence: {fileID: 11400000, guid: 053a385d4eba587478f8b25d8023489b, type: 2}
+    completionEvent: {fileID: 11400000, guid: 7ede6d9d45eddda4a9b76821ccef841a, type: 2}
+  - triggerEvent: {fileID: 11400000, guid: 2b8b1d5b2eceb6d4e899332f09de96bc, type: 2}
+    actionSequence: {fileID: 11400000, guid: 860ae017a9f439b4c971f1bec4286213, type: 2}
+    completionEvent: {fileID: 11400000, guid: b43fdbf6f366c2844aa9d3946cce7e4e, type: 2}
+  backgroundMusic: {fileID: 0}

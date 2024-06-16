@@ -31,4 +31,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 611c7b11c3321d04e87a96e336a04bb3, type: 2}
   - {fileID: 11400000, guid: 002d0b8ef3f36f34f91e3841ee211508, type: 2}
   - {fileID: 11400000, guid: edd8bd2b20f530d44b93c43688920183, type: 2}
+  - {fileID: 11400000, guid: 6c720a31be10f4e4194612fbcdd1a9d5, type: 2}
+  - {fileID: 11400000, guid: bf84afbabe618ce4d9d80dd74b1a8373, type: 2}
+  - {fileID: 11400000, guid: 08208f4c4bb323b45b0c859159737c39, type: 2}
+  - {fileID: 11400000, guid: b5668beb7ab07ab488bd39cc2a419e21, type: 2}
+  - {fileID: 11400000, guid: 2f11741bf7b1faf43be1620898eed16a, type: 2}
+  - {fileID: 11400000, guid: 78d60bce49fb179469bc6de80a53526d, type: 2}
+  - {fileID: 11400000, guid: baaa422608e64ae4ba7f13b5b3ffdd9c, type: 2}
+  - {fileID: 11400000, guid: 0665f5b1fa389ca42a5a530bc21c4ba8, type: 2}
+  - {fileID: 11400000, guid: e25f3d00de74b134f891a8b55f0aed49, type: 2}
+  - {fileID: 11400000, guid: 24f0bfb70f5d76f44b56671a3559322f, type: 2}
+  - {fileID: 11400000, guid: 8992a71b120f4e5409d6cd068627e60a, type: 2}
   levelsFolder: Assets/ScriptableObjects/Levels

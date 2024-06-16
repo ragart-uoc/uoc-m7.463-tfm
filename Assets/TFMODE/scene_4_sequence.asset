@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afd8f6b327d468146854242ac5e40e0d, type: 3}
+  m_Name: scene_4_sequence
+  m_EditorClassIdentifier: 
+  sequenceActions:
+  - rid: 3820998998247866374
+  - rid: 3820998998247866375
+  references:
+    version: 2
+    RefIds:
+    - rid: 3820998998247866374
+      type: {class: EventTriggerAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 1
+        waitAfterAction: 0
+        eventObject: {fileID: 11400000, guid: 985ff41ab38ddd24c958dffc16dee78c, type: 2}
+    - rid: 3820998998247866375
+      type: {class: LevelLoadAction, ns: TFM.Actions, asm: Assembly-CSharp}
+      data:
+        waitForInput: 0
+        waitAfterAction: 0
+        level: {fileID: 11400000, guid: 78d60bce49fb179469bc6de80a53526d, type: 2}
+        fadeOverlay: 0
+        destroyPersistentManagers: 0

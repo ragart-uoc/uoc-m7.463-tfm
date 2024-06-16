@@ -33,3 +33,4 @@ MonoBehaviour:
   - triggerEvent: {fileID: 11400000, guid: 69e14462cee7fd047bc7304798fd7c94, type: 2}
     actionSequence: {fileID: 11400000, guid: 773ea8b5ccdfeb3459bfcf544dc48743, type: 2}
     completionEvent: {fileID: 11400000, guid: 627759800cb0d3e4cbe2b42391b96796, type: 2}
+  backgroundMusic: {fileID: 0}
